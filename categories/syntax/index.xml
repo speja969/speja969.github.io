@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>syntax on Clarity</title>
-    <link>https://pejabadzic.xyz/categories/syntax/</link>
+    <link>https://speja969.github.io/categories/syntax/</link>
     <description>Recent content in syntax on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pejabadzic.xyz/categories/syntax/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/categories/syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</title>
-      <link>https://pejabadzic.xyz/post/min_buster_vbox_2/</link>
+      <link>https://speja969.github.io/post/min_buster_vbox_2/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pejabadzic.xyz/post/min_buster_vbox_2/</guid>
+      <guid>https://speja969.github.io/post/min_buster_vbox_2/</guid>
       <description>
         
           &lt;hr&gt;
@@ -24,21 +24,21 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;U VirtualBox menadžeru startujemo našu Virtuelnu Mašinu klikom na &lt;em&gt;Start&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/startujemo_VM.png&#34; alt=&#34;Startujemo VM&#34; title=&#34;Startujemo VM&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/startujemo_VM.png&#34; alt=&#34;Startujemo VM&#34; title=&#34;Startujemo VM&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Ulogujemo se i unesemo &lt;em&gt;password&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/ulogujemo_se.png&#34; alt=&#34;Startujemo VM&#34; title=&#34;Login i Password&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/ulogujemo_se.png&#34; alt=&#34;Startujemo VM&#34; title=&#34;Login i Password&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Uradimo &lt;em&gt;Update&lt;/em&gt; repozitorijuma sa najnovijim dostupnim programima i &lt;em&gt;Upgrade&lt;/em&gt;-ujemo sistem:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/update_upgrade.png&#34; alt=&#34;Update i Upgrade&#34; title=&#34;update i upgrade&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/update_upgrade.png&#34; alt=&#34;Update i Upgrade&#34; title=&#34;update i upgrade&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Instaliramo &lt;em&gt;&lt;strong&gt;git:&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/install_git.png&#34; alt=&#34;Install git&#34; title=&#34;Install git&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/install_git.png&#34; alt=&#34;Install git&#34; title=&#34;Install git&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Instaliramo &lt;em&gt;VirtualBox Guest Additions&lt;/em&gt;  da bi mogli da koristimo spoljne periferije Host OS-a, kao i da izaberemo veću rezoluciju po želji.&lt;/p&gt;
@@ -73,17 +73,17 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Ulogujemo se i unesemo &lt;em&gt;password&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/ulogujemo_se.png&#34; alt=&#34;Startujemo VM&#34; title=&#34;Login i Password&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/ulogujemo_se.png&#34; alt=&#34;Startujemo VM&#34; title=&#34;Login i Password&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Kloniramo repozitorijum koji sam postavio na &lt;em&gt;GitHub&lt;/em&gt;-u&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-BASH&#34; data-lang=&#34;BASH&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;git clone https://github.com/speja969/Buster_Box_v2.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/git_clone_Buster_box_v2.png&#34; alt=&#34;Kloniramo repozitorijum&#34; title=&#34;kloniramo Repo&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/git_clone_Buster_box_v2.png&#34; alt=&#34;Kloniramo repozitorijum&#34; title=&#34;kloniramo Repo&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Premestimo aktivni direktorijum na folder u kome klonirani repozitorijum:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-BASH&#34; data-lang=&#34;BASH&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Buster_Box_v2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/cd_Buster_Box_v2.png&#34; alt=&#34;cd&#34; title=&#34;cd&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/cd_Buster_Box_v2.png&#34; alt=&#34;cd&#34; title=&#34;cd&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Promenimo ovlašćenja pristupa za ceo Repo i sav sadržaj rekurzivno:&lt;/p&gt;
@@ -94,13 +94,13 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-BASH&#34; data-lang=&#34;BASH&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ls
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/ls.png&#34; alt=&#34;ls&#34; title=&#34;ls&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/ls.png&#34; alt=&#34;ls&#34; title=&#34;ls&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;12&#34;&gt;
 &lt;li&gt;Premestimo aktivni direktorijum na folder  scripts, u kome kad ga izlistamo uočavamo fajl &lt;em&gt;Buster_Box_v2.sh&lt;/em&gt;:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-BASH&#34; data-lang=&#34;BASH&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; scripts
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-BASH&#34; data-lang=&#34;BASH&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ls
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/cd_scripts_ls.png&#34; alt=&#34;cd scripts&#34; title=&#34;cd scripts&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/cd_scripts_ls.png&#34; alt=&#34;cd scripts&#34; title=&#34;cd scripts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;13&#34;&gt;
 &lt;li&gt;U sledećem koraku startujemo izvršavanje &lt;em&gt;&lt;strong&gt;BASH&lt;/strong&gt;&lt;/em&gt; scripte koja će instalirati OpenBox kao i ostale izabrane programe:&lt;/li&gt;
 &lt;/ol&gt;
@@ -113,8 +113,8 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;15&#34;&gt;
 &lt;li&gt;U LightDM unesemo username i password i naći ćemo se u grafičkom okruženju:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/LightDM.png&#34; alt=&#34;LightDM&#34; title=&#34;lightdm&#34;&gt;
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_Vbox_2/OpenBox.png&#34; alt=&#34;OpenBox&#34; title=&#34;OpenBox&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/LightDM.png&#34; alt=&#34;LightDM&#34; title=&#34;lightdm&#34;&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/OpenBox.png&#34; alt=&#34;OpenBox&#34; title=&#34;OpenBox&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;16&#34;&gt;
 &lt;li&gt;Slede podešavanja koja će biti obrađena u trećem delu.&lt;/li&gt;
 &lt;/ol&gt;
@@ -125,10 +125,10 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
     
     <item>
       <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo</title>
-      <link>https://pejabadzic.xyz/post/min_buster_vbox/</link>
+      <link>https://speja969.github.io/post/min_buster_vbox/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://pejabadzic.xyz/post/min_buster_vbox/</guid>
+      <guid>https://speja969.github.io/post/min_buster_vbox/</guid>
       <description>
         
           &lt;hr&gt;
@@ -137,7 +137,7 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
 &lt;p&gt;Najbolja polazna tačka za korisnika Widows-a je da instalira Linux kao virtuelnu mašinu. Najpopularniji program za virtuelizaciju je VirtualBox. Osim što je besplatan, dostupan je za sve tri platforme: Windows, Linux i MacOS.&lt;/p&gt;
 &lt;p&gt;Ovaj sajt je namenjen korisnicima Windows-a koji žele da otkriju čari Linux-a, ali da tranziciju učini što bezbolnijom.&lt;/p&gt;
 &lt;p&gt;Prosečnom korisniku Windows-a 10 neće biti problem da instalira VirtualBox. Sa strane &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt; skinuti instalaciju VirtualBox-a za &lt;em&gt;Windows Host&lt;/em&gt;, kao i &lt;em&gt;VirtualBox Extension Pack&lt;/em&gt;  zajednički za sve platforme i instalirati ih kao standardni &lt;em&gt;Windows&lt;/em&gt; program:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/VirtualBox_Windows_Host.png&#34; alt=&#34;https://www.virtualbox.org/wiki/Downloads&#34; title=&#34;Daunlodujemo VirtualBox za Windows Host&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/VirtualBox_Windows_Host.png&#34; alt=&#34;https://www.virtualbox.org/wiki/Downloads&#34; title=&#34;Daunlodujemo VirtualBox za Windows Host&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:&lt;/li&gt;
 &lt;/ol&gt;
@@ -152,183 +152,183 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;Startujemo VirtualBox Manager klikom na &lt;strong&gt;New&lt;/strong&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/pokrenemo_VirtualBox.png&#34; alt=&#34;Startujemo VirtualBox&#34; title=&#34;Startujemo VirtualBox&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/pokrenemo_VirtualBox.png&#34; alt=&#34;Startujemo VirtualBox&#34; title=&#34;Startujemo VirtualBox&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Definišemo količinu RAM-a  dodeljenu VM:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/podesimo_memoriju_dodeljenu_VM-i.png&#34; alt=&#34;Definišemo količinu RAM-a za VM&#34; title=&#34;Definišemo količinu RAM-a  za VM&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/podesimo_memoriju_dodeljenu_VM-i.png&#34; alt=&#34;Definišemo količinu RAM-a za VM&#34; title=&#34;Definišemo količinu RAM-a  za VM&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Kreiramo virtuelni hard disk za instalaciju Debiana:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/virtuelni_HDD.png&#34; alt=&#34;Kreiramo virtuelni hard disk&#34; title=&#34;Kreiramo virtuelni hard disk&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/virtuelni_HDD.png&#34; alt=&#34;Kreiramo virtuelni hard disk&#34; title=&#34;Kreiramo virtuelni hard disk&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Biramo vrstu hard diska (&lt;strong&gt;VDI&lt;/strong&gt;, VHD ili VMDK):
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/biramo_vrstu_virtuelnog_HDD-a.png&#34; alt=&#34;Biramo VDI (VirtualBox Disk Image)&#34; title=&#34;Biramo VDI (VirtualBox Disk Image)&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/biramo_vrstu_virtuelnog_HDD-a.png&#34; alt=&#34;Biramo VDI (VirtualBox Disk Image)&#34; title=&#34;Biramo VDI (VirtualBox Disk Image)&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Biramo tip hard diska (&lt;strong&gt;promenljive&lt;/strong&gt; veličine - &lt;em&gt;&lt;strong&gt;Dynamically allocated&lt;/strong&gt;&lt;/em&gt;):
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/biramo_tip_virtuelnog_HDD-a.png&#34; alt=&#34;Biramo tip hard diska&#34; title=&#34;Biramo tip hard diska&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/biramo_tip_virtuelnog_HDD-a.png&#34; alt=&#34;Biramo tip hard diska&#34; title=&#34;Biramo tip hard diska&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Određujemo veličinu virtuelnog hard diska, na primer 16 GB a zatim promenimo lokaciju gde će Virtuelna Mašina biti upamćena (novi folder na particiji gde nije Windows):
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/odredjujemo_velicinu_HDD-a.png&#34; alt=&#34;Lokacija i veličina hard diska&#34; title=&#34;Lokacija i veličina hard diska&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/odredjujemo_velicinu_HDD-a.png&#34; alt=&#34;Lokacija i veličina hard diska&#34; title=&#34;Lokacija i veličina hard diska&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;VirualBox Manager nakon podešavanja:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/VM-a_sa_default_podesavanjima.png&#34; alt=&#34;VirtualBox Manager&#34; title=&#34;Nakon podešavanja&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/VM-a_sa_default_podesavanjima.png&#34; alt=&#34;VirtualBox Manager&#34; title=&#34;Nakon podešavanja&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Iz kontekstnog menija kliknemo na  &lt;em&gt;Settings&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/iz_kontekstnog_menija_settings.png&#34; alt=&#34;VirtualBox Manager&#34; title=&#34;desni klik Settings&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/iz_kontekstnog_menija_settings.png&#34; alt=&#34;VirtualBox Manager&#34; title=&#34;desni klik Settings&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Izaberemo dvosmernu komunikaciju sa Host Operativnim Sistemom:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/2xbidirectional.png&#34; alt=&#34;2xbidirectional&#34; title=&#34;2xbidirectional&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/2xbidirectional.png&#34; alt=&#34;2xbidirectional&#34; title=&#34;2xbidirectional&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Podesimo redosled butovanja:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/podesimo_redosled_butovanja.png&#34; alt=&#34;Redosled butovanja&#34; title=&#34;Nakon podešavanja&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/podesimo_redosled_butovanja.png&#34; alt=&#34;Redosled butovanja&#34; title=&#34;Nakon podešavanja&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Dodelimo na primer 2 procesorska jezgra Virtuelnoj Mašini:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/dodelimo_VM-i_npr._2_proc.jezgra.png&#34; alt=&#34;Dodeljivanje procesorskih jezgara&#34; title=&#34;Nakon podešavanja&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/dodelimo_VM-i_npr._2_proc.jezgra.png&#34; alt=&#34;Dodeljivanje procesorskih jezgara&#34; title=&#34;Nakon podešavanja&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Video memoriju proširimo na maksimalnih 128 MB:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/video_memorija_na_128MB.png&#34; alt=&#34;Video memorija&#34; title=&#34;Video memorija&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/video_memorija_na_128MB.png&#34; alt=&#34;Video memorija&#34; title=&#34;Video memorija&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Iz kontektsnog menija plavog diska gore desno - izaberemo ISO sliku Min. Debiana:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/izaberemo_ISO_sliku_Debiana.png&#34; alt=&#34;debian-10.7.0-amd64-netinst.iso&#34; title=&#34;ISO slika Minimalnog Debiana&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/izaberemo_ISO_sliku_Debiana.png&#34; alt=&#34;debian-10.7.0-amd64-netinst.iso&#34; title=&#34;ISO slika Minimalnog Debiana&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Debian se sada pojavljuje u stablu &lt;em&gt;Storage Devices&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/Debian_se_pojavljuje_u_stablu.png&#34; alt=&#34;Debian izabran kao virtuelni disk&#34; title=&#34;Debian izabran kao virtuelni disk&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/Debian_se_pojavljuje_u_stablu.png&#34; alt=&#34;Debian izabran kao virtuelni disk&#34; title=&#34;Debian izabran kao virtuelni disk&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Podešavamo virtuelni mrežni adapter kao &lt;em&gt;Bridged Adapter&lt;/em&gt; da bi VM dobila svoju IP adresu:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/podesavamo_mrezni_adapter.png&#34; alt=&#34;Podešavanje mrežnog adaptera&#34; title=&#34;Podešavanje mrežnog adaptera&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/podesavamo_mrezni_adapter.png&#34; alt=&#34;Podešavanje mrežnog adaptera&#34; title=&#34;Podešavanje mrežnog adaptera&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Opciono - odredimo foldere za šerovanje sa Host OS-om:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/biramo_foldere_za_serovanje.png&#34; alt=&#34;Šerovanje foldera&#34; title=&#34;Šerovanje foldera&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/biramo_foldere_za_serovanje.png&#34; alt=&#34;Šerovanje foldera&#34; title=&#34;Šerovanje foldera&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Virtuelna Mašina je podešena:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/VM-a_je_podesena.png&#34; alt=&#34;Podešena VM&#34; title=&#34;Podešena VM&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/VM-a_je_podesena.png&#34; alt=&#34;Podešena VM&#34; title=&#34;Podešena VM&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Klikom na &lt;em&gt;Start&lt;/em&gt;, otvara se prozor gde biramo &lt;em&gt;graphical install&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/graphical_install.png&#34; alt=&#34;graphical install&#34; title=&#34;graphical install&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/graphical_install.png&#34; alt=&#34;graphical install&#34; title=&#34;graphical install&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Biramo jezik, ostavimo engleski po &lt;em&gt;defaultu&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/izbor_jezika.png&#34; alt=&#34;ostavimo default - engleski&#34; title=&#34;ostavimo _default_ - engleski&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/izbor_jezika.png&#34; alt=&#34;ostavimo default - engleski&#34; title=&#34;ostavimo _default_ - engleski&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Izbor lokacije 1.korak:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/izbor_lokacije_1.korak.png&#34; alt=&#34;izbor lokacije 1.korak&#34; title=&#34;izbor lokacije 1. korak&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/izbor_lokacije_1.korak.png&#34; alt=&#34;izbor lokacije 1.korak&#34; title=&#34;izbor lokacije 1. korak&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Izbor lokacije 2.korak:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/izbor_lokacije_2.korak.png&#34; alt=&#34;izbor lokacije 2.korak&#34; title=&#34;izbor lokacije 2. korak&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/izbor_lokacije_2.korak.png&#34; alt=&#34;izbor lokacije 2.korak&#34; title=&#34;izbor lokacije 2. korak&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Izbor lokacije 3.korak:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/izbor_lokacije_3.korak.png&#34; alt=&#34;izbor lokacije 3.korak&#34; title=&#34;izbor lokacije 3. korak&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/izbor_lokacije_3.korak.png&#34; alt=&#34;izbor lokacije 3.korak&#34; title=&#34;izbor lokacije 3. korak&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Ostavljamo &lt;em&gt;default local settings&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/ostavljamo_default_local_settings.png&#34; alt=&#34;Ostavljamo default local settings&#34; title=&#34;default local settings&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/ostavljamo_default_local_settings.png&#34; alt=&#34;Ostavljamo default local settings&#34; title=&#34;default local settings&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Biramo &lt;em&gt;default&lt;/em&gt; raspored tastature:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/ostavljamo_default_raspored_tastature.png&#34; alt=&#34;Biramo default raspored tastature&#34; title=&#34;Biramo _default_ raspored tastature&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/ostavljamo_default_raspored_tastature.png&#34; alt=&#34;Biramo default raspored tastature&#34; title=&#34;Biramo _default_ raspored tastature&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;Hostname&lt;/em&gt; može &lt;em&gt;default&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/hostname_moze_default_ne_mora.png&#34; alt=&#34;Hostname može default ili po želji&#34; title=&#34;Hostname može default&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/hostname_moze_default_ne_mora.png&#34; alt=&#34;Hostname može default ili po želji&#34; title=&#34;Hostname može default&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;Domaine  name&lt;/em&gt;  ostavljamo prazno:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/domain_name_ostavljamo_prazno.png&#34; alt=&#34;Domaine  name  prazno&#34; title=&#34;Domaine  name  ostavljamo prazno&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/domain_name_ostavljamo_prazno.png&#34; alt=&#34;Domaine  name  prazno&#34; title=&#34;Domaine  name  ostavljamo prazno&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;Root password&lt;/em&gt; ostavljamo prazno da bi prvi &lt;em&gt;USER&lt;/em&gt; imao &lt;em&gt;SUDO&lt;/em&gt; (administratorska) ovlašćenja:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/root_password_preskacemo_continue.png&#34; alt=&#34;Root password  prazno&#34; title=&#34;Root password prazno&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/root_password_preskacemo_continue.png&#34; alt=&#34;Root password  prazno&#34; title=&#34;Root password prazno&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Unosimo ime prvog &lt;em&gt;USER-a&lt;/em&gt; sa &lt;em&gt;default&lt;/em&gt; &lt;em&gt;SUDO&lt;/em&gt; ovlašćenjima:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/ime_USER-a.png&#34; alt=&#34;može puno ime i prezime ili username&#34; title=&#34;Unosimo ime prvog USER-a&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/ime_USER-a.png&#34; alt=&#34;može puno ime i prezime ili username&#34; title=&#34;Unosimo ime prvog USER-a&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Unosimo i &lt;em&gt;username&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/username_USER-a.png&#34; alt=&#34;Unosimo username prvog USER-a&#34; title=&#34;Unosimo username USER-a&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/username_USER-a.png&#34; alt=&#34;Unosimo username prvog USER-a&#34; title=&#34;Unosimo username USER-a&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Unosimo i &lt;em&gt;password&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/password_USER-a.png&#34; alt=&#34;Unosimo password&#34; title=&#34;Unosimo password&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/password_USER-a.png&#34; alt=&#34;Unosimo password&#34; title=&#34;Unosimo password&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Izbor metode particionisanja hard diska - ostavimo prvu opciju:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/particionisanje_HDD-a.png&#34; alt=&#34;Metoda particionisanja&#34; title=&#34;metoda particionisanja&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/particionisanje_HDD-a.png&#34; alt=&#34;Metoda particionisanja&#34; title=&#34;metoda particionisanja&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Virtuelni hard disk je već selektovan:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/jedan_HDD_jedna_particija.png&#34; alt=&#34;Virtuelni HDD je selektovan&#34; title=&#34;Virtuelni HDD je selektovan&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/jedan_HDD_jedna_particija.png&#34; alt=&#34;Virtuelni HDD je selektovan&#34; title=&#34;Virtuelni HDD je selektovan&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Najbolji izbor za početnike - svi fajlovi u jednoj particiji:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/najbolje_za_pocetnike_sve_u_1.png&#34; alt=&#34;Svi fajlovi u jednu particiju&#34; title=&#34;Svi fajlovi u jednu particiju&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/najbolje_za_pocetnike_sve_u_1.png&#34; alt=&#34;Svi fajlovi u jednu particiju&#34; title=&#34;Svi fajlovi u jednu particiju&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Još jedna provera pre završetka particionisanja i upisivanja na HDD:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/provera_particija_upis_na_HDD.png&#34; alt=&#34;provera i upisivanje na virtuelni HDD&#34; title=&#34;provera i upisivanje na virtuelni HDD&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/provera_particija_upis_na_HDD.png&#34; alt=&#34;provera i upisivanje na virtuelni HDD&#34; title=&#34;provera i upisivanje na virtuelni HDD&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Potvdimo promene i dozvolimo upisivanje na HDD:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/potvrda_izmene_particija.png&#34; alt=&#34;upisivanje na virtuelni HDD&#34; title=&#34;upisivanje na virtuelni HDD&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/potvrda_izmene_particija.png&#34; alt=&#34;upisivanje na virtuelni HDD&#34; title=&#34;upisivanje na virtuelni HDD&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Ranije prijavljeni ISO fajl je jedini instalacioni medij
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/nema_drugih_instalacionih_diskova.png&#34; alt=&#34;nema drugih instalacionih medija&#34; title=&#34;nema drugih instalacionih medija&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/nema_drugih_instalacionih_diskova.png&#34; alt=&#34;nema drugih instalacionih medija&#34; title=&#34;nema drugih instalacionih medija&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Najbliži &lt;em&gt;mirror&lt;/em&gt;  je u Srbiji ali je u Mađarskoj brži i pouzdaniji:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/najblizi_mirror_Debiana.png&#34; alt=&#34;Arhiva Debiana po zemljama&#34; title=&#34;Arhiva Debiana po zemljama&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/najblizi_mirror_Debiana.png&#34; alt=&#34;Arhiva Debiana po zemljama&#34; title=&#34;Arhiva Debiana po zemljama&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Može &lt;em&gt;default&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/default_mirror.png&#34; alt=&#34;Arhiva Debiana default&#34; title=&#34;Arhiva Debiana default&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/default_mirror.png&#34; alt=&#34;Arhiva Debiana default&#34; title=&#34;Arhiva Debiana default&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Preskačemo &lt;em&gt;proxy&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/http_proxy_preskacemo.png&#34; alt=&#34;Preskačemo proxy&#34; title=&#34;Preskačemo proxy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/http_proxy_preskacemo.png&#34; alt=&#34;Preskačemo proxy&#34; title=&#34;Preskačemo proxy&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Pošto radimo u Virtuelnoj Mašini, odbićemo učešće u istraživanju:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/ako_je_VM_no.png&#34; alt=&#34;popularity-contest&#34; title=&#34;popularity-contest&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/ako_je_VM_no.png&#34; alt=&#34;popularity-contest&#34; title=&#34;popularity-contest&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Tasksel - odčekiramo sve osim poslednje stavke &lt;em&gt;standard system utilities&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/tasksel.png&#34; alt=&#34;tasksel&#34; title=&#34;tasksel&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/tasksel.png&#34; alt=&#34;tasksel&#34; title=&#34;tasksel&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Da li da instaliramo GRUB na virtuelni hard disk - da:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/install_GRUB.png&#34; alt=&#34;GRUB&#34; title=&#34;GRUB&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/install_GRUB.png&#34; alt=&#34;GRUB&#34; title=&#34;GRUB&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Selektujemo jedini ponuđeni HDD:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/lokacija_za_instaliranje_GRUB-a.png&#34; alt=&#34;GRUB HDD&#34; title=&#34;GRUB HDD&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/lokacija_za_instaliranje_GRUB-a.png&#34; alt=&#34;GRUB HDD&#34; title=&#34;GRUB HDD&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Instalacija završena - &lt;em&gt;continue&lt;/em&gt; - &lt;em&gt;reboot&lt;/em&gt;:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/instalacija_zavrsena.png&#34; alt=&#34;Završena instalacija minimalnog Debiana 10&#34; title=&#34;Završena instalacija minimalnog Debiana 10&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/instalacija_zavrsena.png&#34; alt=&#34;Završena instalacija minimalnog Debiana 10&#34; title=&#34;Završena instalacija minimalnog Debiana 10&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Posle restarta, ulogujemo se TTY konzolu, unesemo &lt;em&gt;username&lt;/em&gt;, &lt;em&gt;password&lt;/em&gt;, i &lt;em&gt;sudo poweroff&lt;/em&gt;  čime gasimo virtuelnu mašinu:
-&lt;img src=&#34;https://pejabadzic.xyz/img/min_Buster_VBox/login-password-poweroff.png&#34; alt=&#34;poweroff&#34; title=&#34;poweroff&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/login-password-poweroff.png&#34; alt=&#34;poweroff&#34; title=&#34;poweroff&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
