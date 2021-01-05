@@ -6,7 +6,60 @@
     <description>Recent content in themes on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/categories/themes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/categories/themes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Podešavanje posle instalacije - 3.deo PCManFM-QT</title>
+      <link>https://speja969.github.io/post/podes_posle_instal_31/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_31/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;podešavanje-posle-instalacije---3deo-pcmanfm-qt&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 3.deo PCManFM-QT&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Posle instaliranja Debiana treba da izvršimo neka podešavanja.
+Najpre čemo podesiti fajl menadžer &lt;em&gt;PCManFM-QT&lt;/em&gt; .&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;U &lt;em&gt;tint2&lt;/em&gt; taskbaru kliknemo na ikonicu PCManFM-QT fajl menadžera (strelica) ili &lt;code&gt;Win+f&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/levi_klik_pcmanfm.png&#34; alt=&#34;Startujemo PCManFM-QT&#34; title=&#34;Startujemo PCManFM-QT&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pojavljuje se nepodešeni PCManFM-QT:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/PCManFM-QT.png&#34; alt=&#34;PCManFM-QT&#34; title=&#34;PCManFM-QT&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Iz taba &lt;em&gt;Edit&lt;/em&gt; u padajućem meniju kliknemo na &lt;em&gt;Preferences&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/Edit_Preferences.png&#34; alt=&#34;Preferences&#34; title=&#34;Preferences&#34;&gt;
+Pod &lt;em&gt;Behavior&lt;/em&gt; opciono možemo za &lt;em&gt;Default view mode&lt;/em&gt; postaviti na primer &lt;em&gt;Detailed List View&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pod &lt;em&gt;Advanced&lt;/em&gt; za terminal emulator izaberemo &lt;em&gt;terminator&lt;/em&gt; , a za &lt;em&gt;Archiver integration&lt;/em&gt; &lt;em&gt;xarchiver&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/Advanced.png&#34; alt=&#34;Advanced&#34; title=&#34;Advanced&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Posle podešavanja to izgleda ovako:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/posle_podesavanja.png&#34; alt=&#34;podeseno&#34; title=&#34;podešeno&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ujedno možemo podesiti i terminal emulator: &lt;em&gt;Terminator&lt;/em&gt; nakon što ga startujemo sa &lt;code&gt;Win+t&lt;/code&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/nepodeseni_terminator.png&#34; alt=&#34;Win+t&#34; title=&#34;Win+t&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Desnim klikom na radnu površinu terminala iz kontekstnog menija izaberemo &lt;em&gt;Preferences&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/terminator_context_preferences.png&#34; alt=&#34;Preferences&#34; title=&#34;Preferences&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Iz taba &lt;em&gt;Profiles&lt;/em&gt; pod &lt;em&gt;General&lt;/em&gt; odčekiramo &lt;em&gt;show titlebar&lt;/em&gt; pa klik na &lt;em&gt;Close&lt;/em&gt; :
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/terminator_profile_general_show_titlebar.png&#34; alt=&#34;odcekirati&#34; title=&#34;odcekirati&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</title>
       <link>https://speja969.github.io/post/min_buster_vbox_2/</link>
