@@ -519,5 +519,37 @@ $$&lt;/p&gt;
       </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://speja969.github.io/post/podes_posle_instal_31/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_31/</guid>
+      <description>
+        
+          &lt;p&gt;author = &amp;quot;Peja Badžić&amp;quot;
+title: &amp;quot;Podešavanje posle instalacije - 3.deo PCManFM-QT&amp;quot;
+date = &amp;quot;2021-01-04&amp;quot;
+description = &amp;quot;Sample article showcasing basic Markdown syntax and formatting for HTML elements.&amp;quot;
+featured = true
+tags = [
+&amp;quot;markdown&amp;quot;,
+]
+categories = [
+&amp;quot;themes&amp;quot;,
+&amp;quot;syntax&amp;quot;,
+]
+series = [&amp;quot;Themes Guide&amp;quot;]
+aliases = [&amp;quot;migrate-from-jekyl&amp;quot;]
+thumbnail = &amp;quot;images/building.png&amp;quot;&lt;/p&gt;
+&lt;p&gt;+++&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;podešavanje-posle-instalacije---3deo-pcmanfm-qt&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 3.deo PCManFM-QT&lt;/h2&gt;
+&lt;hr&gt;
+
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>
