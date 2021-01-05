@@ -6,7 +6,66 @@
     <description>Recent content in Themes Guide on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/series/themes-guide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/series/themes-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Podešavanje posle instalacije - 4.deo Podešavanje izgleda</title>
+      <link>https://speja969.github.io/post/podes_posle_instal_4/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_4/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;podešavanje-posle-instalacije---4deo-podešavanje-izgleda&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 4.deo Podešavanje izgleda&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Podešavanje izgleda počećemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;) --&amp;gt; Applications --&amp;gt; Settings --&amp;gt; Customize Look and Feel:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Customize_Look_and_Feel.png&#34; alt=&#34;Customize Look and Feel&#34; title=&#34;Customize Look and Feel.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dobijamo ovo:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Nepodeseni_CLF.png&#34; alt=&#34;Nepodešeni Customize Look and Feel&#34; title=&#34;Nepodešeni Customize Look and Feel&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;U tabu &lt;em&gt;Widget&lt;/em&gt; izaberemo &lt;em&gt;style&lt;/em&gt; prema želji jer se &lt;em&gt;preview&lt;/em&gt; izabrane teme odmah pojavljuje sa desne strane. Moja topla preporuka je da izaberete &lt;em&gt;Arc-Dark&lt;/em&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Arc-Dark.png&#34; alt=&#34;Arc-Dark&#34; title=&#34;Arc-Dark&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;U tabu &lt;em&gt;Icon Theme&lt;/em&gt; između ponuđenih opcija izaberemo izgled ikonica
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Icon_Theme.png&#34; alt=&#34;Gnome&#34; title=&#34;Gnome&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Podesavanje QT tema na GTK baziranom sistemu:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instaliramo &lt;em&gt;qt4-qtconfig&lt;/em&gt; i &lt;em&gt;qt5-style-plugins&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt-get install qt4-qtconfig
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo apt-get install qt5-style-plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Otvorimo &lt;em&gt;QT 4 Settings&lt;/em&gt; aplikaciju, u tabu Appearance promenimo &lt;em&gt;GUI Style&lt;/em&gt; u &lt;em&gt;GTK+&lt;/em&gt; i upamtimo promenu sa &lt;code&gt;CTRL+S&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/QT_4_Settings.png&#34; alt=&#34;QT 4 Settings&#34; title=&#34;QT 4 Settings&#34;&gt;
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/GTKplus.png&#34; alt=&#34;GTKplus&#34; title=&#34;GTKplus&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Za QT 5 aplikacije:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo su root
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;QT_QPA_PLATFORMTHEME=gtk2&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/environment
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Podešavanje posle instalacije - 3.deo PCManFM-QT</title>
       <link>https://speja969.github.io/post/podes_posle_instal_31/</link>
