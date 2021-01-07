@@ -21,40 +21,34 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;ncmpcpp&lt;/em&gt;&lt;/strong&gt; startujemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)  --&amp;gt; &lt;em&gt;ncmpcpp&lt;/em&gt; :&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/ncmpcpp.png&#34; alt=&#34;ncmpcpp&#34; title=&#34;ncmpcpp&#34;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Dobijamo ovo:
-&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pocetni_ncmpcpp.png&#34; alt=&#34;ncmpcpp&#34; title=&#34;ncmpcpp&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Da bi se koristio treba da izmenimo putanju do foldera sa muzičkim fajlovima:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/ncmpcpp.png&#34; alt=&#34;ncmpcpp&#34; title=&#34;ncmpcpp&#34;&gt;
+2. Dobijamo ovo:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pocetni_ncmpcpp.png&#34; alt=&#34;ncmpcpp&#34; title=&#34;ncmpcpp&#34;&gt;
+3. Da bi se koristio treba da izmenimo putanju do foldera sa muzičkim fajlovima:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Otvorimo fajl menadžer PCManFM-QT sa &lt;code&gt;WIN+F&lt;/code&gt; , zatim &lt;code&gt;F6&lt;/code&gt; da bi dobili &lt;em&gt;split view&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Sa jedne strane otvorimo folder &lt;em&gt;.mpd&lt;/em&gt; , a sa druge folder u kome čuvamo muziku (u primeru je to &lt;em&gt;Muzika&lt;/em&gt; u šerovanom folderu &lt;em&gt;sf_8300-podaci&lt;/em&gt;)
-&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pcmanfm-qt_mpd.png&#34; alt=&#34;pcmanfm-qt_mpd&#34; title=&#34;pcmanfm-qt_mpd&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Sa jedne strane otvorimo folder &lt;em&gt;.mpd&lt;/em&gt; , a sa druge folder u kome čuvamo muziku (u primeru je to &lt;em&gt;Muzika&lt;/em&gt; u šerovanom folderu &lt;em&gt;sf_8300-podaci&lt;/em&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Desnim klikom na folder &lt;em&gt;MUZIKA&lt;/em&gt; iskopiramo putanju u klipbord,
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pcmanfm-qt_mpd.png&#34; alt=&#34;pcmanfm-qt_mpd&#34; title=&#34;pcmanfm-qt_mpd&#34;&gt;
+4. Desnim klikom na folder &lt;em&gt;MUZIKA&lt;/em&gt; iskopiramo putanju u klipbord,
 &lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/MUZIKA.png&#34; alt=&#34;MUZIKA&#34; title=&#34;MUZIKA&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Sa druge strane desnim klikom na fajl&lt;em&gt;mpd.conf&lt;/em&gt; otvaramo ga u editoru &lt;em&gt;Geany&lt;/em&gt; ili &lt;em&gt;Mousepad&lt;/em&gt;,
+&lt;p&gt;Sa druge strane desnim klikom na fajl &lt;em&gt;mpd.conf&lt;/em&gt; otvaramo ga u editoru &lt;em&gt;Geany&lt;/em&gt; ili &lt;em&gt;Mousepad&lt;/em&gt;:
 &lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/mpd.png&#34; alt=&#34;mpd&#34; title=&#34;mpd&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Obe &lt;em&gt;default&lt;/em&gt; putanje &lt;code&gt;~/Music&lt;/code&gt; zamenimo onom iz klipborda
+&lt;p&gt;Obe &lt;em&gt;default&lt;/em&gt; putanje &lt;code&gt;~/Music&lt;/code&gt; zamenimo onom iz klipborda:
 &lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/mpd.conf.png&#34; alt=&#34;mpd,conf&#34; title=&#34;mpd.conf&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Istu zamenu &lt;em&gt;default&lt;/em&gt; putanje &lt;code&gt;~/Music&lt;/code&gt; uradimo i u fajlu &lt;em&gt;config&lt;/em&gt; u folderu &lt;em&gt;.ncmpcpp&lt;/em&gt;
+&lt;p&gt;Istu zamenu &lt;em&gt;default&lt;/em&gt; putanje &lt;code&gt;~/Music&lt;/code&gt; uradimo i u fajlu &lt;em&gt;config&lt;/em&gt; u folderu &lt;em&gt;.ncmpcpp&lt;/em&gt;:
 &lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pcmanfm-qt_config.png&#34; alt=&#34;pcmanfm-qt config&#34; title=&#34;pcmanfm-qt config&#34;&gt;
 &lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/config.png&#34; alt=&#34;config&#34; title=&#34;config&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;WIN+X&lt;/code&gt; --&amp;gt; Reboot&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WIN+X&lt;/code&gt; --&amp;gt; &lt;em&gt;Reboot&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
