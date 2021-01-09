@@ -56,7 +56,7 @@
 <header class="nav_header" >
   <nav class="nav">
     <a href='https://speja969.github.io/' class="nav_brand nav_item">
-      <img src="https://speja969.github.io/logos/debian-logo-1024x576.png" class="logo">
+      <img src="https://speja969.github.io/logos/hiclipart.com.png" class="logo">
       <div class="nav_close">
         <div>
           <svg class="icon">
@@ -146,8 +146,8 @@
   <use xlink:href="#calendar"></use>
 </svg>
     <span class="post_date">
-      30 Dec 2020 00:00:00</span>
-      <a href='https://speja969.github.io/tags/markdown' class="post_tag button button_translucent">markdown
+      30 Dec 2020</span>
+      <a href='https://speja969.github.io/tags/virtualbox' class="post_tag button button_translucent">VirtualBox
       </a>
 </div>
 
@@ -180,22 +180,27 @@
     <hr>
 <h2 id="instaliranje-min-debiana-10-buster-u-virtualbox-u---1deo"><strong>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u</strong> - 1.deo</h2>
 <hr>
+<p>Ovo je prvi iz serije postova u kojima ću detaljno obraditi instaliranje <em>Minimalnog Debiana 10 - Buster</em> . Instaliranje je u <em>VirtualBoxu</em>, ali postupak je gotovo isti kao kod HDD-a ili SSD-a. Particionisanje u toku instalacije sam ostavio po <em>default</em> proceduri, ali ću u nekom od narednih postova pokazati detaljni (ručni) postupak.<br>
+U suštini instalacija sa osnovnim podešavanjima je pokrivena u 6 delova, a redosled je sledeći:<br>
+<a href="https://speja969.github.io/post/min_buster_vbox/">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo</a><br>
+<a href="https://speja969.github.io/post/min_buster_vbox_2/">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</a><br>
+<a href="https://speja969.github.io/post/podes_posle_instal_31/">Podešavanje posle instalacije - 3.deo PCManFM-QT</a><br>
+<a href="https://speja969.github.io/post/podes_posle_instal_4/">Podešavanje posle instalacije - 4.deo Podešavanje izgleda</a><br>
+<a href="https://speja969.github.io/post/podes_posle_instal_5/">Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp</a><br>
+<a href="https://speja969.github.io/post/podes_posle_instal_6/">Podešavanje posle instalacije - 6.deo SWAP fajl</a></p>
 <p>Najbolja polazna tačka za korisnika Widows-a je da instalira Linux kao virtuelnu mašinu. Najpopularniji program za virtuelizaciju je VirtualBox. Osim što je besplatan, dostupan je za sve tri platforme: Windows, Linux i MacOS.</p>
 <p>Ovaj sajt je namenjen korisnicima Windows-a koji žele da otkriju čari Linux-a, ali da tranziciju učini što bezbolnijom.</p>
-<p>Prosečnom korisniku Windows-a 10 neće biti problem da instalira VirtualBox. Sa strane <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a> skinuti instalaciju VirtualBox-a za <em>Windows Host</em>, kao i <em>VirtualBox Extension Pack</em>  zajednički za sve platforme i instalirati ih kao standardni <em>Windows</em> program:</p>
+<p>Prosečnom korisniku Windows-a 10 neće biti problem da instalira VirtualBox.<br>
+Sa strane <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a> skinuti instalaciju VirtualBox-a za <em>Windows Host</em>, kao i <em>VirtualBox Extension Pack</em>  zajednički za sve platforme i instalirati ih kao standardni <em>Windows</em> program:</p>
 <p><img src="/img/min_Buster_VBox/VirtualBox_Windows_Host.png" alt="https://www.virtualbox.org/wiki/Downloads" title="Daunlodujemo VirtualBox za Windows Host"></p>
 <ol>
-<li>Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:</li>
-</ol>
+<li>
+<p>Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:</p>
 <ul>
-<li>
-<p><a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso">https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso</a></p>
-</li>
-<li>
-<p>ili non-free verziju <a href="https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso">https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso</a></p>
-</li>
+<li><a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso">https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso</a></li>
+<li>ili non-free verziju <a href="https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso">https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso</a></li>
 </ul>
-<ol start="2">
+</li>
 <li>
 <p>Startujemo VirtualBox Manager klikom na <strong>New</strong>:
 <img src="/img/min_Buster_VBox/pokrenemo_VirtualBox.png" alt="Startujemo VirtualBox" title="Startujemo VirtualBox"></p>
@@ -390,12 +395,6 @@
         Inženjer, Linux entuziast, učenik, učitelj.
       </div>
       <a href='https://speja969.github.io/about/' class="button mt-1" role="button">Read More</a>
-    <h2 class="mt-4">Featured Posts</h2>
-    <ul>
-      <li>
-        <a href="https://speja969.github.io/post/min_buster_vbox_2/" class="nav-link">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</a>
-      </li>
-    </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
@@ -426,13 +425,13 @@
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
       <nav class="tags_nav">
-        <a href='https://speja969.github.io/categories/syntax/' class="post_tag button button_translucent">
-          SYNTAX
+        <a href='https://speja969.github.io/categories/instalacija/' class="post_tag button button_translucent">
+          INSTALACIJA
           <span class="button_tally">6</span>
         </a>
         
-        <a href='https://speja969.github.io/categories/themes/' class="post_tag button button_translucent">
-          THEMES
+        <a href='https://speja969.github.io/categories/syntax/' class="post_tag button button_translucent">
+          SYNTAX
           <span class="button_tally">6</span>
         </a>
         
@@ -455,7 +454,12 @@
       <nav class="tags_nav">
         <a href='https://speja969.github.io/tags/markdown/' class="post_tag button button_translucent">
           MARKDOWN
-          <span class="button_tally">7</span>
+          <span class="button_tally">5</span>
+        </a>
+        
+        <a href='https://speja969.github.io/tags/virtualbox/' class="post_tag button button_translucent">
+          VIRTUALBOX
+          <span class="button_tally">2</span>
         </a>
         
         <a href='https://speja969.github.io/tags/emoji/' class="post_tag button button_translucent">

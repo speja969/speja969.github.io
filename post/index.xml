@@ -255,7 +255,8 @@ Pod &lt;em&gt;Behavior&lt;/em&gt; opciono možemo za &lt;em&gt;Default view mode
 &lt;h2 id=&#34;instaliranje-min-debiana-10-buster-u-virtualbox-u---2deo&#34;&gt;&lt;strong&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u&lt;/strong&gt; - 2.deo&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;U prvom delu smo instalirali Virtuelnu Mašinu sa minimalnim Debianom 10, ali bez grafičkog okruženja. U nastavku ćemo instalirati &lt;em&gt;OpenBox Windows Manager&lt;/em&gt; koji može da se koristi samostalno bez grafičkog okruženja (&lt;em&gt;Desktop Environment)&lt;/em&gt;.
-Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows Manager&lt;/em&gt; na adresi: &lt;a href=&#34;https://wiki.debian.org/DesktopEnvironment&#34;&gt;https://wiki.debian.org/DesktopEnvironment&lt;/a&gt;&lt;/p&gt;
+Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows Manager&lt;/em&gt; na adresi:&lt;br&gt;
+&lt;a href=&#34;https://wiki.debian.org/DesktopEnvironment&#34;&gt;https://wiki.debian.org/DesktopEnvironment&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Pored OpenBox WM, biće prikazana i instalacija najpotrebnijih programa koji po mom mišljenju minimalno zauzimaju resurse računara:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -370,22 +371,27 @@ Više o pojmovima &lt;em&gt;Desktop Environment&lt;/em&gt; i &lt;em&gt;Windows M
           &lt;hr&gt;
 &lt;h2 id=&#34;instaliranje-min-debiana-10-buster-u-virtualbox-u---1deo&#34;&gt;&lt;strong&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u&lt;/strong&gt; - 1.deo&lt;/h2&gt;
 &lt;hr&gt;
+&lt;p&gt;Ovo je prvi iz serije postova u kojima ću detaljno obraditi instaliranje &lt;em&gt;Minimalnog Debiana 10 - Buster&lt;/em&gt; . Instaliranje je u &lt;em&gt;VirtualBoxu&lt;/em&gt;, ali postupak je gotovo isti kao kod HDD-a ili SSD-a. Particionisanje u toku instalacije sam ostavio po &lt;em&gt;default&lt;/em&gt; proceduri, ali ću u nekom od narednih postova pokazati detaljni (ručni) postupak.&lt;br&gt;
+U suštini instalacija sa osnovnim podešavanjima je pokrivena u 6 delova, a redosled je sledeći:&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Najbolja polazna tačka za korisnika Widows-a je da instalira Linux kao virtuelnu mašinu. Najpopularniji program za virtuelizaciju je VirtualBox. Osim što je besplatan, dostupan je za sve tri platforme: Windows, Linux i MacOS.&lt;/p&gt;
 &lt;p&gt;Ovaj sajt je namenjen korisnicima Windows-a koji žele da otkriju čari Linux-a, ali da tranziciju učini što bezbolnijom.&lt;/p&gt;
-&lt;p&gt;Prosečnom korisniku Windows-a 10 neće biti problem da instalira VirtualBox. Sa strane &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt; skinuti instalaciju VirtualBox-a za &lt;em&gt;Windows Host&lt;/em&gt;, kao i &lt;em&gt;VirtualBox Extension Pack&lt;/em&gt;  zajednički za sve platforme i instalirati ih kao standardni &lt;em&gt;Windows&lt;/em&gt; program:&lt;/p&gt;
+&lt;p&gt;Prosečnom korisniku Windows-a 10 neće biti problem da instalira VirtualBox.&lt;br&gt;
+Sa strane &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt; skinuti instalaciju VirtualBox-a za &lt;em&gt;Windows Host&lt;/em&gt;, kao i &lt;em&gt;VirtualBox Extension Pack&lt;/em&gt;  zajednički za sve platforme i instalirati ih kao standardni &lt;em&gt;Windows&lt;/em&gt; program:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/VirtualBox_Windows_Host.png&#34; alt=&#34;https://www.virtualbox.org/wiki/Downloads&#34; title=&#34;Daunlodujemo VirtualBox za Windows Host&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso&#34;&gt;https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ili non-free verziju &lt;a href=&#34;https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso&#34;&gt;https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso&#34;&gt;https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ili non-free verziju &lt;a href=&#34;https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso&#34;&gt;https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;2&#34;&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Startujemo VirtualBox Manager klikom na &lt;strong&gt;New&lt;/strong&gt;:
 &lt;img src=&#34;https://speja969.github.io/img/min_Buster_VBox/pokrenemo_VirtualBox.png&#34; alt=&#34;Startujemo VirtualBox&#34; title=&#34;Startujemo VirtualBox&#34;&gt;&lt;/p&gt;
