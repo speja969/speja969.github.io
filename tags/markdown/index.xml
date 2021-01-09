@@ -18,6 +18,12 @@
           &lt;hr&gt;
 &lt;h2 id=&#34;podešavanje-posle-instalacije---6deo-swap-fajl&#34;&gt;Podešavanje posle instalacije - 6.deo &lt;strong&gt;SWAP&lt;/strong&gt; fajl&lt;/h2&gt;
 &lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Pored particije gde se nalazi sistem, često vidimo i jednu čija je svrha možda nejasna. To je &lt;em&gt;SWAP&lt;/em&gt; particija. Više o tome na:&lt;br&gt;
 &lt;a href=&#34;https://itsfoss.com/swap-size/&#34;&gt;https://itsfoss.com/swap-size/&lt;/a&gt;&lt;br&gt;
@@ -92,6 +98,12 @@ Možemo zadati sistemu &lt;em&gt;swappiness&lt;/em&gt; vrednost npr. 10:&lt;/p&g
           &lt;hr&gt;
 &lt;h2 id=&#34;podešavanje-posle-instalacije---5deo-muzički-plejer-ncmpcpp&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer &lt;strong&gt;ncmpcpp&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;ncmpcpp&lt;/em&gt;&lt;/strong&gt; startujemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)  --&amp;gt; &lt;em&gt;ncmpcpp&lt;/em&gt; :&lt;/li&gt;
 &lt;/ol&gt;
@@ -142,6 +154,12 @@ Možemo zadati sistemu &lt;em&gt;swappiness&lt;/em&gt; vrednost npr. 10:&lt;/p&g
           &lt;hr&gt;
 &lt;h2 id=&#34;podešavanje-posle-instalacije---4deo-podešavanje-izgleda&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 4.deo Podešavanje izgleda&lt;/h2&gt;
 &lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;/a&gt;&lt;br&gt;
+Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Podešavanje izgleda počećemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;) --&amp;gt; Applications --&amp;gt; Settings --&amp;gt; Customize Look and Feel:&lt;/p&gt;
@@ -201,6 +219,12 @@ Možemo zadati sistemu &lt;em&gt;swappiness&lt;/em&gt; vrednost npr. 10:&lt;/p&g
           &lt;hr&gt;
 &lt;h2 id=&#34;podešavanje-posle-instalacije---3deo-pcmanfm-qt&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 3.deo PCManFM-QT&lt;/h2&gt;
 &lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Posle instaliranja Debiana treba da izvršimo neka podešavanja.
 Najpre čemo podesiti fajl menadžer &lt;em&gt;PCManFM-QT&lt;/em&gt; .&lt;/p&gt;
 &lt;ol&gt;
