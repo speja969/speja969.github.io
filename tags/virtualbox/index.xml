@@ -6,7 +6,74 @@
     <description>Recent content in VirtualBox on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kako koristiti Debian-OpenBox</title>
+      <link>https://speja969.github.io/post/kako_koristiti_debian-openbox/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/kako_koristiti_debian-openbox/</guid>
+      <description>
+        
+          &lt;blockquote&gt;
+&lt;p&gt;Ova verzija Debiana 10 sa OpenBox Windows Menadžerom (WM) sadrži programe po mom izboru.Možda ima funkcionalnijih, možda ima lakših za hardver i korišćenje, ali dole navedeni su po mom mišljenju optimalni za upotrebu.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;STARTOVANJE:&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+Za startovanje najčešće korišćenih programa predvideo sam 3 načina:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)i izborom sa glavnog padajućeg menija (ostali su u podmeniju &lt;em&gt;Applications&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;Prečicom sa tastature:
+&lt;ul&gt;
+&lt;li&gt;Fajl menadžer &lt;em&gt;PCManFM-QT&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;WEB pretraživač &lt;em&gt;Firefox-ESR&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+W&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tekst editor &lt;em&gt;Geany&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+E&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Terminal emulator &lt;em&gt;Terminator&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+T&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Pokretač programa (&lt;em&gt;Launcher&lt;/em&gt;)&lt;em&gt;DMenu&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+M&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Prečicom &lt;code&gt;WIN+M&lt;/code&gt; otvaramo &lt;em&gt;DMenu&lt;/em&gt;.Sa svakim unesenim slovom izbor ponuđenih programa se smanjuje i kad nam dosadi kucanje, tasterima levo-desno pronađemo i startujemo traženi sa &lt;em&gt;ENTER&lt;/em&gt;.&lt;br&gt;
+Obratiti pažnju da dok se &lt;em&gt;DMenu&lt;/em&gt; ne isključi sa &lt;em&gt;ESC&lt;/em&gt;, Debian ne prihvata nijednu komandu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;strong&gt;PSEUDO-TILING:&lt;/strong&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;OpenBox&lt;/em&gt; je pokretljiv (&lt;em&gt;Tiling&lt;/em&gt;) WM.
+Često imamo potrebu da nekoliko prozora budu otvoreni istovremeno.Prilično je neugodno svaki čas dizati i spuštati program u Task Bar.
+Sa druge strane, mnogi od nas nisu profesionalni programeri pa namn nije potreban Tiling WM kao što su: &lt;em&gt;Qtile, i3, SpectrWM, AwesomeWM&lt;/em&gt;, i ostali.
+Tu nastupa &lt;em&gt;Pseudo Tiling&lt;/em&gt;: pomoću prečica sa tastature moguće je u OpenBoxu ostvariti elemnentarnu tiling funkciju.
+Instalacionom skriptom to je predefinisano, tako da se otvoreni prozor može jednim klikom pozicionirati po želji:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;CTRL+F (startovani PCManFM-QT)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_F.png&#34; alt=&#34;startovani PCManFM-QT&#34; title=&#34;startovani PCManFM-QT&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_1 (CTRL + 1 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_1.png&#34; alt=&#34;donja leva četvrtina&#34; title=&#34;donja leva četvrtina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_2 (CTRL + 2 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_2.png&#34; alt=&#34;donja polovina&#34; title=&#34;donja polovina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_3 (CTRL + 3 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_3.png&#34; alt=&#34;donja desna četvrtina&#34; title=&#34;donja desna četvrtina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_6 (CTRL + 6 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_6.png&#34; alt=&#34;desna polovina&#34; title=&#34;desna polovina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_9 (CTRL + 9 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_9.png&#34; alt=&#34;gornja desna četvrtina&#34; title=&#34;gornja desna četvrtina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_8 (CTRL + 8 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_8.png&#34; alt=&#34;gornja polovina&#34; title=&#34;gornja polovina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_4 (CTRL + 4 sa numeričke tastature)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_4.png&#34; alt=&#34;leva polovina&#34; title=&#34;leva polovina&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_5 (CTRL + 5 sa numeričke tastature) - maksimizirano&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_5.png&#34; alt=&#34;fullscreen&#34; title=&#34;fullscreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CTRL+KP_0 (CTRL + 0 sa numeričke tastature) - minimizirano&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/CTRL_KP_0.png&#34; alt=&#34;Task_Bar&#34; title=&#34;Task_Bar&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Naravno sa ALT+Tab biramo program koji je u fokusu (za njega važi pseudo-tiling komanda koju unesemo)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/clip.gif&#34; alt=&#34;demo&#34; title=&#34;demo&#34;&gt;&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</title>
       <link>https://speja969.github.io/post/min_buster_vbox_2/</link>

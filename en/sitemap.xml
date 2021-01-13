@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://speja969.github.io/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://speja969.github.io/categories/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -34,7 +34,72 @@
   
   <url>
     <loc>https://speja969.github.io/categories/instalacija/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/post/kako_koristiti_debian-openbox/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/post/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://speja969.github.io/pt/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://speja969.github.io/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/series/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://speja969.github.io/pt/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://speja969.github.io/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/categories/syntax/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/tags/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://speja969.github.io/pt/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://speja969.github.io/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/series/themes-guide/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/tags/virtualbox/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -58,61 +123,6 @@
   </url>
   
   <url>
-    <loc>https://speja969.github.io/post/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://speja969.github.io/pt/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://speja969.github.io/post/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://speja969.github.io/series/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://speja969.github.io/pt/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://speja969.github.io/series/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://speja969.github.io/categories/syntax/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://speja969.github.io/tags/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://speja969.github.io/pt/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://speja969.github.io/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://speja969.github.io/series/themes-guide/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://speja969.github.io/post/podes_posle_instal_5/</loc>
     <lastmod>2021-01-06T00:00:00+00:00</lastmod>
   </url>
@@ -129,11 +139,6 @@
   
   <url>
     <loc>https://speja969.github.io/post/min_buster_vbox_2/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://speja969.github.io/tags/virtualbox/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url>
   
