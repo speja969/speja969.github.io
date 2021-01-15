@@ -196,193 +196,104 @@ U suštini instalacija sa osnovnim podešavanjima je pokrivena u 6 delova, a red
 Sa strane <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a> skinuti instalaciju VirtualBox-a za <em>Windows Host</em>, kao i <em>VirtualBox Extension Pack</em>  zajednički za sve platforme i instalirati ih kao standardni <em>Windows</em> program:</p>
 <p><img src="/img/min_Buster_VBox/VirtualBox_Windows_Host.png" alt="https://www.virtualbox.org/wiki/Downloads" title="Daunlodujemo VirtualBox za Windows Host"></p>
 <ol>
-<li>
-<p>Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:</p>
+<li>Potrebno je zatim skinuti sa Debianovog sajta ISO instalacioni fajl:
 <ul>
 <li><a href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso">https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso</a></li>
 <li>ili non-free verziju <a href="https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso">https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.7.0+nonfree/amd64/iso-cd/firmware-10.7.0-amd64-netinst.iso</a></li>
 </ul>
 </li>
-<li>
-<p>Startujemo VirtualBox Manager klikom na <strong>New</strong>:
-<img src="/img/min_Buster_VBox/pokrenemo_VirtualBox.png" alt="Startujemo VirtualBox" title="Startujemo VirtualBox"></p>
-</li>
-<li>
-<p>Definišemo količinu RAM-a  dodeljenu VM:
-<img src="/img/min_Buster_VBox/podesimo_memoriju_dodeljenu_VM-i.png" alt="Definišemo količinu RAM-a za VM" title="Definišemo količinu RAM-a  za VM"></p>
-</li>
-<li>
-<p>Kreiramo virtuelni hard disk za instalaciju Debiana:
-<img src="/img/min_Buster_VBox/virtuelni_HDD.png" alt="Kreiramo virtuelni hard disk" title="Kreiramo virtuelni hard disk"></p>
-</li>
-<li>
-<p>Biramo vrstu hard diska (<strong>VDI</strong>, VHD ili VMDK):
-<img src="/img/min_Buster_VBox/biramo_vrstu_virtuelnog_HDD-a.png" alt="Biramo VDI (VirtualBox Disk Image)" title="Biramo VDI (VirtualBox Disk Image)"></p>
-</li>
-<li>
-<p>Biramo tip hard diska (<strong>promenljive</strong> veličine - <em><strong>Dynamically allocated</strong></em>):
-<img src="/img/min_Buster_VBox/biramo_tip_virtuelnog_HDD-a.png" alt="Biramo tip hard diska" title="Biramo tip hard diska"></p>
-</li>
-<li>
-<p>Određujemo veličinu virtuelnog hard diska, na primer 16 GB a zatim promenimo lokaciju gde će Virtuelna Mašina biti upamćena (novi folder na particiji gde nije Windows):
-<img src="/img/min_Buster_VBox/odredjujemo_velicinu_HDD-a.png" alt="Lokacija i veličina hard diska" title="Lokacija i veličina hard diska"></p>
-</li>
-<li>
-<p>VirualBox Manager nakon početnog podešavanja:
-<img src="/img/min_Buster_VBox/VM-a_sa_default_podesavanjima.png" alt="VirtualBox Manager" title="Nakon podešavanja"></p>
-</li>
-<li>
-<p>Iz kontekstnog menija kliknemo na  <em>Settings</em>:
-<img src="/img/min_Buster_VBox/iz_kontekstnog_menija_settings.png" alt="VirtualBox Manager" title="desni klik Settings"></p>
-</li>
-<li>
-<p>Izaberemo dvosmernu komunikaciju sa Host Operativnim Sistemom:
-<img src="/img/min_Buster_VBox/2xbidirectional.png" alt="2xbidirectional" title="2xbidirectional"></p>
-</li>
-<li>
-<p>Podesimo redosled butovanja:
-<img src="/img/min_Buster_VBox/podesimo_redosled_butovanja.png" alt="Redosled butovanja" title="Nakon podešavanja"></p>
-</li>
-<li>
-<p>Dodelimo na primer 2 procesorska jezgra Virtuelnoj Mašini:
-<img src="/img/min_Buster_VBox/dodelimo_VM-i_npr._2_proc.jezgra.png" alt="Dodeljivanje procesorskih jezgara" title="Nakon podešavanja"></p>
-</li>
-<li>
-<p>Video memoriju proširimo na maksimalnih 128 MB:
-<img src="/img/min_Buster_VBox/video_memorija_na_128MB.png" alt="Video memorija" title="Video memorija"></p>
-</li>
-<li>
-<p>Iz kontektsnog menija plavog diska gore desno - izaberemo ISO sliku Min. Debiana:
-<img src="/img/min_Buster_VBox/izaberemo_ISO_sliku_Debiana.png" alt="debian-10.7.0-amd64-netinst.iso" title="ISO slika Minimalnog Debiana"></p>
-</li>
-<li>
-<p>Debian se sada pojavljuje u stablu <em>Storage Devices</em>:
-<img src="/img/min_Buster_VBox/Debian_se_pojavljuje_u_stablu.png" alt="Debian izabran kao virtuelni disk" title="Debian izabran kao virtuelni disk"></p>
-</li>
-<li>
-<p>Podešavamo virtuelni mrežni adapter kao <em>Bridged Adapter</em> da bi VM dobila svoju IP adresu:
-<img src="/img/min_Buster_VBox/podesavamo_mrezni_adapter.png" alt="Podešavanje mrežnog adaptera" title="Podešavanje mrežnog adaptera"></p>
-</li>
-<li>
-<p>Opciono - odredimo foldere za šerovanje sa Host OS-om:
-<img src="/img/min_Buster_VBox/biramo_foldere_za_serovanje.png" alt="Šerovanje foldera" title="Šerovanje foldera"></p>
-</li>
-<li>
-<p>Virtuelna Mašina je potpuno podešena:
-<img src="/img/min_Buster_VBox/VM-a_je_podesena.png" alt="Podešena VM" title="Podešena VM"></p>
-</li>
-<li>
-<p>Klikom na <em>Start</em>, otvara se prozor gde biramo <em>graphical install</em>:
-<img src="/img/min_Buster_VBox/graphical_install.png" alt="graphical install" title="graphical install"></p>
-</li>
-<li>
-<p>Biramo jezik, ostavimo engleski po <em>defaultu</em>:
-<img src="/img/min_Buster_VBox/izbor_jezika.png" alt="ostavimo default - engleski" title="ostavimo _default_ - engleski"></p>
-</li>
-<li>
-<p>Izbor lokacije 1.korak:
-<img src="/img/min_Buster_VBox/izbor_lokacije_1.korak.png" alt="izbor lokacije 1.korak" title="izbor lokacije 1. korak"></p>
-</li>
-<li>
-<p>Izbor lokacije 2.korak:
-<img src="/img/min_Buster_VBox/izbor_lokacije_2.korak.png" alt="izbor lokacije 2.korak" title="izbor lokacije 2. korak"></p>
-</li>
-<li>
-<p>Izbor lokacije 3.korak:
-<img src="/img/min_Buster_VBox/izbor_lokacije_3.korak.png" alt="izbor lokacije 3.korak" title="izbor lokacije 3. korak"></p>
-</li>
-<li>
-<p>Ostavljamo <em>default local settings</em>:
-<img src="/img/min_Buster_VBox/ostavljamo_default_local_settings.png" alt="Ostavljamo default local settings" title="default local settings"></p>
-</li>
-<li>
-<p>Biramo <em>default</em> raspored tastature:
-<img src="/img/min_Buster_VBox/ostavljamo_default_raspored_tastature.png" alt="Biramo default raspored tastature" title="Biramo _default_ raspored tastature"></p>
-</li>
-<li>
-<p><em>Hostname</em> može <em>default</em>:
-<img src="/img/min_Buster_VBox/hostname_moze_default_ne_mora.png" alt="Hostname može default ili po želji" title="Hostname može default"></p>
-</li>
-<li>
-<p><em>Domaine  name</em>  ostavljamo prazno:
-<img src="/img/min_Buster_VBox/domain_name_ostavljamo_prazno.png" alt="Domaine  name  prazno" title="Domaine  name  ostavljamo prazno"></p>
-</li>
-<li>
-<p><em>Root password</em> ostavljamo prazno da bi prvi <em>USER</em> imao <em>SUDO</em> (administratorska) ovlašćenja:
-<img src="/img/min_Buster_VBox/root_password_preskacemo_continue.png" alt="Root password  prazno" title="Root password prazno"></p>
-</li>
-<li>
-<p>Unosimo ime prvog <em>USER-a</em> sa <em>default</em> <em>SUDO</em> ovlašćenjima:
-<img src="/img/min_Buster_VBox/ime_USER-a.png" alt="može puno ime i prezime ili username" title="Unosimo ime prvog USER-a"></p>
-</li>
-<li>
-<p>Unosimo i <em>username</em>:
-<img src="/img/min_Buster_VBox/username_USER-a.png" alt="Unosimo username prvog USER-a" title="Unosimo username USER-a"></p>
-</li>
-<li>
-<p>Unosimo i <em>password</em>:
-<img src="/img/min_Buster_VBox/password_USER-a.png" alt="Unosimo password" title="Unosimo password"></p>
-</li>
-<li>
-<p>Izbor metode particionisanja hard diska - ostavimo prvu opciju:
-<img src="/img/min_Buster_VBox/particionisanje_HDD-a.png" alt="Metoda particionisanja" title="metoda particionisanja"></p>
-</li>
-<li>
-<p>Virtuelni hard disk je već selektovan:
-<img src="/img/min_Buster_VBox/jedan_HDD_jedna_particija.png" alt="Virtuelni HDD je selektovan" title="Virtuelni HDD je selektovan"></p>
-</li>
-<li>
-<p>Najbolji izbor za početnike - svi fajlovi u jednoj particiji:
-<img src="/img/min_Buster_VBox/najbolje_za_pocetnike_sve_u_1.png" alt="Svi fajlovi u jednu particiju" title="Svi fajlovi u jednu particiju"></p>
-</li>
-<li>
-<p>Još jedna provera pre završetka particionisanja i upisivanja na HDD:
-<img src="/img/min_Buster_VBox/provera_particija_upis_na_HDD.png" alt="provera i upisivanje na virtuelni HDD" title="provera i upisivanje na virtuelni HDD"></p>
-</li>
-<li>
-<p>Potvdimo promene i dozvolimo upisivanje na HDD:
-<img src="/img/min_Buster_VBox/potvrda_izmene_particija.png" alt="upisivanje na virtuelni HDD" title="upisivanje na virtuelni HDD"></p>
-</li>
-<li>
-<p>Ranije prijavljeni ISO fajl je jedini instalacioni medij
-<img src="/img/min_Buster_VBox/nema_drugih_instalacionih_diskova.png" alt="nema drugih instalacionih medija" title="nema drugih instalacionih medija"></p>
-</li>
-<li>
-<p>Najbliži <em>mirror</em>  je u Srbiji ali je u Mađarskoj brži i pouzdaniji:
-<img src="/img/min_Buster_VBox/najblizi_mirror_Debiana.png" alt="Arhiva Debiana po zemljama" title="Arhiva Debiana po zemljama"></p>
-</li>
-<li>
-<p>Može <em>default</em>:
-<img src="/img/min_Buster_VBox/default_mirror.png" alt="Arhiva Debiana default" title="Arhiva Debiana default"></p>
-</li>
-<li>
-<p>Preskačemo <em>proxy</em>:
-<img src="/img/min_Buster_VBox/http_proxy_preskacemo.png" alt="Preskačemo proxy" title="Preskačemo proxy"></p>
-</li>
-<li>
-<p>Pošto radimo u Virtuelnoj Mašini, odbićemo učešće u istraživanju:
-<img src="/img/min_Buster_VBox/ako_je_VM_no.png" alt="popularity-contest" title="popularity-contest"></p>
-</li>
-<li>
-<p>Tasksel - odčekiramo sve osim poslednje stavke <em>standard system utilities</em>:
-<img src="/img/min_Buster_VBox/tasksel.png" alt="tasksel" title="tasksel"></p>
-</li>
-<li>
-<p>Da li da instaliramo GRUB na virtuelni hard disk - da:
-<img src="/img/min_Buster_VBox/install_GRUB.png" alt="GRUB" title="GRUB"></p>
-</li>
-<li>
-<p>Selektujemo jedini ponuđeni HDD:
-<img src="/img/min_Buster_VBox/lokacija_za_instaliranje_GRUB-a.png" alt="GRUB HDD" title="GRUB HDD"></p>
-</li>
-<li>
-<p>Instalacija završena - <em>continue</em> - <em>reboot</em>:
-<img src="/img/min_Buster_VBox/instalacija_zavrsena.png" alt="Završena instalacija minimalnog Debiana 10" title="Završena instalacija minimalnog Debiana 10"></p>
-</li>
-<li>
-<p>Posle restarta, ulogujemo se TTY konzolu, unesemo <em>username</em>, <em>password</em>, i <em>sudo poweroff</em>  čime gasimo virtuelnu mašinu:
-<img src="/img/min_Buster_VBox/login-password-poweroff.png" alt="poweroff" title="poweroff"></p>
-</li>
+<li>Startujemo VirtualBox Manager klikom na <strong>New</strong>:
+<img src="/img/min_Buster_VBox/pokrenemo_VirtualBox.png" alt="Startujemo VirtualBox" title="Startujemo VirtualBox"></li>
+<li>Definišemo količinu RAM-a  dodeljenu VM:
+<img src="/img/min_Buster_VBox/podesimo_memoriju_dodeljenu_VM-i.png" alt="Definišemo količinu RAM-a za VM" title="Definišemo količinu RAM-a  za VM"></li>
+<li>Kreiramo virtuelni hard disk za instalaciju Debiana:
+<img src="/img/min_Buster_VBox/virtuelni_HDD.png" alt="Kreiramo virtuelni hard disk" title="Kreiramo virtuelni hard disk"></li>
+<li>Biramo vrstu hard diska (<strong>VDI</strong>, VHD ili VMDK):
+<img src="/img/min_Buster_VBox/biramo_vrstu_virtuelnog_HDD-a.png" alt="Biramo VDI (VirtualBox Disk Image)" title="Biramo VDI (VirtualBox Disk Image)"></li>
+<li>Biramo tip hard diska (<strong>promenljive</strong> veličine - <em><strong>Dynamically allocated</strong></em>):
+<img src="/img/min_Buster_VBox/biramo_tip_virtuelnog_HDD-a.png" alt="Biramo tip hard diska" title="Biramo tip hard diska"></li>
+<li>Određujemo veličinu virtuelnog hard diska, na primer 16 GB a zatim promenimo lokaciju gde će Virtuelna Mašina biti upamćena (novi folder na particiji gde nije Windows):
+<img src="/img/min_Buster_VBox/odredjujemo_velicinu_HDD-a.png" alt="Lokacija i veličina hard diska" title="Lokacija i veličina hard diska"></li>
+<li>VirualBox Manager nakon početnog podešavanja:
+<img src="/img/min_Buster_VBox/VM-a_sa_default_podesavanjima.png" alt="VirtualBox Manager" title="Nakon podešavanja"></li>
+<li>Iz kontekstnog menija kliknemo na  <em>Settings</em>:
+<img src="/img/min_Buster_VBox/iz_kontekstnog_menija_settings.png" alt="VirtualBox Manager" title="desni klik Settings"></li>
+<li>Izaberemo dvosmernu komunikaciju sa Host Operativnim Sistemom:
+<img src="/img/min_Buster_VBox/2xbidirectional.png" alt="2xbidirectional" title="2xbidirectional"></li>
+<li>Podesimo redosled butovanja:
+<img src="/img/min_Buster_VBox/podesimo_redosled_butovanja.png" alt="Redosled butovanja" title="Nakon podešavanja"></li>
+<li>Dodelimo na primer 2 procesorska jezgra Virtuelnoj Mašini:
+<img src="/img/min_Buster_VBox/dodelimo_VM-i_npr._2_proc.jezgra.png" alt="Dodeljivanje procesorskih jezgara" title="Nakon podešavanja"></li>
+<li>Video memoriju proširimo na maksimalnih 128 MB:
+<img src="/img/min_Buster_VBox/video_memorija_na_128MB.png" alt="Video memorija" title="Video memorija"></li>
+<li>Iz kontektsnog menija plavog diska gore desno - izaberemo ISO sliku Min. Debiana:
+<img src="/img/min_Buster_VBox/izaberemo_ISO_sliku_Debiana.png" alt="debian-10.7.0-amd64-netinst.iso" title="ISO slika Minimalnog Debiana"></li>
+<li>Debian se sada pojavljuje u stablu <em>Storage Devices</em>:
+<img src="/img/min_Buster_VBox/Debian_se_pojavljuje_u_stablu.png" alt="Debian izabran kao virtuelni disk" title="Debian izabran kao virtuelni disk"></li>
+<li>Podešavamo virtuelni mrežni adapter kao <em>Bridged Adapter</em> da bi VM dobila svoju IP adresu:
+<img src="/img/min_Buster_VBox/podesavamo_mrezni_adapter.png" alt="Podešavanje mrežnog adaptera" title="Podešavanje mrežnog adaptera"></li>
+<li>Opciono - odredimo foldere za šerovanje sa Host OS-om:
+<img src="/img/min_Buster_VBox/biramo_foldere_za_serovanje.png" alt="Šerovanje foldera" title="Šerovanje foldera"></li>
+<li>Virtuelna Mašina je potpuno podešena:
+<img src="/img/min_Buster_VBox/VM-a_je_podesena.png" alt="Podešena VM" title="Podešena VM"></li>
+<li>Klikom na <em>Start</em>, otvara se prozor gde biramo <em>graphical install</em>:
+<img src="/img/min_Buster_VBox/graphical_install.png" alt="graphical install" title="graphical install"></li>
+<li>Biramo jezik, ostavimo engleski po <em>defaultu</em>:
+<img src="/img/min_Buster_VBox/izbor_jezika.png" alt="ostavimo default - engleski" title="ostavimo _default_ - engleski"></li>
+<li>Izbor lokacije 1.korak:
+<img src="/img/min_Buster_VBox/izbor_lokacije_1.korak.png" alt="izbor lokacije 1.korak" title="izbor lokacije 1. korak"></li>
+<li>Izbor lokacije 2.korak:
+<img src="/img/min_Buster_VBox/izbor_lokacije_2.korak.png" alt="izbor lokacije 2.korak" title="izbor lokacije 2. korak"></li>
+<li>Izbor lokacije 3.korak:
+<img src="/img/min_Buster_VBox/izbor_lokacije_3.korak.png" alt="izbor lokacije 3.korak" title="izbor lokacije 3. korak"></li>
+<li>Ostavljamo <em>default local settings</em>:
+<img src="/img/min_Buster_VBox/ostavljamo_default_local_settings.png" alt="Ostavljamo default local settings" title="default local settings"></li>
+<li>Biramo <em>default</em> raspored tastature:
+<img src="/img/min_Buster_VBox/ostavljamo_default_raspored_tastature.png" alt="Biramo default raspored tastature" title="Biramo _default_ raspored tastature"></li>
+<li><em>Hostname</em> može <em>default</em>:
+<img src="/img/min_Buster_VBox/hostname_moze_default_ne_mora.png" alt="Hostname može default ili po želji" title="Hostname može default"></li>
+<li><em>Domaine  name</em>  ostavljamo prazno:
+<img src="/img/min_Buster_VBox/domain_name_ostavljamo_prazno.png" alt="Domaine  name  prazno" title="Domaine  name  ostavljamo prazno"></li>
+<li><em>Root password</em> ostavljamo prazno da bi prvi <em>USER</em> imao <em>SUDO</em> (administratorska) ovlašćenja:
+<img src="/img/min_Buster_VBox/root_password_preskacemo_continue.png" alt="Root password  prazno" title="Root password prazno"></li>
+<li>Unosimo ime prvog <em>USER-a</em> sa <em>default</em> <em>SUDO</em> ovlašćenjima:
+<img src="/img/min_Buster_VBox/ime_USER-a.png" alt="može puno ime i prezime ili username" title="Unosimo ime prvog USER-a"></li>
+<li>Unosimo i <em>username</em>:
+<img src="/img/min_Buster_VBox/username_USER-a.png" alt="Unosimo username prvog USER-a" title="Unosimo username USER-a"></li>
+<li>Unosimo i <em>password</em>:
+<img src="/img/min_Buster_VBox/password_USER-a.png" alt="Unosimo password" title="Unosimo password"></li>
+<li>Izbor metode particionisanja hard diska - ostavimo prvu opciju:
+<img src="/img/min_Buster_VBox/particionisanje_HDD-a.png" alt="Metoda particionisanja" title="metoda particionisanja"></li>
+<li>Virtuelni hard disk je već selektovan:
+<img src="/img/min_Buster_VBox/jedan_HDD_jedna_particija.png" alt="Virtuelni HDD je selektovan" title="Virtuelni HDD je selektovan"></li>
+<li>Najbolji izbor za početnike - svi fajlovi u jednoj particiji:
+<img src="/img/min_Buster_VBox/najbolje_za_pocetnike_sve_u_1.png" alt="Svi fajlovi u jednu particiju" title="Svi fajlovi u jednu particiju"></li>
+<li>Još jedna provera pre završetka particionisanja i upisivanja na HDD:
+<img src="/img/min_Buster_VBox/provera_particija_upis_na_HDD.png" alt="provera i upisivanje na virtuelni HDD" title="provera i upisivanje na virtuelni HDD"></li>
+<li>Potvdimo promene i dozvolimo upisivanje na HDD:
+<img src="/img/min_Buster_VBox/potvrda_izmene_particija.png" alt="upisivanje na virtuelni HDD" title="upisivanje na virtuelni HDD"></li>
+<li>Ranije prijavljeni ISO fajl je jedini instalacioni medij
+<img src="/img/min_Buster_VBox/nema_drugih_instalacionih_diskova.png" alt="nema drugih instalacionih medija" title="nema drugih instalacionih medija"></li>
+<li>Najbliži <em>mirror</em>  je u Srbiji ali je u Mađarskoj brži i pouzdaniji:
+<img src="/img/min_Buster_VBox/najblizi_mirror_Debiana.png" alt="Arhiva Debiana po zemljama" title="Arhiva Debiana po zemljama"></li>
+<li>Može <em>default</em>:</li>
+</ol>
+<p><img src="/img/min_Buster_VBox/default_mirror.png" alt="Arhiva Debiana default" title="Arhiva Debiana default"></p>
+<ol start="40">
+<li>Preskačemo <em>proxy</em>:
+<img src="/img/min_Buster_VBox/http_proxy_preskacemo.png" alt="Preskačemo proxy" title="Preskačemo proxy"></li>
+<li>Pošto radimo u Virtuelnoj Mašini, odbićemo učešće u istraživanju:
+<img src="/img/min_Buster_VBox/ako_je_VM_no.png" alt="popularity-contest" title="popularity-contest"></li>
+<li>Tasksel - odčekiramo sve osim poslednje stavke <em>standard system utilities</em>:
+<img src="/img/min_Buster_VBox/tasksel.png" alt="tasksel" title="tasksel"></li>
+<li>Da li da instaliramo GRUB na virtuelni hard disk - da:
+<img src="/img/min_Buster_VBox/install_GRUB.png" alt="GRUB" title="GRUB"></li>
+<li>Selektujemo jedini ponuđeni HDD:
+<img src="/img/min_Buster_VBox/lokacija_za_instaliranje_GRUB-a.png" alt="GRUB HDD" title="GRUB HDD"></li>
+<li>Instalacija završena - <em>continue</em> - <em>reboot</em>:
+<img src="/img/min_Buster_VBox/instalacija_zavrsena.png" alt="Završena instalacija minimalnog Debiana 10" title="Završena instalacija minimalnog Debiana 10"></li>
+<li>Posle restarta, ulogujemo se TTY konzolu, unesemo <em>username</em>, <em>password</em>, i <em>sudo poweroff</em>  čime gasimo virtuelnu mašinu:
+<img src="/img/min_Buster_VBox/login-password-poweroff.png" alt="poweroff" title="poweroff"></li>
 </ol>
 
     
