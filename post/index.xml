@@ -20,25 +20,22 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;STARTOVANJE:&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
 Za startovanje najčešće korišćenih programa predvideo sam 3 načina:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)i izborom sa glavnog padajućeg menija (ostali su u podmeniju &lt;em&gt;Applications&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;Prečicom sa tastature:
-&lt;ul&gt;
-&lt;li&gt;Fajl menadžer &lt;em&gt;PCManFM-QT&lt;/em&gt;&lt;br&gt;
-&lt;code&gt;WIN+F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;WEB pretraživač &lt;em&gt;Firefox-ESR&lt;/em&gt;&lt;br&gt;
-&lt;code&gt;WIN+W&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Tekst editor &lt;em&gt;Geany&lt;/em&gt;&lt;br&gt;
-&lt;code&gt;WIN+E&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Terminal emulator &lt;em&gt;Terminator&lt;/em&gt;&lt;br&gt;
-&lt;code&gt;WIN+T&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Pokretač programa (&lt;em&gt;Launcher&lt;/em&gt;)&lt;em&gt;DMenu&lt;/em&gt;&lt;br&gt;
-&lt;code&gt;WIN+M&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Prečicom &lt;code&gt;WIN+M&lt;/code&gt; otvaramo &lt;em&gt;DMenu&lt;/em&gt;.Sa svakim unesenim slovom izbor ponuđenih programa se smanjuje i kad nam dosadi kucanje, tasterima levo-desno pronađemo i startujemo traženi sa &lt;em&gt;ENTER&lt;/em&gt;.&lt;br&gt;
-Obratiti pažnju da dok se &lt;em&gt;DMenu&lt;/em&gt; ne isključi sa &lt;em&gt;ESC&lt;/em&gt;, Debian ne prihvata nijednu komandu.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/Kako_koristiti_Debian-OpenBox/anim_320.gif&#34; alt=&#34;:left&#34; title=&#34;Turntable&#34;&gt; 1. Desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)i izborom sa glavnog padajućeg menija (ostali su u podmeniju &lt;em&gt;Applications&lt;/em&gt;)&lt;br&gt;
+2. Prečicom sa tastature:
+- Fajl menadžer &lt;em&gt;PCManFM-QT&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+F&lt;/code&gt;&lt;br&gt;
+- WEB pretraživač &lt;em&gt;Firefox-ESR&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+W&lt;/code&gt;&lt;br&gt;
+- Tekst editor &lt;em&gt;Geany&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+E&lt;/code&gt;&lt;br&gt;
+- Terminal emulator &lt;em&gt;Terminator&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+T&lt;/code&gt;&lt;br&gt;
+- Pokretač programa (&lt;em&gt;Launcher&lt;/em&gt;)&lt;em&gt;DMenu&lt;/em&gt;&lt;br&gt;
+&lt;code&gt;WIN+M&lt;/code&gt;&lt;br&gt;
+3. Prečicom &lt;code&gt;WIN+M&lt;/code&gt; otvaramo &lt;em&gt;DMenu&lt;/em&gt;.Sa svakim unesenim slovom izbor ponuđenih programa se smanjuje i kad nam dosadi kucanje, tasterima levo-desno pronađemo i startujemo traženi sa &lt;em&gt;ENTER&lt;/em&gt;.&lt;br&gt;
+Obratiti pažnju da dok se &lt;em&gt;DMenu&lt;/em&gt; ne isključi sa &lt;em&gt;ESC&lt;/em&gt;, Debian ne prihvata nijednu komandu.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;strong&gt;PSEUDO-TILING:&lt;/strong&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;OpenBox&lt;/em&gt; je pokretljiv (&lt;em&gt;Tiling&lt;/em&gt;) WM.
