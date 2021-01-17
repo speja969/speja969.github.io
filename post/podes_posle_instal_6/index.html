@@ -195,7 +195,7 @@ Na datom linku dobićete informacije za donošenje odluke da li da uopšte predv
 Odlučite li se ipak za <em>SWAP</em> fajl, evo kako bih ja to uradio u <em>Debianu</em>:</p>
 </blockquote>
 <ol>
-<li>Otvorimo terminal sa <code>WIN+T</code> :</li>
+<li>Otvorimo terminal sa <mark style="background-color: lightblue"><strong><em>WIN+T</em></strong></mark> :</li>
 </ol>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo fallocate -l 1G /swapfile   <span class="c1"># da swap fajl bude 1 GB</span>
 </code></pre></div><ol start="2">
@@ -241,9 +241,9 @@ Možemo zadati sistemu <em>swappiness</em> vrednost npr. 10:</p>
 </ol>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo swapoff -v /swapfile    <span class="c1"># prvo deaktiviranje</span>
 <span class="ln">2</span>sudo nano /etc/fstab
-<span class="ln">3</span><span class="c1"># brišemo liniju &#34;/swapfile swap swap defaults 0 0 &#34;</span>
-<span class="ln">4</span>sudo rm /swapfile
-<span class="ln">5</span><span class="sb">`</span>CTRL+O<span class="sb">`</span> --&gt; <span class="sb">`</span>Enter<span class="sb">`</span> --&gt; <span class="sb">`</span>CTRL+X<span class="sb">`</span>  <span class="c1"># upamti promene i zatvara *nano*</span>
+<span class="ln">3</span><span class="c1"># brišemo liniju &#34;/swapfile swap swap defaults 0 0 &#34;  </span>
+</code></pre></div><p><mark style="background-color: lightblue"><strong><em>CTRL+O</em></strong></mark> --&gt; <mark style="background-color: lightblue"><strong><em>ENTER</em></strong></mark> --&gt; <mark style="background-color: lightblue"><strong><em>CTRL+X</em></strong></mark>   upamti promene i zatvara <strong><em>nano</em></strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo rm /swapfile  
 </code></pre></div>
     
       
