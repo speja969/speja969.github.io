@@ -182,7 +182,7 @@
 <hr>
 <p><img src="/img/min_Buster_Vbox_2/1969416_128.png" alt=":left"><a href="https://speja969.github.io/post/min_buster_vbox/">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo</a><br>
 <a href="https://speja969.github.io/post/min_buster_vbox_2/">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</a><br>
-<a href="https://speja969.github.io/post/podes_posle_instal_31/">Podešavanje posle instalacije - 3.deo PCManFM-QT</a><br>
+<a href="https://speja969.github.io/post/podes_posle_instal_31/">Podešavanje posle instalacije - 3.deo PCManFM-Qt</a><br>
 <a href="https://speja969.github.io/post/podes_posle_instal_4/">Podešavanje posle instalacije - 4.deo Podešavanje izgleda</a><br>
 <a href="https://speja969.github.io/post/podes_posle_instal_5/">Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp</a><br>
 Podešavanje posle instalacije - 6.deo SWAP fajl</p>
@@ -217,9 +217,9 @@ Odlučite li se ipak za <em>SWAP</em> fajl, evo kako bih ja to uradio u <em>Debi
 </code></pre></div><ol start="6">
 <li>da bi <em>SWAP</em> fajl ostao trajno (i posle restarta) otvorimo /etc/fstab u na primer nano editoru i dodamo sledeću liniju:</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo nano /etc/fstab
-<span class="ln">2</span>/swapfile swap swap defaults <span class="m">0</span> <span class="m">0</span>
-</code></pre></div><p><img src="/img/podes_posle_instal_6/swapfile.png" alt="swapfile" title="swapfile">
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo nano /etc/fstab  
+</code></pre></div><p>dodajemo liniju kao na slici: <mark style="background-color: lightblue"><strong><em>/swapfile swap swap defaults 0 0</em></strong></mark>
+<img src="/img/podes_posle_instal_6/swapfile.png" alt="swapfile" title="swapfile">
 7. Na kraju provera da li je swap fajl aktivan::</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo swapon --show
 </code></pre></div><ol start="8">
@@ -278,7 +278,7 @@ Možemo zadati sistemu <em>swappiness</em> vrednost npr. 10:</p>
         <a href="https://speja969.github.io/post/podes_posle_instal_4/" class="nav-link">Podešavanje posle instalacije - 4.deo Podešavanje izgleda</a>
       </li>
       <li>
-        <a href="https://speja969.github.io/post/podes_posle_instal_31/" class="nav-link">Podešavanje posle instalacije - 3.deo PCManFM-QT</a>
+        <a href="https://speja969.github.io/post/podes_posle_instal_31/" class="nav-link">Podešavanje posle instalacije - 3.deo PCManFM-Qt</a>
       </li>
       <li>
         <a href="https://speja969.github.io/post/min_buster_vbox_2/" class="nav-link">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</a>

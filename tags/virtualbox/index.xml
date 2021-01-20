@@ -107,7 +107,7 @@ Naravno sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
 Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;br&gt;
-&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
@@ -157,7 +157,7 @@ Pored OpenBox WM, biće prikazana i instalacija najpotrebnijih programa koji po 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Zatim treba dodati USERA vboxsf grupi.&lt;/p&gt;
+&lt;p&gt;Zatim treba dodati &lt;strong&gt;&lt;em&gt;USERA&lt;/em&gt;&lt;/strong&gt; vboxsf grupi.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo adduser USER vboxsf &lt;span class=&#34;c1&#34;&gt;#pri čemu umesto USER unesemo svoj username.&lt;/span&gt;
@@ -236,7 +236,7 @@ U suštini instalacija sa osnovnim podešavanjima je pokrivena u 6 delova, a red
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-QT&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
