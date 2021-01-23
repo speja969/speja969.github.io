@@ -6,7 +6,306 @@
     <description>Recent content in markdown on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo sajt - izrada i besplatno hostovanje - 2.deo Izrada sajta i postavljanje</title>
+      <link>https://speja969.github.io/post/hugo_sajt_2/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/hugo_sajt_2/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;p&gt;U prvom delu instalitali smo &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;GIT&lt;/em&gt;&lt;/strong&gt;. Sada treba izraditi sajt na računaru pre nego što ga okačimo na internet:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Prvo otvorimo terminal &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; i premestimo aktivni direktorijum na lokaciju gde će se nalaziti sajt ili napravimo novi (u primeru to je &lt;em&gt;~projects&lt;/em&gt; ) i startujemo sledeću komandu:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mkdir /home/peja/projects  &lt;span class=&#34;c1&#34;&gt;# ako već ne postoji&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/peja/projects  &lt;span class=&#34;c1&#34;&gt;# moj username je peja, vi stavite svoj&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;hugo new site mojnovisajt  &lt;span class=&#34;c1&#34;&gt;# u primeru ime sajta je mojnovisajt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/mojnovisajt.png&#34; alt=&#34;Novi sajt&#34; title=&#34;Novi sajt&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Ako otvorimo fajl menadžer sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+F&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;  videćemo da je &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt; pripremio folder &lt;em&gt;mojnovisajt&lt;/em&gt; sa svim potrebnim pripadajućim podfolderima i fajlovima:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/struktura.png&#34; alt=&#34;Struktura foldera&#34; title=&#34;Struktura foldera&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Glavni konfiguracioni fajl je &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;config.toml&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; i zahteva izmene o čemu će biti reči kasnije&lt;/li&gt;
+&lt;li&gt;Folder &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;content&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; u kome se smešta sav sadržaj sajta, svi postovi bloga, može da sadrži podfoldere mada su tu obično .md (&lt;em&gt;Markdown&lt;/em&gt; formatirani) fajlovi.&lt;/li&gt;
+&lt;li&gt;Folder &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;static&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; u kome se smeštaju statički fajlovi npr. slike pozadina, logoi kao i .css i .js (za finija podešavanja rasporeda elemenata sajta).&lt;br&gt;
+Sadržaj ovog foldera se direktno kopira u &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;theme&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;.&lt;br&gt;
+Folder &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;static&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; ima viši prioritet od foldera &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;static&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; koji je podfolder &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;theme&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;Folder &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;themes&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; trenutno je prazan, u njemu će biti sadržaj teme koju sami biramo.&lt;/li&gt;
+&lt;li&gt;Folder &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;archetypes&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; u kome se smeštaju .md templejt (&lt;em&gt;Markdown&lt;/em&gt; formatirani) fajlovi .&lt;br&gt;
+Folder &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;archetypes&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; ima viši prioritet od foldera &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;archetypes&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; koji je podfolder &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;theme&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;Folder &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em&gt;data&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; u kome se smeštaju fajlovi za potrebe &lt;em&gt;templejtova&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Folder &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;layouts&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; u kome se smeštaju &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;.html&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; templejti, ima viši prioritet od foldera &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;/layouts&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; koji je podfolder &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;theme&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;Takođe, tu je i folder &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;public&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; koji se formira kad kreirane strane sklapamo u sajt: posle izvršenja u terminalu komande &lt;em&gt;hugo&lt;/em&gt;, ovde se pojavljuje sadržaj sajta konvertovan u &lt;em&gt;HTML&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;izbor-teme-_theme_&#34;&gt;IZBOR TEME (&lt;em&gt;Theme&lt;/em&gt;):&lt;/h3&gt;
+&lt;p&gt;Na zvaničnoma HUGO sajtu imamo veliki izbor &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;tema&lt;/a&gt; koje možemo da koristimo. Ja sam izabrao &lt;a href=&#34;https://themes.gohugo.io/hugo-clarity/&#34;&gt;Clarity&lt;/a&gt; i u primeru će se podešavanja odnositi na nju. Svaka tema ima neke specifičnosti, pa je potrebno detaljno proučiti &lt;a href=&#34;https://themes.gohugo.io/hugo-clarity/#table-of-contents&#34;&gt;uputstvo&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Otvorimo terminal &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/peja/projects/mojnovisajt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;git init
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;git submodule add https://github.com/chipzoller/hugo-clarity themes/hugo-clarity  
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;cp -a themes/hugo-clarity/exampleSite/* .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;U tekst editoru  &lt;em&gt;Geany&lt;/em&gt; &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+E&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;  otvorimo konfiguracioni fajl &lt;em&gt;config.toml&lt;/em&gt;:&lt;br&gt;
+File --&amp;gt; Open... --&amp;gt; Home --&amp;gt; projects --&amp;gt; mojnovisajt --&amp;gt; config.toml --&amp;gt;Open&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/config.toml.png&#34; alt=&#34;config.toml&#34; title=&#34;config.toml&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;ln&#34;&gt;  1&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# set `baseurl` to your root domain&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  2&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# if you set it to &amp;#34;/&amp;#34; share icons won&amp;#39;t work properly on production&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  3&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;baseurl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://example.com/&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c&#34;&gt;# Include trailing slash&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  4&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Clarity&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  5&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;author&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Jane Doe&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  6&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;copyright&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  7&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# canonifyurls = true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  8&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;paginate&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  9&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;hugo-clarity&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 11&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;disqusShortname&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 12&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 13&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;DefaultContentLanguage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 14&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# [languages]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 15&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# config/_default/languages.toml&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 16&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 17&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# [menus]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 18&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# config/_default/menus/menu.xx.toml&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 19&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;taxonomies&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 21&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 22&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tag&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 23&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;series&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;series&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 24&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 25&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 26&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 27&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;goldmark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 28&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;goldmark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;renderer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 29&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;hardWraps&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 30&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;unsafe&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# change to false to disable inclusion of rawHTML and math functions&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 31&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;xhtml&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 32&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;goldmark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 33&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;typographer&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 34&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;highlight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 35&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;codeFences&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 36&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;guessSyntax&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 37&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;hl_Lines&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;--&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 38&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;lineNoStart&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 39&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;lineNos&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# always set to true # else line numbers won&amp;#39;t show at all! even when you toggle them on in the UI&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 40&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;lineNumbersInTable&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# toggling this on (i.e to true) or deleting this line will break the code blocks functionality. Will&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 41&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;noClasses&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 42&lt;/span&gt;    &lt;span class=&#34;c&#34;&gt;# style = &amp;#34;monokai&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 43&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;tabWidth&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 44&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 45&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 46&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;author&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Jane Doe&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 47&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;twitter&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;@janedoe&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 48&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;largeTwitterCard&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# set to true if you want to show a large twitter card image. The default is a small twitter card image&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 49&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;introDescription&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Technologist, perpetual student, teacher, continual incremental improvement.&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 50&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# description = &amp;#34;&amp;#34; # set your site&amp;#39;s description here. will be use for home page content meta tags (seo). Alternatively set this description in your homepage content file i.e content/_index.md. Whatever is set in the latter will take precedence&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 51&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 52&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Google analytics Id&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 53&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ga_analytics&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;XXXXXXXXXX&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 54&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 55&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Baidu analytics Id&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 56&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# baidu_analytics = &amp;#34;XXXXXXXX&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 57&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 58&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# limit the number of taxonomies links shown on the sidebar of each page by default.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 59&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;numberOfTagsShown&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;14&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# Applies for all other default &amp;amp; custom taxonomies. e.g categories, brands see https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 60&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 61&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# will be used on share &amp;gt;&amp;gt; twitter, facebook, linkedin&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 62&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fallBackOgImage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;images/thumbnail.png&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 63&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 64&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# sets the maximum number of lines per codeblock. The codeblock will however be scrollable and expandable.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 65&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;codeMaxLines&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 66&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 67&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# disable showing line numbers by default. Switch to `true` if you&amp;#39;d rather have them on.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 68&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;codeLineNumbers&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 69&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 70&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# enable math notation. Switch to `true` to enable mathjax in your site.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 71&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;enableMathNotation&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 72&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 73&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# directory(s) where your articles are located&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 74&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mainSections&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# see config details here https://gohugo.io/functions/where/#mainsections&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 75&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 76&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# center logo on navbar&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 77&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;centerLogo&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# Set to &amp;#34;true&amp;#34; for centering or &amp;#34;false&amp;#34; for left aligned.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 78&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 79&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;logo&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;logos/logo.png&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 80&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 81&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Label Non inline images on an article body&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 82&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;figurePositionShow&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# toggle on or off globally&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 83&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# you can toggle this behaviour on or off on per page using the same variable inside your articles frontmatter&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 84&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;figurePositionLabel&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Figure&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# the text before image number e.g Figure 1.0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 85&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 86&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Set the collapsed mobile navigation to either appear from the left or the right&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 87&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mobileNavigation&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;left&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# if you prefer right change to &amp;#39;right&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 88&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 89&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# some site owners want to decide how they would like their sites to be introduced users. These settings give you as a site owner to decide how the user will view your site for the first time.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 90&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 91&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# please note that you cannot enforce both modes at the same time. i.e by enforcing one mode, you priotise it over the other (by setting it to true). enforceDarkMode will be commented out&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 92&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 93&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# please also not that mode toggle UI will remain in place. That way, if a user prefers darkmode, they can have their way.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 94&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 95&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;enforceLightMode&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 96&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# enforceDarkMode = false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 97&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 98&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# customize footer icon. see issue https://github.com/chipzoller/hugo-clarity/issues/77&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 99&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# footerLogo = &amp;#34;icons/copy.svg&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;100&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;101&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Text for the languages menu.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;102&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;languageMenuName&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;🌐&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;103&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;104&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Title separator, default to |.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;105&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# titleSeparator = &amp;#34;|&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;106&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;107&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Enable or disable comment globally. Default to true.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;108&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# comment = false&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;109&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;110&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Maximum number of recent posts.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;111&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# numberOfRecentPosts = 8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;112&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;113&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Maximum number of featured posts.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;114&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# numberOfFeaturedPosts = 8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;115&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;116&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Date format. Checkout https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference for details.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;117&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# dateFormat = &amp;#34;2006-01-02&amp;#34; # Default to &amp;#34;Jan 2, 2006&amp;#34;.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;118&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# customFonts = false # toggle to true if you want to use custom fonts only.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;119&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;120&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# The year when ths website was created, this value is used in the copyright&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;121&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# notice of the footer.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;122&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# since = 2016&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;u-_configtoml_-fajlu-treba-podesiti-dosta-stvari&#34;&gt;U &lt;em&gt;config.toml&lt;/em&gt; fajlu treba podesiti dosta stvari:&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;baseurl&lt;/em&gt;&lt;/strong&gt; - adresa na kojoj će Firefox moći da ga (sajt/blog) otvori&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;title&lt;/em&gt;&lt;/strong&gt; - naziv, ime sajta&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;author&lt;/em&gt;&lt;/strong&gt; - ime vlasnika sajta&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;copyright&lt;/em&gt;&lt;/strong&gt; - autorska prava nad sadržajem sajta&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;DefaultContentLanguage&lt;/em&gt;&lt;/strong&gt; - jezik sajta, ostavio sam engleski jer u UTF8 formatu bez problema prihvata srpsku latinicu.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;[taxonomies]&lt;/em&gt;&lt;/strong&gt; - označavanje strana radi grupisanja po srodnosti sadržaja;&lt;br&gt;
+po &lt;em&gt;defaultu&lt;/em&gt; Hugo predviđa dve taxonomije: &lt;em&gt;category&lt;/em&gt; i &lt;em&gt;tag&lt;/em&gt; i tad se može ceo blok sa taksonomijama izostaviti iz &lt;em&gt;config.toml&lt;/em&gt;. Ako uvodimo novu taksonomiju kao što je kreator ove teme uveo &lt;strong&gt;&lt;em&gt;series&lt;/em&gt;&lt;/strong&gt;, potrebno je uz novu izlistati i &lt;em&gt;defaultne&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;taxonomies&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;  
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tag&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;series&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;series&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;DefaultContentLanguage&lt;/em&gt;&lt;/strong&gt; - jezik sajta, ostavio sam engleski jer u UTF8 formatu bez problema prihvata srpsku latinicu.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tu je još stavki koje treba podesiti po vlastitom ukusu kao što je logo, njegov položaj na strani, vidljivost i broj linija koda prilikom prikazivanja programskih blokova itd.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Testirajmo sajt lokalno...&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/peja/projects/mojnovisajt/  
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;hugo serve -D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kad otvorimo &lt;em&gt;web browser&lt;/em&gt; sa &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+W&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; i odemo na http://localhost:1313/  trebalo bi da pojavi &lt;em&gt;Home&lt;/em&gt; strana &lt;em&gt;mojnovisajt&lt;/em&gt; sajta:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/lokalna_proba.png&#34; alt=&#34;Lokalna proba&#34; title=&#34;Lokalna proba&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To je struktura sajta po &lt;em&gt;defaultu&lt;/em&gt; kako ju je kreator teme &lt;em&gt;Clarity&lt;/em&gt; predvideo. Ubačeno je nekoliko strana da prikaže dizajn i raspored elemenata. Jedan deo izmena može se odraditi u gore pomenutom &lt;a href=&#34;#u-_configtoml_-fajlu-treba-podesiti-dosta-stvari&#34;&gt;config.toml&lt;/a&gt; fajlu.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Vrlo je važno da &lt;em&gt;&lt;strong&gt;baseurl&lt;/strong&gt;&lt;/em&gt; bude data prema podešavanjima na GitHubu koja slede.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;otvorimo-nalog-na-githubu&#34;&gt;&lt;strong&gt;Otvorimo nalog na GitHubu&lt;/strong&gt;:&lt;/h4&gt;
+&lt;p&gt;U ovoj fazi već imamo ideju da li želimo da &lt;em&gt;hostovanje&lt;/em&gt; budućeg sajta plaćamo ili da iskoristimo neku besplatnu varijantu. Ovde obrađujemo ovo drugo.&lt;br&gt;
+Najjednostavniji način je otvaranje besplatnog naloga na &lt;a href=&#34;https://github.com/join?ref_cta=Sign+up&amp;amp;ref_loc=header+logged+out&amp;amp;ref_page=%2F&amp;amp;source=header-home&#34;&gt;&lt;em&gt;GitHubu&lt;/em&gt;&lt;/a&gt; uz korišćenje mogućnosti da Hugo sajt besplatno hostujemo koristeći servis  &lt;a href=&#34;https://pages.github.com/&#34;&gt;&lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/a&gt;.&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/GitHub_account.png&#34; alt=&#34;GitHub account&#34; title=&#34;nalog na GitHubu&#34;&gt;&lt;br&gt;
+Poželjno je da izabrani &lt;em&gt;username&lt;/em&gt; što više asocira na sajt ili tematiku sajta, ukoliko je primarni razlog otvaranja naloga - hostovanje sajta.&lt;/p&gt;
+&lt;h4 id=&#34;okačimo-svoj-github-repozitorijum&#34;&gt;&lt;strong&gt;Okačimo svoj GitHub repozitorijum&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Da bi postavili svoj sajt sa adresom &lt;em&gt;username.github.io&lt;/em&gt; , prvo treba postaviti repozitorijum u formatu &lt;em&gt;username.github.io&lt;/em&gt;&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/github_repo.png&#34; alt=&#34;GitHub repo&#34; title=&#34;GitHub repo&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Besplatni nalog ne dozvoljava privatni repozitorijum, te je &lt;em&gt;Public&lt;/em&gt; jedina mogućnost.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ne čekiramo&lt;/strong&gt; &lt;em&gt;Initialize this repository&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Kliknemo na &lt;em&gt;Create repository&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Startujemo terminal &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/peja/projects/mojnovisajt/public
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;git init
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;git add .
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;git remote add origin https://github.com/username/username.github.io.git
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;first commit&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Proverimo naš novi sajt:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/provera.png&#34; alt=&#34;provera sajta&#34; title=&#34;Provera sajta&#34;&gt; &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/provera_2.png&#34; alt=&#34;provera sajta&#34; title=&#34;Provera sajta&#34;&gt;&lt;br&gt;
+Kliknemo na &lt;em&gt;Settings&lt;/em&gt;:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/sajt_repo.png&#34; alt=&#34;Sajt repo&#34; title=&#34;Sajt repo&#34;&gt;&lt;br&gt;
+Odskrolujemo do pred kraj i tu naš link:
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/link.png&#34; alt=&#34;Link&#34; title=&#34;Link&#34;&gt;&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Hugo sajt - izrada i besplatno hostovanje - 1.deo instalacija</title>
+      <link>https://speja969.github.io/post/hugo_sajt_1/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/hugo_sajt_1/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;p&gt;Već dugo želim da napravim svoj sajt. Rađale su se ideje šta bi mogao da bude sadržaj, bilo nešto stručno (mašinstvo) ili pak neki hobi sadržaj kao kompjuteri, Linux... Samo da provalim kako. Nisam programer pa ne znam ni jedan programski jezik da bih mogao sam završim sav posao. Plaćanje ne dolazi u obzir...&lt;br&gt;
+A onda sam našao &lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;ovo&lt;/a&gt;&lt;br&gt;
+&lt;em&gt;Addy&lt;/em&gt; me je zainteresovao te sam krenuo da kopam dublje i ustanovio sledeće:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Ima nekoliko programa za izradu statičkih sajtova za koje nije nije potrebno dobro poznavanje programskih jezika: &lt;strong&gt;&lt;em&gt;Jekill&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Gatsby&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Eleventy&lt;/em&gt;&lt;/strong&gt;...&lt;/li&gt;
+&lt;li&gt;Svi oni ili većina koriste &lt;em&gt;Markdown&lt;/em&gt; i &lt;em&gt;HTML&lt;/em&gt; između ostalih. HTML ne znam i ne želim da učim pod stare dane, ali &lt;em&gt;Markdown&lt;/em&gt; je druga priča. To je jednostavni jezik za označavanje teksta (&lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;&lt;em&gt;ML-Markup language&lt;/em&gt;&lt;/a&gt;), za razliku od osnovnih jezika u kojima se radi web dizajn (HTML, XML i XHTML).&lt;/li&gt;
+&lt;li&gt;Markdown ima petnaestak jednostavnih sintaktičkih pravila kojima možemo da formatiramo tekst, postavimo slike, linkove i td.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;Addy&lt;/a&gt; je zaključio da je najpogodniji program za izradu statičkih sajtova - &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt;, jer ima sijaset predefinisanih tema (templejta), izvanredan je za Debian jer instalacija &lt;em&gt;.deb&lt;/em&gt; fajla ne traži druge pakete (instaliramo trenutno najnoviju stabilnu verziju &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;programa&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Kad stranicu formatiramo po svom ukusu (koristeći &lt;em&gt;Markdown&lt;/em&gt; sintaksu), &lt;em&gt;Hugo&lt;/em&gt; jednom komandom konvertuje stranu u &lt;em&gt;HTML&lt;/em&gt; koji se prikazuje u Firefoxu, Chrome-u, Chromium-u, Brave-u...&lt;/li&gt;
+&lt;li&gt;Neke komplikovanije operacije koje nisu predviđene u &lt;em&gt;Markdownu&lt;/em&gt;, moguće je izvesti ubacivanjem &lt;em&gt;HTML&lt;/em&gt; blokova za šta postoji široka podrška na internetu.
+Krenimo redom:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Prvi korak je daunlodovanje najnovije verzije &lt;em&gt;Hugo&lt;/em&gt;-a sa &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;adrese&lt;/a&gt; i to klikom na link &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; --&amp;gt; &lt;em&gt;Save file&lt;/em&gt; --&amp;gt; &lt;em&gt;OK&lt;/em&gt; --&amp;gt; &lt;em&gt;Hugo&lt;/em&gt; se daunloduje u &lt;em&gt;~/Download&lt;/em&gt; folderu.&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_extended.png&#34; alt=&#34;Hugo instalacija&#34; title=&#34;Hugo instalacija&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Otvorimo  &lt;em&gt;GDebi Package Installer&lt;/em&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/GDebi.png&#34; alt=&#34;GDebi&#34; title=&#34;_GDebi_&#34;&gt;&lt;/li&gt;
+&lt;li&gt;File --&amp;gt; Open
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/GDebi_2.png&#34; alt=&#34;GDebi&#34; title=&#34;_GDebi_&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Selektujemo &lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt; --&amp;gt; Open&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_open.png&#34; alt=&#34;Hugo open&#34; title=&#34;Hugo open&#34;&gt;&lt;br&gt;
+Ako dobijete info da je starija verzija dostupna u softverskim kanalima (Debianovim repozitorijumima) - ne obazirite se...&lt;/li&gt;
+&lt;li&gt;Ako je ispoštovana procedura prikazana u postovima koji pokrivaju &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;instalaciju&lt;/a&gt;, trebalo bi da je &lt;em&gt;git&lt;/em&gt; već instaliran.&lt;br&gt;
+Proverimo ga ovako:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;git --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ako je instaliran dobićemo koja je verzija. Ukoliko nije instaliramo ga:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install git  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Instalirali smo &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;GIT&lt;/em&gt;&lt;/strong&gt;.&lt;br&gt;
+U nastavku bavićemo se izradom sajta na lokalu.&lt;/li&gt;
+&lt;/ol&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Podešavanje posle instalacije - 6.deo SWAP fajl</title>
       <link>https://speja969.github.io/post/podes_posle_instal_6/</link>

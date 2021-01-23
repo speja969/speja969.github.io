@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://speja969.github.io/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://speja969.github.io/categories/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -33,18 +33,33 @@
   </url>
   
   <url>
-    <loc>https://speja969.github.io/categories/instalacija/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <loc>https://speja969.github.io/post/hugo_sajt_2/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://speja969.github.io/post/kako_koristiti_debian-openbox/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <loc>https://speja969.github.io/categories/instalacija/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/tags/markdown/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://speja969.github.io/pt/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://speja969.github.io/tags/markdown/"
+                />
   </url>
   
   <url>
     <loc>https://speja969.github.io/post/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -59,7 +74,7 @@
   
   <url>
     <loc>https://speja969.github.io/series/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -74,12 +89,12 @@
   
   <url>
     <loc>https://speja969.github.io/categories/syntax/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://speja969.github.io/tags/</loc>
-    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -94,27 +109,22 @@
   
   <url>
     <loc>https://speja969.github.io/series/themes-guide/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/post/hugo_sajt_1/</loc>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://speja969.github.io/post/kako_koristiti_debian-openbox/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://speja969.github.io/tags/virtualbox/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://speja969.github.io/tags/markdown/</loc>
-    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://speja969.github.io/pt/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://speja969.github.io/tags/markdown/"
-                />
   </url>
   
   <url>
