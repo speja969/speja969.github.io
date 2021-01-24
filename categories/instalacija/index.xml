@@ -71,6 +71,27 @@
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+U tabeli su data osnovna sintaksa _Markdown_ formariranja.  
+Uz ovo treba dodati i sledeće:
+&lt;ul&gt;
+&lt;li&gt;Prekidanje linije i započinjanje nove (&lt;em&gt;line break&lt;/em&gt;), postižemo sa&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;2 x SPACE + SHIFT + ENTER&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Ovde se završava linija.  
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Ovde započinje nova.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Označavavanje teksta odabranom bojom nije predviđeno &lt;em&gt;Markdown&lt;/em&gt; sintaksom. Zato koristimo &lt;em&gt;HTML&lt;/em&gt; blokove koji se usađuju po potrebi:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Ovaj deo teksta je označen &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;žutom&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; bojom.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Formatirano u &lt;em&gt;Markdownu&lt;/em&gt;:&lt;br&gt;
+Ovaj deo teksta je označen &lt;mark&gt;žutom&lt;/mark&gt; bojom.&lt;br&gt;
+Ako želimo da boju izaberemo sami:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Ovaj deo teksta je označen &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background-color: lightblue&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;svetlo plavom&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; bojom.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Formatirano u &lt;em&gt;Markdownu&lt;/em&gt;:&lt;br&gt;
+Ovaj deo teksta je označen &lt;mark style=&#34;background-color: lightblue&#34;&gt;svetlo plavom&lt;/mark&gt; bojom.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;U svakom slučaju umesto naziva boje (blue, lightblue, olive, silver...)  može se koristiti heksadecimalni kod boje. Više o tome &lt;a href=&#34;https://www.computerhope.com/htmcolor.htm&#34;&gt;ovde&lt;/a&gt;.&lt;/p&gt;
 
         
       </description>
@@ -323,6 +344,14 @@ Kliknemo na &lt;em&gt;Settings&lt;/em&gt;:&lt;br&gt;
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/sajt_repo.png&#34; alt=&#34;Sajt repo&#34; title=&#34;Sajt repo&#34;&gt;&lt;br&gt;
 Odskrolujemo do pred kraj i tu naš link:
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/link.png&#34; alt=&#34;Link&#34; title=&#34;Link&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Ako je sve prošlo kako treba, sajt je sređen lokalno i postavljen na &lt;em&gt;GitHub Pages&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Strane su definisane od kreatora teme &lt;em&gt;Clarity&lt;/em&gt;, i to kao prikaz mogućnosti.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3/&#34;&gt;U trećem delu&lt;/a&gt; prikazane su osnove &lt;em&gt;Markdown&lt;/em&gt; sintakse uz neke napomene ispod tabele.&lt;/li&gt;
+&lt;li&gt;U četvrtom delu - krtina: kreiranje vlastitog sadržaja i postavljanje na &lt;em&gt;WEB&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 
         
       </description>

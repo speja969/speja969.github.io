@@ -233,6 +233,27 @@
   </tr>
 </tbody>
 </table>
+U tabeli su data osnovna sintaksa _Markdown_ formariranja.  
+Uz ovo treba dodati i sledeće:
+<ul>
+<li>Prekidanje linije i započinjanje nove (<em>line break</em>), postižemo sa<br>
+<mark style="background-color: lightblue"><strong><em>2 x SPACE + SHIFT + ENTER</em></strong></mark></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="ln">1</span>Ovde se završava linija.  
+<span class="ln">2</span>Ovde započinje nova.
+</code></pre></div><ul>
+<li>Označavavanje teksta odabranom bojom nije predviđeno <em>Markdown</em> sintaksom. Zato koristimo <em>HTML</em> blokove koji se usađuju po potrebi:</li>
+</ul>
+<blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="ln">1</span>Ovaj deo teksta je označen <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>žutom<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> bojom.
+</code></pre></div><p>Formatirano u <em>Markdownu</em>:<br>
+Ovaj deo teksta je označen <mark>žutom</mark> bojom.<br>
+Ako želimo da boju izaberemo sami:</p>
+<div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="ln">1</span>Ovaj deo teksta je označen <span class="p">&lt;</span><span class="nt">mark</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background-color: lightblue&#34;</span><span class="p">&gt;</span>svetlo plavom<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> bojom.
+</code></pre></div><p>Formatirano u <em>Markdownu</em>:<br>
+Ovaj deo teksta je označen <mark style="background-color: lightblue">svetlo plavom</mark> bojom.</p>
+</blockquote>
+<p>U svakom slučaju umesto naziva boje (blue, lightblue, olive, silver...)  može se koristiti heksadecimalni kod boje. Više o tome <a href="https://www.computerhope.com/htmcolor.htm">ovde</a>.</p>
 
     
       
