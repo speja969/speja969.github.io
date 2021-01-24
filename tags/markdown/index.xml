@@ -283,23 +283,32 @@ Krenimo redom:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;Prvi korak je daunlodovanje najnovije verzije &lt;em&gt;Hugo&lt;/em&gt;-a sa &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;adrese&lt;/a&gt; i to klikom na link &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; --&amp;gt; &lt;em&gt;Save file&lt;/em&gt; --&amp;gt; &lt;em&gt;OK&lt;/em&gt; --&amp;gt; &lt;em&gt;Hugo&lt;/em&gt; se daunloduje u &lt;em&gt;~/Download&lt;/em&gt; folderu.&lt;br&gt;
-&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_extended.png&#34; alt=&#34;Hugo instalacija&#34; title=&#34;Hugo instalacija&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Otvorimo  &lt;em&gt;GDebi Package Installer&lt;/em&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/GDebi.png&#34; alt=&#34;GDebi&#34; title=&#34;_GDebi_&#34;&gt;&lt;/li&gt;
-&lt;li&gt;File --&amp;gt; Open
-&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/GDebi_2.png&#34; alt=&#34;GDebi&#34; title=&#34;_GDebi_&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Selektujemo &lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt; --&amp;gt; Open&lt;br&gt;
+&lt;li&gt;
+&lt;p&gt;Prvi korak je daunlodovanje najnovije verzije &lt;em&gt;Hugo&lt;/em&gt;-a sa &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;adrese&lt;/a&gt; i to klikom na link &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; --&amp;gt; &lt;em&gt;Save file&lt;/em&gt; --&amp;gt; &lt;em&gt;OK&lt;/em&gt; --&amp;gt; &lt;em&gt;Hugo&lt;/em&gt; se daunloduje u &lt;em&gt;~/Download&lt;/em&gt; folderu.&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_extended.png&#34; alt=&#34;Hugo instalacija&#34; title=&#34;Hugo instalacija&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Otvorimo  &lt;em&gt;GDebi Package Installer&lt;/em&gt;&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/GDebi.png&#34; alt=&#34;&#34; title=&#34;_GDebi_&#34;&gt;&lt;/p&gt;
+&lt;p&gt;File --&amp;gt; Open&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/GDebi_2.png&#34; alt=&#34;&#34; title=&#34;_GDebi_&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Selektujemo &lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt; --&amp;gt; Open&lt;br&gt;
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_open.png&#34; alt=&#34;Hugo open&#34; title=&#34;Hugo open&#34;&gt;&lt;br&gt;
-Ako dobijete info da je starija verzija dostupna u softverskim kanalima (Debianovim repozitorijumima) - ne obazirite se...&lt;/li&gt;
-&lt;li&gt;Ako je ispoštovana procedura prikazana u postovima koji pokrivaju &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;instalaciju&lt;/a&gt;, trebalo bi da je &lt;em&gt;git&lt;/em&gt; već instaliran.&lt;br&gt;
-Proverimo ga ovako:&lt;/li&gt;
+Ako dobijete info da je starija verzija dostupna u softverskim kanalima (Debianovim repozitorijumima) - ne obazirite se...&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ako je ispoštovana procedura prikazana u postovima koji pokrivaju &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;instalaciju&lt;/a&gt;, trebalo bi da je &lt;em&gt;git&lt;/em&gt; već instaliran.&lt;br&gt;
+Proverimo ga ovako:&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;git --version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ako je instaliran dobićemo koja je verzija. Ukoliko nije instaliramo ga:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install git  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Instalirali smo &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;GIT&lt;/em&gt;&lt;/strong&gt;.&lt;br&gt;
-U nastavku bavićemo se izradom sajta na lokalu.&lt;/li&gt;
+U nastavku bavićemo se izradom sajta na lokalu i postavljanjem na &lt;em&gt;WEB&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
         
