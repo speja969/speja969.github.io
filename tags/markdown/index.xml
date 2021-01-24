@@ -6,7 +6,76 @@
     <description>Recent content in markdown on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown sintaksa</title>
+      <link>https://speja969.github.io/post/hugo_sajt_3/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/hugo_sajt_3/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-gmla{border-color:inherit;font-size:16px;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+&lt;/style&gt;
+&lt;table class=&#34;tg&#34;&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th class=&#34;tg-gmla&#34;&gt; &lt;span style=&#34;font-weight:bold&#34;&gt;Basic Syntax&lt;/span&gt;&lt;br&gt; &lt;br&gt;&lt;br&gt; &lt;/th&gt;
+    &lt;th class=&#34;tg-gmla&#34;&gt;&lt;span style=&#34;font-weight:bold&#34;&gt;Extended Syntax&lt;/span&gt;&lt;br&gt; &lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Heading&lt;br&gt; &lt;br&gt;# H1&lt;br&gt;## H2&lt;br&gt;### H3&lt;br&gt;#### H4&lt;br&gt;##### H5&lt;br&gt;###### H6&lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Table&lt;br&gt; &lt;br&gt;| Syntax | Description |&lt;br&gt;| ----------- | ----------- |&lt;br&gt;| Header | Title |&lt;br&gt;| Paragraph | Text |&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Bold&lt;br&gt; &lt;br&gt;&lt;span style=&#34;font-weight:bold&#34;&gt;**bold text**&lt;/span&gt;&lt;br&gt; &lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Fenced Code Block&lt;br&gt; &lt;br&gt;```&lt;br&gt;{&lt;br&gt;  &#34;firstName&#34;: &#34;John&#34;,&lt;br&gt;  &#34;lastName&#34;: &#34;Smith&#34;,&lt;br&gt;  &#34;age&#34;: 25&lt;br&gt;}&lt;br&gt;```&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Italic&lt;br&gt; &lt;br&gt;&lt;span style=&#34;font-style:italic&#34;&gt;*italicized text*&lt;/span&gt;&lt;br&gt; ili&lt;br&gt;&lt;span style=&#34;font-style:italic&#34;&gt;_italicized text_&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Footnote&lt;br&gt; &lt;br&gt;Here&#39;s a sentence with a footnote. [^1]&lt;br&gt; &lt;br&gt;[^1]: This is the footnote.&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Blockquote&lt;br&gt; &lt;br&gt;&amp;gt; blockquote&lt;br&gt; &lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Heading ID&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Ordered List&lt;br&gt; &lt;br&gt;1. First item&lt;br&gt;2. Second item&lt;br&gt;3. Third item&lt;br&gt; &lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### My Great Heading {#custom-id}&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Unordered List&lt;br&gt; &lt;br&gt;- First item&lt;br&gt;- Second item&lt;br&gt;- Third item&lt;br&gt; &lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Definition List&lt;br&gt; &lt;br&gt;term&lt;br&gt;: definition&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Code&lt;br&gt; &lt;br&gt;&lt;span style=&#34;color:black;background-color:#ddd&#34;&gt;`code`&lt;/span&gt;&lt;br&gt; &lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Strikethrough&lt;br&gt; &lt;br&gt;~~The world is flat.~~&lt;br&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Link&lt;br&gt; &lt;br&gt;&lt;a href=&#34;https://www.example.com&#34;&gt;&lt;span style=&#34;color:black;background-color:#ddd&#34;&gt;[title](https://www.example.com)&lt;/span&gt;&lt;/a&gt;&lt;br&gt; &lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Task List&lt;br&gt; &lt;br&gt;- [x] Write the press release&lt;br&gt;- [ ] Update the website&lt;br&gt;- [ ] Contact the media&lt;br&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;### Image&lt;br&gt; &lt;br&gt;![alt text](image.jpg)&lt;br&gt;&lt;/td&gt;
+    &lt;td class=&#34;tg-0pky&#34;&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Hugo sajt - izrada i besplatno hostovanje - 2.deo Izrada sajta i postavljanje</title>
       <link>https://speja969.github.io/post/hugo_sajt_2/</link>
@@ -268,9 +337,10 @@ Odskrolujemo do pred kraj i tu naš link:
       <description>
         
           &lt;hr&gt;
-&lt;p&gt;Već dugo želim da napravim svoj sajt. Rađale su se ideje šta bi mogao da bude sadržaj, bilo nešto stručno (mašinstvo) ili pak neki hobi sadržaj kao kompjuteri, Linux... Samo da provalim kako. Nisam programer pa ne znam ni jedan programski jezik da bih mogao sam završim sav posao. Plaćanje ne dolazi u obzir...&lt;br&gt;
-A onda sam našao &lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;ovo&lt;/a&gt;&lt;br&gt;
-&lt;em&gt;Addy&lt;/em&gt; me je zainteresovao te sam krenuo da kopam dublje i ustanovio sledeće:&lt;/p&gt;
+&lt;p&gt;Već dugo želim da napravim svoj sajt. Ređale su se ideje šta bi mogao da bude sadržaj; da li nešto stručno iz mašinstva ili pak neki hobi sadržaj kao kompjuteri, Linux...&lt;br&gt;
+Samo da provalim kako. Ne znam ni jedan programski jezik da bih mogao da završim sav posao sam. Plaćanje ne dolazi u obzir...&lt;br&gt;
+A onda sam našao &lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;ovo&lt;/a&gt;.&lt;br&gt;
+&lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;&lt;em&gt;Addy&lt;/em&gt;&lt;/a&gt; me je zainteresovao te sam krenuo da kopam dublje i ustanovio sledeće:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;Ima nekoliko programa za izradu statičkih sajtova za koje nije nije potrebno dobro poznavanje programskih jezika: &lt;strong&gt;&lt;em&gt;Jekill&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Gatsby&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Eleventy&lt;/em&gt;&lt;/strong&gt;...&lt;/li&gt;
@@ -285,7 +355,7 @@ Krenimo redom:&lt;/li&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Prvi korak je daunlodovanje najnovije verzije &lt;em&gt;Hugo&lt;/em&gt;-a sa &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;adrese&lt;/a&gt; i to klikom na link &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;hugo_extended_x.xx.x_Linux-64bit.deb&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; --&amp;gt; &lt;em&gt;Save file&lt;/em&gt; --&amp;gt; &lt;em&gt;OK&lt;/em&gt; --&amp;gt; &lt;em&gt;Hugo&lt;/em&gt; se daunloduje u &lt;em&gt;~/Download&lt;/em&gt; folderu.&lt;br&gt;
-&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_extended.png&#34; alt=&#34;Hugo instalacija&#34; title=&#34;Hugo instalacija&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_extended.png&#34; alt=&#34;Hugo instalacija&#34; title=&#34;Hugo_instalacija&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Otvorimo  &lt;em&gt;GDebi Package Installer&lt;/em&gt;&lt;br&gt;
@@ -303,7 +373,7 @@ Ako dobijete info da je starija verzija dostupna u softverskim kanalima (Debiano
 Proverimo ga ovako:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;git --version
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;git version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ako je instaliran dobićemo koja je verzija. Ukoliko nije instaliramo ga:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install git  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
