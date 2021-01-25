@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="" class="page">
   <head>
-<title>Clarity</title>
+<title>Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja | Clarity</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.79.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -14,17 +14,18 @@
   gtag('js', new Date());
   gtag('config', 'XXXXXXXXXX');
 </script>
+  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="">
+<meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="" />
-<meta property="og:url" content="https://speja969.github.io/archives/" />
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="https://speja969.github.io/images/thumbnail.png" />
+<meta name="twitter:title" content="Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja" />
+<meta property="og:url" content="https://speja969.github.io/post/hugo_sajt_4/" />
+<meta property="og:title" content="Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja" />
+<meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
+<meta property="og:image" content="https://speja969.github.io/images/building.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://speja969.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://speja969.github.io/icons/favicon-32x32.png'>
 <link rel="manifest" href='https://speja969.github.io/icons/site.webmanifest'>
@@ -32,7 +33,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://speja969.github.io/archives/">
+<link rel="canonical" href="https://speja969.github.io/post/hugo_sajt_4/">
 
     
 
@@ -139,24 +140,26 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title"></h1><div class="post_meta">
+    <h1 class="post_title">Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja</h1><div class="post_meta">
   
     <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
     <span class="post_date">
-      28 May 2019</span>
+      25 Jan 2021</span>
+      <a href='https://speja969.github.io/tags/markdown' class="post_tag button button_translucent">markdown
+      </a>
 </div>
 
     
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=&url=https%3a%2f%2fspeja969.github.io%2farchives%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=Hugo%20sajt%20-%20izrada%20i%20besplatno%20hostovanje%20-%204.deo%20Kreiranje%20vlastitog%20sadr%c5%beaja&url=https%3a%2f%2fspeja969.github.io%2fpost%2fhugo_sajt_4%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
     </a>
-    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fspeja969.github.io%2farchives%2f&t=" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fspeja969.github.io%2fpost%2fhugo_sajt_4%2f&t=Hugo%20sajt%20-%20izrada%20i%20besplatno%20hostovanje%20-%204.deo%20Kreiranje%20vlastitog%20sadr%c5%beaja" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -166,7 +169,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
     </a>
-    <a href="https://speja969.github.io/archives/" title="Copy Link" class="link link_yank">
+    <a href="https://speja969.github.io/post/hugo_sajt_4/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -174,7 +177,79 @@
   </div>
 
     
-    
+    <hr>
+<h3 id="kako-postaviti-stranu-post-sa-sopstvenim-sadržajem">Kako postaviti stranu (post) sa sopstvenim sadržajem</h3>
+<ol>
+<li>
+<p>U terminalu navedemo aktivni direktorijum na <em>mojnovisajt</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> /home/peja/projects/mojnovisajt
+</code></pre></div></li>
+<li>
+<p>Startujemo Huga</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>hugo serve -D
+</code></pre></div></li>
+<li>
+<p>U browseru otvorimo stranu http://localhost:1313/  čime otvaramo <em>Home</em> stranu sa linkovima na sve postove.<br>
+Sada u browseru možemo u realnom vremenu pratiti sve što radimo u Typori</p>
+</li>
+<li>
+<p>Otvorimo terminal:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>hugo new post/mojnovipost
+</code></pre></div></li>
+<li>
+<p>U stablu sa postovima Typore pojavljuje se <em>mojnovipost</em>, na koji kad kliknemo vidimo 3 linije sa najosnovnijim podacima.<br>
+Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti formatirani u <em>yaml</em>, <em>toml</em> ili <em>json</em>. Ovo se zove <a href="https://gohugo.io/content-management/front-matter/">Front Matter</a> i ja ga stavljam u <em>.toml</em>  kao što je i ranije pominjani konfiguracioni fajl <em>config.toml</em></p>
+</li>
+<li>
+<p>Evo kako bi mogao da izgleda <em>Front Matter</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="ln"> 1</span><span class="err">+++</span>
+<span class="ln"> 2</span><span class="nx">author</span> <span class="p">=</span> <span class="s2">&#34;Peja Badžić&#34;</span>
+<span class="ln"> 3</span><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;Hugo sajt - mojnovisajt&#34;</span>
+<span class="ln"> 4</span><span class="nx">date</span> <span class="p">=</span> <span class="s2">&#34;2021-01-24&#34;</span>
+<span class="ln"> 5</span><span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;Sample article showcasing basic Markdown syntax and formatting for HTML elements.&#34;</span>
+<span class="ln"> 6</span><span class="nx">featured</span> <span class="p">=</span> <span class="kc">false</span>
+<span class="ln"> 7</span><span class="nx">tags</span> <span class="p">=</span> <span class="p">[</span>
+<span class="ln"> 8</span>    <span class="s2">&#34;markdown&#34;</span><span class="p">,</span>
+<span class="ln"> 9</span> <span class="p">]</span>
+<span class="ln">10</span><span class="nx">categories</span> <span class="p">=</span> <span class="p">[</span>
+<span class="ln">11</span>    <span class="s2">&#34;Instalacija&#34;</span><span class="p">,</span>
+<span class="ln">12</span>    <span class="s2">&#34;syntax&#34;</span><span class="p">,</span>
+<span class="ln">13</span><span class="p">]</span>
+<span class="ln">14</span><span class="nx">series</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;Themes Guide&#34;</span><span class="p">]</span>
+<span class="ln">15</span><span class="nx">aliases</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;migrate-from-jekyl&#34;</span><span class="p">]</span>
+<span class="ln">16</span><span class="nx">thumbnail</span> <span class="p">=</span> <span class="s2">&#34;images/building.png&#34;</span>
+<span class="ln">17</span>   
+<span class="ln">18</span><span class="err">+++</span>
+</code></pre></div><p>Kao što vidimo ceo blok je &quot;ograđen&quot; sa dva reda od po tri plusa</p>
+</li>
+<li>
+<p>Nakon definisanja <em>F.M.</em>-a, sa <mark style="background-color: lightblue"><strong><em>CTRL+S</em></strong></mark> upamtimo  stranu (post) obavezno sa ekstenzijom <em>md</em> .</p>
+</li>
+<li>
+<p>Dalje unosimo tekst po želji, poštujući pravila <em>markdown</em> formatiranja pri čemu veliku pomoć pruža <em>Typora</em> formatirajući na poziv iz kontekstnog menija:<br>
+<img src="/img/hugo_sajt_4/kontekst.png" alt="Kontekstni meni" title="Kontekstni meni"></p>
+</li>
+<li>
+<p>Nekad je lakše duplirati postojeću stranu (kontekstni meni --&gt; <em>Duplicate</em>), pa izvršiti izmene.</p>
+</li>
+</ol>
+<h2 id="ažuriranje-promena-na-serveru">Ažuriranje promena na serveru</h2>
+<p>Skockali smo stranu ili više njih lokalno i želimo da to bude dostupno <em>online</em> na našem sajtu <em>mojnovisajt</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nb">cd</span> /home/peja/projects/mojnovisajt
+<span class="ln"> 2</span>git status  <span class="c1"># provera</span>
+<span class="ln"> 3</span>git add .
+<span class="ln"> 4</span>git commit -am <span class="s2">&#34;promena&#34;</span>
+<span class="ln"> 5</span>git status <span class="c1"># da se uverimo da nije ostalo nista za &#34;commit&#34;</span>
+<span class="ln"> 6</span>hugo
+<span class="ln"> 7</span><span class="nb">cd</span> public
+<span class="ln"> 8</span>git status
+<span class="ln"> 9</span>git add .
+<span class="ln">10</span>git commit -am <span class="s2">&#34;promena&#34;</span>
+<span class="ln">11</span>git status  <span class="c1"># da se uverimo da nije ostalo nista za commit</span>
+<span class="ln">12</span>git push -u origin master
+<span class="ln">13</span>
+</code></pre></div><p>Nakon ovoga, može da potraje i 10-15 minuta dok se na GitHub serveru ne ažuriraju promene.</p>
+
     
       
     
@@ -199,9 +274,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://speja969.github.io/post/hugo_sajt_4/" class="nav-link">Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja</a>
-      </li>
-      <li>
         <a href="https://speja969.github.io/post/mojnovipost/" class="nav-link">Hugo sajt - mojnovisajt</a>
       </li>
       <li>
@@ -221,6 +293,9 @@
       </li>
       <li>
         <a href="https://speja969.github.io/post/podes_posle_instal_5/" class="nav-link">Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp</a>
+      </li>
+      <li>
+        <a href="https://speja969.github.io/post/podes_posle_instal_4/" class="nav-link">Podešavanje posle instalacije - 4.deo Podešavanje izgleda</a>
       </li>
     </ul>
     <div>

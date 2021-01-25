@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="" class="page">
   <head>
-<title>Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown sintaksa | Clarity</title>
+<title>Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown i Typora | Clarity</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.79.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -21,9 +21,9 @@
 <meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown sintaksa" />
+<meta name="twitter:title" content="Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown i Typora" />
 <meta property="og:url" content="https://speja969.github.io/post/hugo_sajt_3/" />
-<meta property="og:title" content="Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown sintaksa" />
+<meta property="og:title" content="Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown i Typora" />
 <meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
 <meta property="og:image" content="https://speja969.github.io/images/building.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://speja969.github.io/icons/apple-touch-icon.png'>
@@ -140,7 +140,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown sintaksa</h1><div class="post_meta">
+    <h1 class="post_title">Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown i Typora</h1><div class="post_meta">
   
     <svg class="icon">
   <use xlink:href="#calendar"></use>
@@ -154,12 +154,12 @@
     
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=Hugo%20sajt%20-%20izrada%20i%20besplatno%20hostovanje%20-%203.deo%20Markdown%20sintaksa&url=https%3a%2f%2fspeja969.github.io%2fpost%2fhugo_sajt_3%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=Hugo%20sajt%20-%20izrada%20i%20besplatno%20hostovanje%20-%203.deo%20Markdown%20i%20Typora&url=https%3a%2f%2fspeja969.github.io%2fpost%2fhugo_sajt_3%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
     </a>
-    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fspeja969.github.io%2fpost%2fhugo_sajt_3%2f&t=Hugo%20sajt%20-%20izrada%20i%20besplatno%20hostovanje%20-%203.deo%20Markdown%20sintaksa" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fspeja969.github.io%2fpost%2fhugo_sajt_3%2f&t=Hugo%20sajt%20-%20izrada%20i%20besplatno%20hostovanje%20-%203.deo%20Markdown%20i%20Typora" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -178,6 +178,51 @@
 
     
     <hr>
+<h3 id="šta-je-_markdown_">Šta je <em>Markdown</em>?</h3>
+<p>Informacije o <em>Markdownu</em> možete dobiti na internetu na primer <a href="https://www.markdownguide.org/">ovde</a>.<br>
+To je jezik koji možemo koristiti za formatiranje tekstualnih dokumenata pri izradi Hugo sajta.<br>
+Nekom se neće svideti zato što nije <a href="https://sr.wikipedia.org/sr/WYSIWYG">WYSIWYG</a>, mada sama upotreba nije komplikovana.<br>
+Koja je procedura?</p>
+<ol>
+<li>Možemo koristiti neki od online Markdown generatora kao <a href="https://dillinger.io/">na primer</a> gde odmah vidimo kako će <em>Markdown</em> fajl biti prikazan u <em>WEB browseru</em>:<br>
+<img src="/img/hugo_sajt_3/dilinger.png" alt="Dilinger" title="Dilinger"></li>
+<li>Drugi pristup je upotreba nekog  <em>Markdown</em> editora, mada tekst editori kao što su <a href="https://atom.io/">Atom</a>,  <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://www.geany.org/">Geany</a>…, uz <em>markdown pluginove</em> odlično završavaju posao.</li>
+<li>Moj izbor je pao na čisti <em>Markdown</em> editor pod nazivom <a href="https://typora.io/">Typora</a>, i u nastavku ću pokazati kako se instalira i koristi.</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>   wget -qO - https://typora.io/linux/public-key.asc <span class="p">|</span> sudo apt-key add -
+<span class="ln">2</span>   sudo add-apt-repository <span class="s1">&#39;deb https://typora.io/linux ./&#39;</span>  <span class="c1"># add Typora&#39;s repository</span>
+<span class="ln">3</span>   sudo apt-get update
+<span class="ln">4</span>   sudo apt-get install typora  <span class="c1"># install typora</span>
+</code></pre></div><ol start="4">
+<li>
+<p>Typoru možemo startovati iz <em>Launchera</em> sa <mark style="background-color: lightblue"><strong><em>WIN+M</em></strong></mark>, ili iz glavnog padajućeg menija: <em>Applications</em> --&gt; <em>Office</em> --&gt; <em>Typora</em></p>
+</li>
+<li>
+<p>Otvorimo folder sa postovima <em>mojnovisajt</em> sajta:<br>
+<em>File --&gt; Open --&gt; Home --&gt; projects --&gt; mojnovisajt --&gt;  content --&gt; post</em></p>
+</li>
+<li>
+<p>Sa leve strane su svi postovi ostavljeni kao primer, te selektovanjem jednog od njih dobijamo <em>preview</em> sa desne strane.</p>
+</li>
+<li>
+<p>Klikom na simbol <mark style="background-color: lightblue"><strong><em>&lt;/&gt;</em></strong></mark> označen na slici, pojavljuje se čitav tekst formatiran u <em>Markdownu</em>.<br>
+<img src="/img/hugo_sajt_3/typora_1.png" alt="Toggle" title="Toggle"></p>
+</li>
+</ol>
+<h3 id="kako-postaviti-stranu-post-sa-sopstvenim-sadržajem">Kako postaviti stranu (post) sa sopstvenim sadržajem</h3>
+<ol>
+<li>
+<p>U terminalu navedemo aktivni direktorijum na <em>mojnovisajt</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">cd</span> /home/peja/projects/mojnovisajt
+</code></pre></div></li>
+<li>
+<p>Startujemo Huga</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>hugo serve -D
+</code></pre></div></li>
+<li>
+<p>U browseru otvorimo stranu http://localhost:1313/  čime otvaramo <em>Home</em> stranu sa linkovima na sve postove.</p>
+</li>
+</ol>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -279,6 +324,12 @@ Ovaj deo teksta je označen <mark style="background-color: lightblue">svetlo pla
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://speja969.github.io/post/hugo_sajt_4/" class="nav-link">Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja</a>
+      </li>
+      <li>
+        <a href="https://speja969.github.io/post/mojnovipost/" class="nav-link">Hugo sajt - mojnovisajt</a>
+      </li>
+      <li>
         <a href="https://speja969.github.io/post/hugo_sajt_2/" class="nav-link">Hugo sajt - izrada i besplatno hostovanje - 2.deo Izrada sajta i postavljanje</a>
       </li>
       <li>
@@ -296,24 +347,18 @@ Ovaj deo teksta je označen <mark style="background-color: lightblue">svetlo pla
       <li>
         <a href="https://speja969.github.io/post/podes_posle_instal_4/" class="nav-link">Podešavanje posle instalacije - 4.deo Podešavanje izgleda</a>
       </li>
-      <li>
-        <a href="https://speja969.github.io/post/podes_posle_instal_31/" class="nav-link">Podešavanje posle instalacije - 3.deo PCManFM-Qt</a>
-      </li>
-      <li>
-        <a href="https://speja969.github.io/post/min_buster_vbox_2/" class="nav-link">Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
       <nav class="tags_nav">
         <a href='https://speja969.github.io/categories/instalacija/' class="post_tag button button_translucent">
           INSTALACIJA
-          <span class="button_tally">10</span>
+          <span class="button_tally">12</span>
         </a>
         
         <a href='https://speja969.github.io/categories/syntax/' class="post_tag button button_translucent">
           SYNTAX
-          <span class="button_tally">10</span>
+          <span class="button_tally">12</span>
         </a>
         
         
@@ -324,7 +369,7 @@ Ovaj deo teksta je označen <mark style="background-color: lightblue">svetlo pla
       <nav class="tags_nav">
         <a href='https://speja969.github.io/series/themes-guide/' class="post_tag button button_translucent">
           THEMES-GUIDE
-          <span class="button_tally">10</span>
+          <span class="button_tally">12</span>
         </a>
         
         
@@ -335,7 +380,7 @@ Ovaj deo teksta je označen <mark style="background-color: lightblue">svetlo pla
       <nav class="tags_nav">
         <a href='https://speja969.github.io/tags/markdown/' class="post_tag button button_translucent">
           MARKDOWN
-          <span class="button_tally">8</span>
+          <span class="button_tally">10</span>
         </a>
         
         <a href='https://speja969.github.io/tags/virtualbox/' class="post_tag button button_translucent">
