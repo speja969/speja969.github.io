@@ -132,20 +132,6 @@ Koja je procedura?&lt;/p&gt;
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_3/typora_1.png&#34; alt=&#34;Toggle&#34; title=&#34;Toggle&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;kako-postaviti-stranu-post-sa-sopstvenim-sadržajem&#34;&gt;Kako postaviti stranu (post) sa sopstvenim sadržajem&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;U terminalu navedemo aktivni direktorijum na &lt;em&gt;mojnovisajt&lt;/em&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/peja/projects/mojnovisajt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Startujemo Huga&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;hugo serve -D
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;U browseru otvorimo stranu http://localhost:1313/  čime otvaramo &lt;em&gt;Home&lt;/em&gt; stranu sa linkovima na sve postove.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;style type=&#34;text/css&#34;&gt;
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
