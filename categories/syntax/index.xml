@@ -16,7 +16,15 @@
       <description>
         
           &lt;hr&gt;
-&lt;h3 id=&#34;kako-postaviti-stranu-post-sa-sopstvenim-sadržajem&#34;&gt;Kako postaviti stranu (post) sa sopstvenim sadržajem&lt;/h3&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7kako-postaviti-stranu-sa-sopstvenim-sadržajemmark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Kako postaviti stranu sa sopstvenim sadržajem&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje:&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;U terminalu navedemo aktivni direktorijum na &lt;em&gt;mojnovisajt&lt;/em&gt;:&lt;/p&gt;
@@ -71,7 +79,7 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
 &lt;p&gt;Nekad je lakše duplirati postojeću stranu (kontekstni meni --&amp;gt; &lt;em&gt;Duplicate&lt;/em&gt;), pa izvršiti izmene.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;ažuriranje-promena-na-serveru&#34;&gt;Ažuriranje promena na serveru&lt;/h2&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7ažuriranje-promena-na-serverumark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Ažuriranje promena na serveru&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;p&gt;Skockali smo stranu ili više njih lokalno i želimo da to bude dostupno &lt;em&gt;online&lt;/em&gt; na našem sajtu &lt;em&gt;mojnovisajt&lt;/em&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /home/peja/projects/mojnovisajt
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;git status  &lt;span class=&#34;c1&#34;&gt;# provera&lt;/span&gt;
@@ -101,7 +109,13 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
       <description>
         
           &lt;hr&gt;
-&lt;h3 id=&#34;šta-je-_markdown_&#34;&gt;Šta je &lt;em&gt;Markdown&lt;/em&gt;?&lt;/h3&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7šta-je-_markdown_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Šta je &lt;em&gt;Markdown&lt;/em&gt;?&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Informacije o &lt;em&gt;Markdownu&lt;/em&gt; možete dobiti na internetu na primer &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;ovde&lt;/a&gt;.&lt;br&gt;
 To je jezik koji možemo koristiti za formatiranje tekstualnih dokumenata pri izradi Hugo sajta.&lt;br&gt;
 Nekom se neće svideti zato što nije &lt;a href=&#34;https://sr.wikipedia.org/sr/WYSIWYG&#34;&gt;WYSIWYG&lt;/a&gt;, mada sama upotreba nije komplikovana.&lt;br&gt;
@@ -132,6 +146,7 @@ Koja je procedura?&lt;/p&gt;
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_3/typora_1.png&#34; alt=&#34;Toggle&#34; title=&#34;Toggle&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7_markdown-formatiranje_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Markdown formatiranje&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;style type=&#34;text/css&#34;&gt;
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -222,6 +237,12 @@ Ovaj deo teksta je označen &lt;mark style=&#34;background-color: lightblue&#34;
       <description>
         
           &lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;U prvom delu instalitali smo &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;GIT&lt;/em&gt;&lt;/strong&gt;. Sada treba izraditi sajt na računaru pre nego što ga okačimo na internet:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Prvo otvorimo terminal &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; i premestimo aktivni direktorijum na lokaciju gde će se nalaziti sajt ili napravimo novi (u primeru to je &lt;em&gt;~projects&lt;/em&gt; ) i startujemo sledeću komandu:&lt;/li&gt;
@@ -247,7 +268,7 @@ Folder &lt;mark style=&#34;background-color: silver&#34;&gt;&lt;strong&gt;&lt;em
 &lt;li&gt;Folder &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;layouts&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; u kome se smeštaju &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;.html&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; templejti, ima viši prioritet od foldera &lt;mark style=&#34;background-color: olive&#34;&gt;&lt;strong&gt;&lt;em&gt;/layouts&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; koji je podfolder &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;theme&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/li&gt;
 &lt;li&gt;Takođe, tu je i folder &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;public&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; koji se formira kad kreirane strane sklapamo u sajt: posle izvršenja u terminalu komande &lt;em&gt;hugo&lt;/em&gt;, ovde se pojavljuje sadržaj sajta konvertovan u &lt;em&gt;HTML&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;izbor-teme-_theme_&#34;&gt;IZBOR TEME (&lt;em&gt;Theme&lt;/em&gt;):&lt;/h3&gt;
+&lt;h4 id=&#34;mark-stylebackground-color-98afc7_izbor-teme-theme_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;IZBOR TEME (Theme):&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/h4&gt;
 &lt;p&gt;Na zvaničnoma HUGO sajtu imamo veliki izbor &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;tema&lt;/a&gt; koje možemo da koristimo. Ja sam izabrao &lt;a href=&#34;https://themes.gohugo.io/hugo-clarity/&#34;&gt;Clarity&lt;/a&gt; i u primeru će se podešavanja odnositi na nju. Svaka tema ima neke specifičnosti, pa je potrebno detaljno proučiti &lt;a href=&#34;https://themes.gohugo.io/hugo-clarity/#table-of-contents&#34;&gt;uputstvo&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -434,12 +455,12 @@ po &lt;em&gt;defaultu&lt;/em&gt; Hugo predviđa dve taxonomije: &lt;em&gt;catego
 &lt;ul&gt;
 &lt;li&gt;Vrlo je važno da &lt;em&gt;&lt;strong&gt;baseurl&lt;/strong&gt;&lt;/em&gt; bude data prema podešavanjima na GitHubu koja slede.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;otvorimo-nalog-na-githubu&#34;&gt;&lt;strong&gt;Otvorimo nalog na GitHubu&lt;/strong&gt;:&lt;/h4&gt;
+&lt;h4 id=&#34;mark-stylebackground-color-98afc7otvorimo-nalog-na-githubumark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Otvorimo nalog na GitHubu&lt;/strong&gt;:&lt;/mark&gt;&lt;/h4&gt;
 &lt;p&gt;U ovoj fazi već imamo ideju da li želimo da &lt;em&gt;hostovanje&lt;/em&gt; budućeg sajta plaćamo ili da iskoristimo neku besplatnu varijantu. Ovde obrađujemo ovo drugo.&lt;br&gt;
 Najjednostavniji način je otvaranje besplatnog naloga na &lt;a href=&#34;https://github.com/join?ref_cta=Sign+up&amp;amp;ref_loc=header+logged+out&amp;amp;ref_page=%2F&amp;amp;source=header-home&#34;&gt;&lt;em&gt;GitHubu&lt;/em&gt;&lt;/a&gt; uz korišćenje mogućnosti da Hugo sajt besplatno hostujemo koristeći servis  &lt;a href=&#34;https://pages.github.com/&#34;&gt;&lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/a&gt;.&lt;br&gt;
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/GitHub_account.png&#34; alt=&#34;GitHub account&#34; title=&#34;nalog na GitHubu&#34;&gt;&lt;br&gt;
 Poželjno je da izabrani &lt;em&gt;username&lt;/em&gt; što više asocira na sajt ili tematiku sajta, ukoliko je primarni razlog otvaranja naloga - hostovanje sajta.&lt;/p&gt;
-&lt;h4 id=&#34;okačimo-svoj-github-repozitorijum&#34;&gt;&lt;strong&gt;Okačimo svoj GitHub repozitorijum&lt;/strong&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7okačimo-svoj-github-repozitorijummark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Okačimo svoj GitHub repozitorijum&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;p&gt;Da bi postavili svoj sajt sa adresom &lt;em&gt;username.github.io&lt;/em&gt; , prvo treba postaviti repozitorijum u formatu &lt;em&gt;username.github.io&lt;/em&gt;&lt;br&gt;
 &lt;img src=&#34;https://speja969.github.io/img/hugo_sajt_2/github_repo.png&#34; alt=&#34;GitHub repo&#34; title=&#34;GitHub repo&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -482,8 +503,16 @@ Odskrolujemo do pred kraj i tu naš link:
       <description>
         
           &lt;hr&gt;
+&lt;h2 id=&#34;mark-stylebackground-color-98afc7hugo-i-git-instalacijamark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Hugo i GIT instalacija&lt;/strong&gt;:&lt;/mark&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Već dugo želim da napravim svoj sajt. Ređale su se ideje šta bi mogao da bude sadržaj; da li nešto stručno iz mašinstva ili pak neki hobi sadržaj kao kompjuteri, Linux...&lt;br&gt;
-Samo da provalim kako. Ne znam ni jedan programski jezik da bih mogao da završim sav posao sam. Plaćanje ne dolazi u obzir...&lt;br&gt;
+Samo da provalim kako. Bez znanja programskih jezika ne bih mogao da završim sav posao sam. Plaćanje ne dolazi u obzir...&lt;br&gt;
 A onda sam našao &lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;ovo&lt;/a&gt;.&lt;br&gt;
 &lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;&lt;em&gt;Addy&lt;/em&gt;&lt;/a&gt; me je zainteresovao te sam krenuo da kopam dublje i ustanovio sledeće:&lt;/p&gt;
 &lt;blockquote&gt;
