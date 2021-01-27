@@ -95,7 +95,7 @@ Naravno sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt
     </item>
     
     <item>
-      <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</title>
+      <title>Debian 10 u VirtualBox-u - 2.deo</title>
       <link>https://speja969.github.io/post/min_buster_vbox_2/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -103,10 +103,10 @@ Naravno sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;instaliranje-min-debiana-10-buster-u-virtualbox-u---2deo&#34;&gt;&lt;strong&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u&lt;/strong&gt; - 2.deo&lt;/h2&gt;
+&lt;h2 id=&#34;instaliranje-u-virtualbox-u---2deo&#34;&gt;&lt;strong&gt;Instaliranje u VirtualBox-u - 2.deo&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
-Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
@@ -220,7 +220,7 @@ Pored OpenBox WM, biće prikazana i instalacija najpotrebnijih programa koji po 
     </item>
     
     <item>
-      <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo</title>
+      <title>Debian 10 u VirtualBox-u</title>
       <link>https://speja969.github.io/post/min_buster_vbox/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -228,13 +228,13 @@ Pored OpenBox WM, biće prikazana i instalacija najpotrebnijih programa koji po 
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;instaliranje-min-debiana-10-buster-u-virtualbox-u---1deo&#34;&gt;&lt;strong&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u&lt;/strong&gt; - 1.deo&lt;/h2&gt;
+&lt;h2 id=&#34;instaliranje-u-virtualbox-u---1deo&#34;&gt;&lt;strong&gt;Instaliranje u VirtualBox-u - 1.deo&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Ovo je prvi iz serije postova u kojima ću detaljno obraditi instaliranje &lt;em&gt;Minimalnog Debiana 10 - Buster&lt;/em&gt; . Instaliranje je u &lt;em&gt;VirtualBoxu&lt;/em&gt;, ali postupak je gotovo isti kao kod HDD-a ili SSD-a. Particionisanje u toku instalacije sam ostavio po &lt;em&gt;default&lt;/em&gt; proceduri, ali ću u nekom od narednih postova pokazati detaljni (ručni) postupak.&lt;br&gt;
 U suštini instalacija sa osnovnim podešavanjima je pokrivena u 6 delova, a redosled je sledeći:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;

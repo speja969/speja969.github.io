@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postinstall settings on Clarity</title>
+    <link>https://speja969.github.io/tags/postinstall-settings/</link>
+    <description>Recent content in postinstall settings on Clarity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/tags/postinstall-settings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian 10 u VirtualBox-u - 6.deo</title>
+      <link>https://speja969.github.io/post/podes_posle_instal_6/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_6/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;swap-fajl&#34;&gt;&lt;strong&gt;SWAP&lt;/strong&gt; fajl&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pored particije gde se nalazi sistem, često vidimo i jednu čija je svrha možda nejasna. To je &lt;em&gt;SWAP&lt;/em&gt; particija. Više o tome na:&lt;br&gt;
+&lt;a href=&#34;https://itsfoss.com/swap-size/&#34;&gt;https://itsfoss.com/swap-size/&lt;/a&gt;&lt;br&gt;
+Uobičajeno je da se &lt;em&gt;SWAP&lt;/em&gt; particija instalira prilikom instalacije &lt;em&gt;OS&lt;/em&gt;-a, mada može da se doda bilo kada. Alternativno, moguće je umesto particije formirati &lt;em&gt;SWAP&lt;/em&gt; fajl koji ima istu namenu.
+Obe škole mišljenja imaju argumente za i protiv, ali postoji i treća koja negira potrebu za &lt;em&gt;SWAP&lt;/em&gt; prostorom kod modernih računara sa 32 GB RAM-a i više.&lt;br&gt;
+Na datom linku dobićete informacije za donošenje odluke da li da uopšte predvidite &lt;em&gt;SWAP&lt;/em&gt; prostor i ako da, koliko prostora odvojiti za njega.
+Odlučite li se ipak za &lt;em&gt;SWAP&lt;/em&gt; fajl, evo kako bih ja to uradio u &lt;em&gt;Debianu&lt;/em&gt;:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Otvorimo terminal sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo fallocate -l 1G /swapfile   &lt;span class=&#34;c1&#34;&gt;# da swap fajl bude 1 GB&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Ako komanda fallocate ne radi onda idemo ovako:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/swapfile &lt;span class=&#34;nv&#34;&gt;bs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1048576&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Definišemo ovlašćenja:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo chmod &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt; /swapfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Koristimo &lt;em&gt;mkswap utility&lt;/em&gt; da &lt;em&gt;SWAP&lt;/em&gt; fajl stavimo u funkciju:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo mkswap /swapfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Aktiviramo ga u novoj ulozi:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo swapon /swapfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;da bi &lt;em&gt;SWAP&lt;/em&gt; fajl ostao trajno (i posle restarta) otvorimo /etc/fstab u na primer nano editoru i dodamo sledeću liniju:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo nano /etc/fstab  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;dodajemo liniju kao na slici: &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;/swapfile swap swap defaults 0 0&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_6/swapfile.png&#34; alt=&#34;swapfile&#34; title=&#34;swapfile&#34;&gt;
+7. Na kraju provera da li je swap fajl aktivan::&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo swapon --show
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Provera &lt;em&gt;swappiness&lt;/em&gt; vrednosti odnosno koliko često sistem koristi &lt;em&gt;SWAP&lt;/em&gt; prostor:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cat /proc/sys/vm/swappiness
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Default&lt;/em&gt; je 60.&lt;br&gt;
+Vrednost je izmedju 0 - 100.&lt;br&gt;
+Što je bliže nuli znači da sistem izbegava korišćenje &lt;em&gt;SWAP&lt;/em&gt; prostora.&lt;br&gt;
+Možemo zadati sistemu &lt;em&gt;swappiness&lt;/em&gt; vrednost npr. 10:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo sysctl vm.swappiness&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Da bi ovaj parametar ostao trajno (i posle restarta):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo nano /etc/sysctl.conf​
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;vm.swappiness&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;# dodajemo ovu liniju fajlu /etc/sysctl.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;Brisanje &lt;em&gt;SWAP&lt;/em&gt; fajla:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo swapoff -v /swapfile    &lt;span class=&#34;c1&#34;&gt;# prvo deaktiviranje&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo nano /etc/fstab
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# brišemo liniju &amp;#34;/swapfile swap swap defaults 0 0 &amp;#34;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;CTRL+O&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; --&amp;gt; &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;ENTER&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; --&amp;gt; &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;CTRL+X&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;   upamti promene i zatvara &lt;strong&gt;&lt;em&gt;nano&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo rm /swapfile  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Debian 10 u VirtualBox-u - 5.deo</title>
+      <link>https://speja969.github.io/post/podes_posle_instal_5/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_5/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;muzički-plejer-_ncmpcpp_&#34;&gt;Muzički plejer &lt;strong&gt;&lt;em&gt;ncmpcpp&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;  &lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;ncmpcpp&lt;/em&gt;&lt;/strong&gt; startujemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)  --&amp;gt; &lt;em&gt;ncmpcpp&lt;/em&gt; :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/ncmpcpp.png&#34; alt=&#34;ncmpcpp&#34; title=&#34;ncmpcpp&#34;&gt;
+2. Dobijamo ovo:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pocetni_ncmpcpp.png&#34; alt=&#34;ncmpcpp&#34; title=&#34;ncmpcpp&#34;&gt;
+3. Da bi se koristio treba da izmenimo putanju do foldera sa muzičkim fajlovima:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Otvorimo fajl menadžer PCManFM-QT sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+F&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; , zatim &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;F6&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; da bi dobili &lt;em&gt;split view&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Sa jedne strane otvorimo folder &lt;em&gt;.mpd&lt;/em&gt; , a sa druge folder u kome čuvamo muziku (u primeru je to &lt;em&gt;Muzika&lt;/em&gt; u šerovanom folderu &lt;em&gt;sf_8300-podaci&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pcmanfm-qt_mpd.png&#34; alt=&#34;pcmanfm-qt_mpd&#34; title=&#34;pcmanfm-qt_mpd&#34;&gt;
+4. Desnim klikom na folder &lt;em&gt;MUZIKA&lt;/em&gt; iskopiramo putanju u klipbord,
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/MUZIKA.png&#34; alt=&#34;MUZIKA&#34; title=&#34;MUZIKA&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Sa druge strane desnim klikom na fajl &lt;em&gt;mpd.conf&lt;/em&gt; otvaramo ga u editoru &lt;em&gt;Geany&lt;/em&gt; ili &lt;em&gt;Mousepad&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/mpd.png&#34; alt=&#34;mpd&#34; title=&#34;mpd&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Obe &lt;em&gt;default&lt;/em&gt; putanje &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;~/Music&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; zamenimo onom iz klipborda:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/mpd.conf.png&#34; alt=&#34;mpd,conf&#34; title=&#34;mpd.conf&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Istu zamenu &lt;em&gt;default&lt;/em&gt; putanje &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;~/Music&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;  uradimo i u fajlu &lt;em&gt;config&lt;/em&gt; u folderu &lt;em&gt;.ncmpcpp&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/pcmanfm-qt_config.png&#34; alt=&#34;pcmanfm-qt config&#34; title=&#34;pcmanfm-qt config&#34;&gt;
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_5/config.png&#34; alt=&#34;config&#34; title=&#34;config&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+X&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;  --&amp;gt; &lt;em&gt;Reboot&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Debian 10 u VirtualBox-u - 4.deo</title>
+      <link>https://speja969.github.io/post/podes_posle_instal_4/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_4/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;podešavanje-izgleda&#34;&gt;&lt;strong&gt;Podešavanje izgleda&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; &lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Podešavanje izgleda počećemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;) --&amp;gt; Applications --&amp;gt; Settings --&amp;gt; Customize Look and Feel:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Customize_Look_and_Feel.png&#34; alt=&#34;Customize Look and Feel&#34; title=&#34;Customize Look and Feel.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dobijamo ovo:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Nepodeseni_CLF.png&#34; alt=&#34;Nepodešeni Customize Look and Feel&#34; title=&#34;Nepodešeni Customize Look and Feel&#34;&gt;
+3. U tabu &lt;em&gt;Widget&lt;/em&gt; izaberemo &lt;em&gt;style&lt;/em&gt; prema želji jer se &lt;em&gt;preview&lt;/em&gt; izabrane teme odmah pojavljuje sa desne strane. Moja topla preporuka je da izaberete &lt;em&gt;Arc-Dark&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Arc-Dark.png&#34; alt=&#34;Arc-Dark&#34; title=&#34;Arc-Dark&#34;&gt;
+4. U tabu &lt;em&gt;Icon Theme&lt;/em&gt; između ponuđenih opcija izaberemo izgled ikonica
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/Icon_Theme.png&#34; alt=&#34;Gnome&#34; title=&#34;Gnome&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Podesavanje QT tema na GTK baziranom sistemu:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instaliramo &lt;em&gt;qt4-qtconfig&lt;/em&gt; i &lt;em&gt;qt5-style-plugins&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt-get install qt4-qtconfig
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo apt-get install qt5-style-plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Otvorimo &lt;em&gt;QT 4 Settings&lt;/em&gt; aplikaciju, u tabu Appearance promenimo &lt;em&gt;GUI Style&lt;/em&gt; u &lt;em&gt;GTK+&lt;/em&gt; i upamtimo promenu sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;CTRL+S&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/QT_4_Settings.png&#34; alt=&#34;QT 4 Settings&#34; title=&#34;QT 4 Settings&#34;&gt;
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_4/GTKplus.png&#34; alt=&#34;GTKplus&#34; title=&#34;GTKplus&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Za QT 5 aplikacije:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo su root
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;QT_QPA_PLATFORMTHEME=gtk2&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/environment
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Debian 10 u VirtualBox-u - 3.deo</title>
+      <link>https://speja969.github.io/post/podes_posle_instal_31/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://speja969.github.io/post/podes_posle_instal_31/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;pcmanfm-qt&#34;&gt;&lt;strong&gt;PCManFM-Qt&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Posle instaliranja Debiana treba da izvršimo neka podešavanja.
+Najpre čemo podesiti fajl menadžer &lt;em&gt;PCManFM-Qt&lt;/em&gt; .&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;U &lt;em&gt;tint2&lt;/em&gt; taskbaru kliknemo na ikonicu PCManFM-Qt fajl menadžera (strelica) ili &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+F&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/levi_klik_pcmanfm.png&#34; alt=&#34;Startujemo PCManFM-Qt&#34; title=&#34;Startujemo PCManFM-Qt&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pojavljuje se nepodešeni PCManFM-Qt:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/PCManFM-QT.png&#34; alt=&#34;PCManFM-Qt&#34; title=&#34;PCManFM-Qt&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Iz taba &lt;em&gt;Edit&lt;/em&gt; u padajućem meniju kliknemo na &lt;em&gt;Preferences&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/Edit_Preferences.png&#34; alt=&#34;Preferences&#34; title=&#34;Preferences&#34;&gt;
+Pod &lt;em&gt;Behavior&lt;/em&gt; opciono možemo za &lt;em&gt;Default view mode&lt;/em&gt; postaviti na primer &lt;em&gt;Detailed List View&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pod &lt;em&gt;Advanced&lt;/em&gt; za terminal emulator izaberemo &lt;em&gt;terminator&lt;/em&gt; , a za &lt;em&gt;Archiver integration&lt;/em&gt; &lt;em&gt;xarchiver&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/Advanced.png&#34; alt=&#34;Advanced&#34; title=&#34;Advanced&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Posle podešavanja to izgleda ovako:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/posle_podesavanja.png&#34; alt=&#34;podeseno&#34; title=&#34;podešeno&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ujedno možemo podesiti i terminal emulator: &lt;em&gt;Terminator&lt;/em&gt; nakon što ga startujemo sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; ili iz glavnog padajućeg menija: &lt;strong&gt;&lt;em&gt;Applications&lt;/em&gt;&lt;/strong&gt; --&amp;gt; &lt;strong&gt;&lt;em&gt;System&lt;/em&gt;&lt;/strong&gt; --&amp;gt; &lt;strong&gt;&lt;em&gt;Terminator&lt;/em&gt;&lt;/strong&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/nepodeseni_terminator.png&#34; alt=&#34;Win+t&#34; title=&#34;Win+t&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Desnim klikom na radnu površinu terminala iz kontekstnog menija izaberemo &lt;em&gt;Preferences&lt;/em&gt;:
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/terminator_context_preferences.png&#34; alt=&#34;Preferences&#34; title=&#34;Preferences&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Iz taba &lt;em&gt;Profiles&lt;/em&gt; pod &lt;em&gt;General&lt;/em&gt; odčekiramo &lt;em&gt;show titlebar&lt;/em&gt; pa klik na &lt;em&gt;Close&lt;/em&gt; :
+&lt;img src=&#34;https://speja969.github.io/img/podes_posle_instal_31/terminator_profile_general_show_titlebar.png&#34; alt=&#34;odcekirati&#34; title=&#34;odcekirati&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

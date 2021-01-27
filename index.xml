@@ -8,7 +8,7 @@
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
     <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://speja969.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo sajt - izrada i besplatno hostovanje - 4.deo Kreiranje vlastitog sadržaja</title>
+      <title>Hugo sajt - 4.deo</title>
       <link>https://speja969.github.io/post/hugo_sajt_4/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -16,14 +16,14 @@
       <description>
         
           &lt;hr&gt;
-&lt;h3 id=&#34;mark-stylebackground-color-98afc7kako-postaviti-stranu-sa-sopstvenim-sadržajemmark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Kako postaviti stranu sa sopstvenim sadržajem&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
-&lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje:&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7kreiranje-vlastitog-sadržajamark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Kreiranje vlastitog sadržaja&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -101,7 +101,7 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
     </item>
     
     <item>
-      <title>Hugo sajt - izrada i besplatno hostovanje - 3.deo Markdown i Typora</title>
+      <title>Hugo sajt - 3.deo</title>
       <link>https://speja969.github.io/post/hugo_sajt_3/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -109,13 +109,15 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
       <description>
         
           &lt;hr&gt;
-&lt;h3 id=&#34;mark-stylebackground-color-98afc7šta-je-_markdown_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Šta je &lt;em&gt;Markdown&lt;/em&gt;?&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;mark-stylebackground-color-98afc7_markdown_-i-_typora_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Markdown&lt;/em&gt; i &lt;em&gt;Typora&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
+&lt;hr&gt;
 &lt;p&gt;Informacije o &lt;em&gt;Markdownu&lt;/em&gt; možete dobiti na internetu na primer &lt;a href=&#34;https://www.markdownguide.org/&#34;&gt;ovde&lt;/a&gt;.&lt;br&gt;
 To je jezik koji možemo koristiti za formatiranje tekstualnih dokumenata pri izradi Hugo sajta.&lt;br&gt;
 Nekom se neće svideti zato što nije &lt;a href=&#34;https://sr.wikipedia.org/sr/WYSIWYG&#34;&gt;WYSIWYG&lt;/a&gt;, mada sama upotreba nije komplikovana.&lt;br&gt;
@@ -229,7 +231,7 @@ Ovaj deo teksta je označen &lt;mark style=&#34;background-color: lightblue&#34;
     </item>
     
     <item>
-      <title>Hugo sajt - izrada i besplatno hostovanje - 2.deo Izrada sajta i postavljanje</title>
+      <title>Hugo sajt - 2.deo</title>
       <link>https://speja969.github.io/post/hugo_sajt_2/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -240,9 +242,12 @@ Ovaj deo teksta je označen &lt;mark style=&#34;background-color: lightblue&#34;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje online&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;mark-stylebackground-color-98afc7izrada-sajta-i-postavljanje-_online_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Izrada sajta i postavljanje &lt;em&gt;online&lt;/em&gt;&lt;/strong&gt;:&lt;/mark&gt;&lt;/h2&gt;
+&lt;hr&gt;
 &lt;p&gt;U prvom delu instalitali smo &lt;strong&gt;&lt;em&gt;Hugo&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;GIT&lt;/em&gt;&lt;/strong&gt;. Sada treba izraditi sajt na računaru pre nego što ga okačimo na internet:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Prvo otvorimo terminal &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;WIN+T&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; i premestimo aktivni direktorijum na lokaciju gde će se nalaziti sajt ili napravimo novi (u primeru to je &lt;em&gt;~projects&lt;/em&gt; ) i startujemo sledeću komandu:&lt;/li&gt;
@@ -495,7 +500,7 @@ Odskrolujemo do pred kraj i tu naš link:
     </item>
     
     <item>
-      <title>Hugo sajt - izrada i besplatno hostovanje - 1.deo instalacija</title>
+      <title>Hugo sajt</title>
       <link>https://speja969.github.io/post/hugo_sajt_1/</link>
       <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -503,14 +508,15 @@ Odskrolujemo do pred kraj i tu naš link:
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;mark-stylebackground-color-98afc7hugo-i-git-instalacijamark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Hugo i GIT instalacija&lt;/strong&gt;:&lt;/mark&gt;&lt;/h2&gt;
-&lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;mark-stylebackground-color-98afc7hugo-i-git---instalacijamark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Hugo i GIT - instalacija&lt;/strong&gt;:&lt;/mark&gt;&lt;/h2&gt;
+&lt;hr&gt;
 &lt;p&gt;Već dugo želim da napravim svoj sajt. Ređale su se ideje šta bi mogao da bude sadržaj; da li nešto stručno iz mašinstva ili pak neki hobi sadržaj kao kompjuteri, Linux...&lt;br&gt;
 Samo da provalim kako. Bez znanja programskih jezika ne bih mogao da završim sav posao sam. Plaćanje ne dolazi u obzir...&lt;br&gt;
 A onda sam našao &lt;a href=&#34;https://addy-dclxvi.github.io/post/hugo/&#34;&gt;ovo&lt;/a&gt;.&lt;br&gt;
@@ -647,7 +653,7 @@ Naravno sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt
     </item>
     
     <item>
-      <title>Podešavanje posle instalacije - 6.deo SWAP fajl</title>
+      <title>Debian 10 u VirtualBox-u - 6.deo</title>
       <link>https://speja969.github.io/post/podes_posle_instal_6/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -655,14 +661,14 @@ Naravno sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;podešavanje-posle-instalacije---6deo-swap-fajl&#34;&gt;Podešavanje posle instalacije - 6.deo &lt;strong&gt;SWAP&lt;/strong&gt; fajl&lt;/h2&gt;
+&lt;h2 id=&#34;swap-fajl&#34;&gt;&lt;strong&gt;SWAP&lt;/strong&gt; fajl&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
-Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/p&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Pored particije gde se nalazi sistem, često vidimo i jednu čija je svrha možda nejasna. To je &lt;em&gt;SWAP&lt;/em&gt; particija. Više o tome na:&lt;br&gt;
 &lt;a href=&#34;https://itsfoss.com/swap-size/&#34;&gt;https://itsfoss.com/swap-size/&lt;/a&gt;&lt;br&gt;
@@ -727,7 +733,7 @@ Možemo zadati sistemu &lt;em&gt;swappiness&lt;/em&gt; vrednost npr. 10:&lt;/p&g
     </item>
     
     <item>
-      <title>Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp</title>
+      <title>Debian 10 u VirtualBox-u - 5.deo</title>
       <link>https://speja969.github.io/post/podes_posle_instal_5/</link>
       <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -735,13 +741,13 @@ Možemo zadati sistemu &lt;em&gt;swappiness&lt;/em&gt; vrednost npr. 10:&lt;/p&g
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;podešavanje-posle-instalacije---5deo-muzički-plejer-ncmpcpp&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer &lt;strong&gt;ncmpcpp&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;muzički-plejer-_ncmpcpp_&#34;&gt;Muzički plejer &lt;strong&gt;&lt;em&gt;ncmpcpp&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
-Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;  &lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;ncmpcpp&lt;/em&gt;&lt;/strong&gt; startujemo desnim klikom na radnu površinu (&lt;em&gt;Wallpaper&lt;/em&gt;)  --&amp;gt; &lt;em&gt;ncmpcpp&lt;/em&gt; :&lt;/li&gt;
@@ -783,7 +789,7 @@ Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;br&gt;
     </item>
     
     <item>
-      <title>Podešavanje posle instalacije - 4.deo Podešavanje izgleda</title>
+      <title>Debian 10 u VirtualBox-u - 4.deo</title>
       <link>https://speja969.github.io/post/podes_posle_instal_4/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -791,12 +797,12 @@ Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;br&gt;
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;podešavanje-posle-instalacije---4deo-podešavanje-izgleda&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 4.deo Podešavanje izgleda&lt;/h2&gt;
+&lt;h2 id=&#34;podešavanje-izgleda&#34;&gt;&lt;strong&gt;Podešavanje izgleda&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
-Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; &lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -842,7 +848,7 @@ Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;br&gt;
     </item>
     
     <item>
-      <title>Podešavanje posle instalacije - 3.deo PCManFM-Qt</title>
+      <title>Debian 10 u VirtualBox-u - 3.deo</title>
       <link>https://speja969.github.io/post/podes_posle_instal_31/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -850,11 +856,11 @@ Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;br&gt;
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;podešavanje-posle-instalacije---3deo-pcmanfm-qt&#34;&gt;&lt;strong&gt;Podešavanje posle instalacije&lt;/strong&gt; - 3.deo PCManFM-Qt&lt;/h2&gt;
+&lt;h2 id=&#34;pcmanfm-qt&#34;&gt;&lt;strong&gt;PCManFM-Qt&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
-Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_6/&#34;&gt;Podešavanje posle instalacije - 6.deo SWAP fajl&lt;/a&gt;&lt;/p&gt;
@@ -901,7 +907,7 @@ Pod &lt;em&gt;Behavior&lt;/em&gt; opciono možemo za &lt;em&gt;Default view mode
     </item>
     
     <item>
-      <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo</title>
+      <title>Debian 10 u VirtualBox-u - 2.deo</title>
       <link>https://speja969.github.io/post/min_buster_vbox_2/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -909,10 +915,10 @@ Pod &lt;em&gt;Behavior&lt;/em&gt; opciono možemo za &lt;em&gt;Default view mode
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;instaliranje-min-debiana-10-buster-u-virtualbox-u---2deo&#34;&gt;&lt;strong&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u&lt;/strong&gt; - 2.deo&lt;/h2&gt;
+&lt;h2 id=&#34;instaliranje-u-virtualbox-u---2deo&#34;&gt;&lt;strong&gt;Instaliranje u VirtualBox-u - 2.deo&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/a&gt;&lt;br&gt;
-Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;br&gt;
+&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_5/&#34;&gt;Podešavanje posle instalacije - 5.deo Muzički plejer ncmpcpp&lt;/a&gt;&lt;br&gt;
@@ -1026,7 +1032,7 @@ Pored OpenBox WM, biće prikazana i instalacija najpotrebnijih programa koji po 
     </item>
     
     <item>
-      <title>Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo</title>
+      <title>Debian 10 u VirtualBox-u</title>
       <link>https://speja969.github.io/post/min_buster_vbox/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -1034,13 +1040,13 @@ Pored OpenBox WM, biće prikazana i instalacija najpotrebnijih programa koji po 
       <description>
         
           &lt;hr&gt;
-&lt;h2 id=&#34;instaliranje-min-debiana-10-buster-u-virtualbox-u---1deo&#34;&gt;&lt;strong&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u&lt;/strong&gt; - 1.deo&lt;/h2&gt;
+&lt;h2 id=&#34;instaliranje-u-virtualbox-u---1deo&#34;&gt;&lt;strong&gt;Instaliranje u VirtualBox-u - 1.deo&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Ovo je prvi iz serije postova u kojima ću detaljno obraditi instaliranje &lt;em&gt;Minimalnog Debiana 10 - Buster&lt;/em&gt; . Instaliranje je u &lt;em&gt;VirtualBoxu&lt;/em&gt;, ali postupak je gotovo isti kao kod HDD-a ili SSD-a. Particionisanje u toku instalacije sam ostavio po &lt;em&gt;default&lt;/em&gt; proceduri, ali ću u nekom od narednih postova pokazati detaljni (ručni) postupak.&lt;br&gt;
 U suštini instalacija sa osnovnim podešavanjima je pokrivena u 6 delova, a redosled je sledeći:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/min_Buster_Vbox_2/1969416_128.png&#34; alt=&#34;:left&#34;&gt;&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 1.deo&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/min_buster_vbox_2/&#34;&gt;Instaliranje min. Debiana 10 (Buster) u VirtualBox-u - 2.deo&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_31/&#34;&gt;Podešavanje posle instalacije - 3.deo PCManFM-Qt&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/podes_posle_instal_4/&#34;&gt;Podešavanje posle instalacije - 4.deo Podešavanje izgleda&lt;/a&gt;&lt;br&gt;
