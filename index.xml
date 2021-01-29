@@ -17,11 +17,11 @@
         
           &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje:&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #50C7FF&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje:&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;mark style=&#34;background-color: #78EFFF&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/mark&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;mark-stylebackground-color-98afc7kreiranje-vlastitog-sadržajamark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Kreiranje vlastitog sadržaja&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;hr&gt;
@@ -110,10 +110,10 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
         
           &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #50C7FF&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #78EFFF&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;mark-stylebackground-color-98afc7_markdown_-i-_typora_mark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Markdown&lt;/em&gt; i &lt;em&gt;Typora&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
@@ -217,15 +217,30 @@ Uz ovo treba dodati i sledeće:
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Ovaj deo teksta je označen &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;žutom&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; bojom.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Formatirano u &lt;em&gt;Markdownu&lt;/em&gt;:&lt;br&gt;
-Ovaj deo teksta je označen &lt;mark&gt;žutom&lt;/mark&gt; bojom.&lt;br&gt;
-Ako želimo da boju izaberemo sami:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;U &lt;em&gt;Markdownu&lt;/em&gt; fajlu (.md):&lt;br&gt;
+Ovaj deo teksta je označen &lt;mark&gt;žutom&lt;/mark&gt; bojom.&lt;/p&gt;
+&lt;p&gt;Ako želimo da boju izaberemo sami:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Ovaj deo teksta je označen &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;background-color: lightblue&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;svetlo plavom&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;mark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; bojom.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Formatirano u &lt;em&gt;Markdownu&lt;/em&gt;:&lt;br&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;U &lt;em&gt;Markdownu&lt;/em&gt; fajlu (.md):&lt;br&gt;
 Ovaj deo teksta je označen &lt;mark style=&#34;background-color: lightblue&#34;&gt;svetlo plavom&lt;/mark&gt; bojom.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;U svakom slučaju umesto naziva boje (blue, lightblue, olive, silver...)  može se koristiti heksadecimalni kod boje. Više o tome &lt;a href=&#34;https://www.computerhope.com/htmcolor.htm&#34;&gt;ovde&lt;/a&gt;.&lt;/p&gt;
-
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Podvlačenje teksta takođe nije predviđeno &lt;em&gt;Markdown&lt;/em&gt; sintaksom. Zato koristimo &lt;em&gt;HTML&lt;/em&gt; blokove koji se usađuju po potrebi:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Sada sledi &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;podvučeni&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; tekst.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;U &lt;em&gt;Markdownu&lt;/em&gt; fajlu (.md):&lt;br&gt;
+Sada sledi &lt;ins&gt;podvučeni&lt;/ins&gt; tekst.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Slike smeštamo u folder &lt;em&gt;mojnovisajt/static/img&lt;/em&gt; ,nakon što napravimo folder &lt;em&gt;img&lt;/em&gt; koga po &lt;em&gt;defaultu&lt;/em&gt; nema.&lt;br&gt;
+U stvari , ako planiramo veći broj slika, biće preglednije da se unutar foldera &lt;em&gt;img&lt;/em&gt; naprave podfolderi sa imenima strana i slike pakuju shodno tome. Putanja slike se računa iza foldera &lt;em&gt;static&lt;/em&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  ![&lt;span class=&#34;nt&#34;&gt;alternativni tekst&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;/img/ime_foldera_po_imenu_strane/slika_1.png&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
     </item>
@@ -240,9 +255,9 @@ Ovaj deo teksta je označen &lt;mark style=&#34;background-color: lightblue&#34;
         
           &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #50C7FF&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_1&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje online&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #78EFFF&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje online&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -509,8 +524,8 @@ Odskrolujemo do pred kraj i tu naš link:
         
           &lt;hr&gt;
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/hugo_sajt/hugo_128x128.gif&#34; alt=&#34;:left&#34; title=&#34;Hugo animacija&#34;&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: #43BFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
-&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #50C7FF&#34;&gt;&lt;strong&gt;&lt;em&gt;Hugo sajt - izrada i besplatno hostovanje&lt;/em&gt;:&lt;/strong&gt;&lt;/mark&gt;&lt;br&gt;
+&lt;mark style=&#34;background-color: #78EFFF&#34;&gt;&lt;em&gt;1.deo - instaliranje Huga&lt;/em&gt;&lt;/mark&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_2&#34;&gt;&lt;em&gt;2.deo - Izrada sajta i postavljanje na WEB&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_3&#34;&gt;&lt;em&gt;3.deo - Markdown i Typora&lt;/em&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://speja969.github.io/post/hugo_sajt_4/&#34;&gt;&lt;em&gt;4.deo - Kreiranje vlastitog sadržaja&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;

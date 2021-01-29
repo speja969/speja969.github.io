@@ -179,10 +179,10 @@
     
     <hr>
 <p><img src="/img/hugo_sajt/hugo_128x128.gif" alt=":left" title="Hugo animacija"><br>
-<mark style="background-color: #43BFC7"><strong><em>Hugo sajt - izrada i besplatno hostovanje</em>:</strong></mark><br>
+<mark style="background-color: #50C7FF"><strong><em>Hugo sajt - izrada i besplatno hostovanje</em>:</strong></mark><br>
 <a href="https://speja969.github.io/post/hugo_sajt_1"><em>1.deo - instaliranje Huga</em></a><br>
 <a href="https://speja969.github.io/post/hugo_sajt_2"><em>2.deo - Izrada sajta i postavljanje na WEB</em></a><br>
-<mark style="background-color: lightblue"><em>3.deo - Markdown i Typora</em></mark><br>
+<mark style="background-color: #78EFFF"><em>3.deo - Markdown i Typora</em></mark><br>
 <a href="https://speja969.github.io/post/hugo_sajt_4/"><em>4.deo - Kreiranje vlastitog sadržaja</em></a></p>
 <hr>
 <h3 id="mark-stylebackground-color-98afc7_markdown_-i-_typora_mark"><mark style="background-color: #98AFC7"><strong><em>Markdown</em> i <em>Typora</em></strong></mark></h3>
@@ -286,15 +286,30 @@ Uz ovo treba dodati i sledeće:
 </ul>
 <blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="ln">1</span>Ovaj deo teksta je označen <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>žutom<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> bojom.
-</code></pre></div><p>Formatirano u <em>Markdownu</em>:<br>
-Ovaj deo teksta je označen <mark>žutom</mark> bojom.<br>
-Ako želimo da boju izaberemo sami:</p>
+</code></pre></div><p>U <em>Markdownu</em> fajlu (.md):<br>
+Ovaj deo teksta je označen <mark>žutom</mark> bojom.</p>
+<p>Ako želimo da boju izaberemo sami:</p>
 <div class="highlight"><pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="ln">1</span>Ovaj deo teksta je označen <span class="p">&lt;</span><span class="nt">mark</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background-color: lightblue&#34;</span><span class="p">&gt;</span>svetlo plavom<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> bojom.
-</code></pre></div><p>Formatirano u <em>Markdownu</em>:<br>
+</code></pre></div><p>U <em>Markdownu</em> fajlu (.md):<br>
 Ovaj deo teksta je označen <mark style="background-color: lightblue">svetlo plavom</mark> bojom.</p>
 </blockquote>
 <p>U svakom slučaju umesto naziva boje (blue, lightblue, olive, silver...)  može se koristiti heksadecimalni kod boje. Više o tome <a href="https://www.computerhope.com/htmcolor.htm">ovde</a>.</p>
-
+<ul>
+<li>
+<p>Podvlačenje teksta takođe nije predviđeno <em>Markdown</em> sintaksom. Zato koristimo <em>HTML</em> blokove koji se usađuju po potrebi:</p>
+<blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span>Sada sledi <span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>podvučeni<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span> tekst.
+</code></pre></div><p>U <em>Markdownu</em> fajlu (.md):<br>
+Sada sledi <ins>podvučeni</ins> tekst.</p>
+</blockquote>
+</li>
+<li>
+<p>Slike smeštamo u folder <em>mojnovisajt/static/img</em> ,nakon što napravimo folder <em>img</em> koga po <em>defaultu</em> nema.<br>
+U stvari , ako planiramo veći broj slika, biće preglednije da se unutar foldera <em>img</em> naprave podfolderi sa imenima strana i slike pakuju shodno tome. Putanja slike se računa iza foldera <em>static</em>:</p>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="ln">1</span>  ![<span class="nt">alternativni tekst</span>](<span class="na">/img/ime_foldera_po_imenu_strane/slika_1.png</span>)
+</code></pre></div>
     
       
     
