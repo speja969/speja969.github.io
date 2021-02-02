@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Clarity</title>
+    <link>https://speja969.github.io/series/linux/</link>
+    <description>Recent content in Linux on Clarity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 31 Jan 2021 14:43:30 +0100</lastBuildDate><atom:link href="https://speja969.github.io/series/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFMPEG - moćna multimedijska alatka</title>
+      <link>https://speja969.github.io/post/ffmpeg_1/</link>
+      <pubDate>Sun, 31 Jan 2021 14:43:30 +0100</pubDate>
+      
+      <guid>https://speja969.github.io/post/ffmpeg_1/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;_ffmpeg_&#34;&gt;&lt;strong&gt;&lt;em&gt;FFmpeg&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, srimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.&lt;br&gt;
+Instalacija je jednostavna:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install ffmpeg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Konverziju video i audio fajlova u smislu promene formata, bitrejta, rezolucije, tipa kompresije itd. , što smanjuje izlaznu veličinu ali uz gubitak kvaliteta prikaza.&lt;/li&gt;
+&lt;li&gt;Ugrađivanje titlova u video fajlove, kao i lepljenje (&lt;em&gt;hardcoding&lt;/em&gt;) titlova prvenstveno srpske latinice i ćirilice.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;konverzija&#34;&gt;KONVERZIJA&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Da li vam se desilo da dođete u posed video ili audio snimka koji za svoju dužinu  ima neverovatnu veličinu.&lt;br&gt;
+Običnom korisniku nije potreban preterani kvalitet klipa od 7 minuta koji ima 1 GB ili više.&lt;br&gt;
+Treba naći kompromisno rešenje, a za to su nam potrebni parametri video fajla.&lt;br&gt;
+Evo kako pomoću &lt;em&gt;FFprobe&lt;/em&gt; možemo dobiti parametre našeg testnog &lt;a href=&#34;https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4&#34;&gt;fajla&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rezoluciju:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffprobe -v error -select_streams v:0 -show_entries &lt;span class=&#34;nv&#34;&gt;stream&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;height,width -of &lt;span class=&#34;nv&#34;&gt;csv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;x:p&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Broj frejmova u sekundi - &lt;em&gt;Frame Rate&lt;/em&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffprobe -v error -select_streams v:0 -show_entries &lt;span class=&#34;nv&#34;&gt;stream&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;avg_frame_rate -of &lt;span class=&#34;nv&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;noprint_wrappers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1:nokey&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# 30000/1001 je 30 fps&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Veličinu fajla:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffprobe -v error -show_entries &lt;span class=&#34;nv&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;size -of &lt;span class=&#34;nv&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;noprint_wrappers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# dobijena vrednost je bajtima (za iznos u MB treba podeliti sa 1048576)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/ffprobe.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+Kao što vidimo komande su dugačke i mada daju sliku o upotrebljivosti, njihova primena nije baš praktična. Mnogo jednostavnije je instalirati neki &lt;em&gt;GUI&lt;/em&gt; program, kao što je &lt;em&gt;mediaInfo-gui&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo apt install mediainfo-gui
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Dakle naš &lt;a href=&#34;https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4&#34;&gt;fajl&lt;/a&gt; ima ~58 MB, rezoluciju 3840x2160 i &lt;em&gt;Bitrate&lt;/em&gt; 22 Mb/s&lt;/p&gt;
+&lt;h4 id=&#34;možemo-da-uradimo-sledeće&#34;&gt;&lt;strong&gt;Možemo da uradimo sledeće:&lt;/strong&gt;&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Možemo da ga smanjimo kompresijom uz pomoć H265 kodeka:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ovde koristimo &lt;em&gt;CRF (Constant Rate Factor)&lt;/em&gt; kao &lt;em&gt;default&lt;/em&gt; podešavanje kvaliteta i &lt;em&gt;bitrate&lt;/em&gt;-a. Više o tome &lt;a href=&#34;https://slhck.info/video/2017/02/24/crf-guide.html&#34;&gt;ovde&lt;/a&gt;.&lt;br&gt;
+Ovim smo fajl smanjili: sa 57.8 na 48.6 MB, odnosno nekih ~20%:
+&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-H265.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Obzirom da naš &lt;a href=&#34;https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4&#34;&gt;fajl&lt;/a&gt; ima &lt;em&gt;Bitrate&lt;/em&gt; 22 Mb/s, smanjimo ga na 10:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -b:v 10M -minrate 10M -maxrate 10M output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-bitrate.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+Smanjili smo veličinu fajla na 26 MB, ali po cenu vidljive degradacije kvaliteta.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Možemo da smanjimo rezoluciju na FullHD (1920x1080):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1920:1080,setsar&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1:1 output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dobijamo sledeće parametre:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-rezolucija.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;tabela_16_9&#34;&gt;Evo tabele sa preporučenim rezolucijama za dijagonalu 16:9 &lt;/h6&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Best Choice:&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;2nd Best:&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;3rd Best:&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Multiples of 16&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Multiples of 8&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Multiples of 4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1920 x 1080&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1792 x 1008&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1856 x 1044&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1280 x 720&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1152 x 648&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1216 x 684&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1024 x 576&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;896 x 504&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1088 x 612&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;768 x 432&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;640 x 360&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;960 x 540&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;512 x 288&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;384 x 216&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;832 x 468&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;256 x 144&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;128 x 72&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;704 x 396&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;576 x 324&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;448 x 252&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;320 x 180&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;192 x 108&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;zaključak&#34;&gt;&lt;strong&gt;Zaključak:&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Na svakom od nas je da proceni koliki gubitak kvaliteta mu je prihvatljiv kad zadaje izlazne parametre.&lt;br&gt;
+Evo predloga kako bi to moglo da se uradi kombinujući više operacija u istoj komandi.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1920:1080,setsar&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1:1 -b:v 15M -minrate 13M -maxrate 16M -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-sve.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;_titlovi_&#34;&gt;&lt;strong&gt;&lt;em&gt;TITLOVI&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Neka nam testni fajl bude &lt;a href=&#34;https://vimeo.com/311038206&#34;&gt;&lt;em&gt;Auntie Edna&lt;/em&gt;&lt;/a&gt;.&lt;br&gt;
+Ako još niste instalirali/ažurirali &lt;em&gt;youtube-dl&lt;/em&gt; evo komande:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt-get remove -y youtube-dl &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod a+rx /usr/local/bin/youtube-dl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;daunlodujmo Ednu u maksimalnoj ponuđenoj rezoluciji (1728x1080):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /folder/gde/vrsimo/konverziju
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;youtube-dl -F https://vimeo.com/311038206
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dobićemo ovako nešto:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/youtube-dl.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+Izaberemo jednu od ponuđenih opcija sa najvećom rezolucijom (ja sam uzeo poslednju):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;youtube-dl -f dash-fastly_skyfire-video-1197402664 https://vimeo.com/311038206
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sad skinemo titl &lt;a href=&#34;https://titlovi.com/titlovi/auntie-edna-318598/&#34;&gt;odavde&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Imamo video fajl (&lt;em&gt;Auntie Edna-311038206.mp4&lt;/em&gt;) i titl (Auntie.Edna.2018.720p.BluRay.x264-[YTS.AM].srt) koje ćemo preimenovati u &lt;strong&gt;&lt;em&gt;Auntie_Edna.mp4&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;titl.srt&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mv &lt;span class=&#34;s1&#34;&gt;&amp;#39;Auntie Edna-311038206.mp4&amp;#39;&lt;/span&gt; Auntie_Edna.mp4
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mv Auntie.Edna.2018.720p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.srt titl.srt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;ugradićemo-titl-u-fajl-kao-njegov-sastavni-deo-bez-re-enkodiranja&#34;&gt;&lt;strong&gt;Ugradićemo titl u fajl kao njegov sastavni deo bez re-enkodiranja:&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie_Edna.mp4 -sub_charenc CP1250 -i titl.srt -map 0:v -map 0:a -c copy -map &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -c:s:0 mov_text -metadata:s:s:0 &lt;span class=&#34;nv&#34;&gt;language&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;srp Auntie_Edna_sa_titlom.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;U fajl &lt;em&gt;Auntie_Edna_sa_titlom.mp4&lt;/em&gt; je ugrađen titl uz audio i video komponentu:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/ugradjen_titl.png&#34; alt=&#34;mediainfo-gui&#34; title=&#34;mediainfo-gui&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ugrađivanje titla u &lt;em&gt;&lt;strong&gt;mkv&lt;/strong&gt;&lt;/em&gt; fajl:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mkv -sub_charenc CP1250 -i subtitle.srt -map 0:v -map 0:a -c copy -map 1 -c:s:0 srt -metadata:s:s:0 language=srp output.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ili ugrađivanje više titlova u &lt;em&gt;&lt;strong&gt;mkv&lt;/strong&gt;&lt;/em&gt; fajl:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp4       -i subtitle_eng.srt -i subtitle_fre.srt &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;       -map 0:v -map 0:a  -map &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;              -map &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;              &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;       -c:v copy -c:a copy -c:s copy                              &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;       -metadata:s:s:0 &lt;span class=&#34;nv&#34;&gt;language&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;eng -metadata:s:s:1 &lt;span class=&#34;nv&#34;&gt;language&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;fre  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  output.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;nalepićemo-titl-na-video-kao-sastavni-deo-slike-uz-re-enkodiranje&#34;&gt;&lt;strong&gt;Nalepićemo titl na video kao sastavni deo slike uz re-enkodiranje:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Titl žute boje,sa transparentnom pozadinom, font Arial 24, testni fajl promenjen u &lt;em&gt;&lt;strong&gt;Auntie.Edna.2018.1080p.BluRay.x264-[YTS.AM].mp4&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;&amp;#34;&lt;/span&gt; Auntie-Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/Edna-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Titl isti kao u prethodnom slučaju ali sa crnom pozadinom:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;amp;H100000000,Outline=1,BorderStyle=3,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;&amp;#34;&lt;/span&gt; Auntie--Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/Edna-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Transparentna pozadina titlova + enkodirano &lt;em&gt;-crf 28 u x265&lt;/em&gt;;&lt;br&gt;
+fajl smanjen sa &lt;strong&gt;84 na 29&lt;/strong&gt; MB:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;&amp;#34;&lt;/span&gt; -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; Auntie---Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/Edna-3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prethodne operacije smo obavljali ostavljajući nepromenjenu rezoluciju  &lt;em&gt;1920x808&lt;/em&gt; što odgovara dijagonali (&lt;em&gt;Aspect Ratio&lt;/em&gt;) od &lt;strong&gt;2,4:1&lt;/strong&gt;.&lt;br&gt;
+Vidimo iz predloženih &lt;a href=&#34;#tabela_16_9&#34;&gt;rezolucija&lt;/a&gt; da FFmpeg &amp;quot;voli&amp;quot; standardni odnos &lt;strong&gt;16:9&lt;/strong&gt;.&lt;br&gt;
+Evo kako bi smo skalirali naš video fajl sa 1920x808 [A.R - 2.40:1] na 1280:720 [A.R. - 16:9] uz zadržavanje proporcija slike, dakle popunjavanje praznog prostora crnim trakama:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1&amp;#34;&lt;/span&gt; Auntie.-.Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_HD.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ako skaliranje na različitu rezoluciju iskombinujemo sa lepljenjem titlova, dobićemo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:-1:-1,setsar=1,subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=20,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;[v]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[v]&amp;#34;&lt;/span&gt; -map 0:a -c:a copy Auntie-.-Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_titlovi.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ima tu još prostora ispod titla, hajde da maksimalno iskoristimo crnu traku:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:-1:-1,setsar=1,subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=20,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,MarginV=1,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;[v]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[v]&amp;#34;&lt;/span&gt; -map 0:a -c:a copy Auntie-..-Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_MarginV_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ako bi uz sve iz prethodne tačke dodali re-enkodiranje u H265 da bi smanjili veličinu fajla:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:-1:-1,setsar=1,subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=20,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,MarginV=1,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;[v]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[v]&amp;#34;&lt;/span&gt; -map 0:a -c:a copy -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; Auntie-Edna.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_MarginV_1_H265.png&#34; alt=&#34;&#34;&gt;
+I to bi bilo to...&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
