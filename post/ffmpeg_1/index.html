@@ -184,11 +184,11 @@
 <hr>
 <hr>
 <blockquote>
-<p>FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, srimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.<br>
+<p>FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, strimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.<br>
 Instalacija je jednostavna:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt install ffmpeg
-</code></pre></div><p>Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:</p>
-</blockquote>
+</code></pre></div></blockquote>
+<p>Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:</p>
 <ul>
 <li>Konverziju video i audio fajlova u smislu promene formata, bitrejta, rezolucije, tipa kompresije itd. , što smanjuje izlaznu veličinu ali uz gubitak kvaliteta prikaza.</li>
 <li>Ugrađivanje titlova u video fajlove, kao i lepljenje (<em>hardcoding</em>) titlova prvenstveno srpske latinice i ćirilice.</li>
@@ -245,8 +245,8 @@ Smanjili smo veličinu fajla na 26 MB, ali po cenu vidljive degradacije kvalitet
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1920:1080,setsar<span class="o">=</span>1:1 output.mp4
 </code></pre></div><p>Dobijamo sledeće parametre:<br>
 <img src="/img/ffmpeg_1/mediainfo-gui-plaza-rezolucija.png" alt=""></p>
-</blockquote>
 <h6 id="tabela_16_9">Evo tabele sa preporučenim rezolucijama za dijagonalu 16:9 </h6>
+</blockquote>
 <hr>
 <hr>
 <table>
@@ -341,7 +341,7 @@ Izaberemo jednu od ponuđenih opcija sa najvećom rezolucijom (ja sam uzeo posle
 <h3 id="ugradićemo-titl-u-fajl-kao-njegov-sastavni-deo-bez-re-enkodiranja"><strong>Ugradićemo titl u fajl kao njegov sastavni deo bez re-enkodiranja:</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i Auntie_Edna.mp4 -sub_charenc CP1250 -i titl.srt -map 0:v -map 0:a -c copy -map <span class="m">1</span> -c:s:0 mov_text -metadata:s:s:0 <span class="nv">language</span><span class="o">=</span>srp Auntie_Edna_sa_titlom.mp4
 </code></pre></div><hr>
-<ol start="2">
+<ol>
 <li>
 <p>U fajl <em>Auntie_Edna_sa_titlom.mp4</em> je ugrađen titl uz audio i video komponentu:<br>
 <img src="/img/ffmpeg_1/ugradjen_titl.png" alt="mediainfo-gui" title="mediainfo-gui"></p>
@@ -372,6 +372,11 @@ Izaberemo jednu od ponuđenih opcija sa najvećom rezolucijom (ja sam uzeo posle
 </code></pre></div><p><img src="/img/ffmpeg_1/Edna-2.png" alt=""></p>
 </li>
 <li>
+<p>Crna boja je u redu ako je na fajl već nalepljen neki strani titl koji odvlači pažnju. Obično to nije tako drastično, pa vizuelno više prija polutransparentna pozadina:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="o">[</span>YTS.AM<span class="o">]</span>.mp4 -vf <span class="s2">&#34;subtitles=titl.srt:charenc=CP1250:force_style=&#39;BackColour=&amp;H80000000,Fontname=Arial,Fontsize=22,OutlineColour=&amp;H100000000,Outline=1,BorderStyle=4,Alignment=2,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;&#34;</span> Auntie__Edna.mp4
+</code></pre></div><p><img src="/img/ffmpeg_1/Edna-22.png" alt=""></p>
+</li>
+<li>
 <p>Transparentna pozadina titlova + enkodirano <em>-crf 28 u x265</em>;<br>
 fajl smanjen sa <strong>84 na 29</strong> MB:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="o">[</span>YTS.AM<span class="o">]</span>.mp4 -vf <span class="s2">&#34;subtitles=titl.srt:charenc=CP1250:force_style=&#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;&#34;</span> -c:v libx265 -crf <span class="m">28</span> Auntie---Edna.mp4
@@ -395,7 +400,7 @@ Evo kako bi smo skalirali naš video fajl sa 1920x808 [A.R - 2.40:1] na 1280:720
 </code></pre></div></li>
 </ol>
 <p><img src="/img/ffmpeg_1/skalirano_MarginV_1.png" alt=""></p>
-<ol>
+<ol start="8">
 <li>Ako bi uz sve iz prethodne tačke dodali re-enkodiranje u H265 da bi smanjili veličinu fajla:
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="o">[</span>YTS.AM<span class="o">]</span>.mp4 -filter_complex <span class="s2">&#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:-1:-1,setsar=1,subtitles=titl.srt:charenc=CP1250:force_style=&#39;Fontname=Arial,Fontsize=20,OutlineColour=&amp;H100000000,Outline=1,Alignment=2,MarginV=1,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;[v]&#34;</span> -map <span class="s2">&#34;[v]&#34;</span> -map 0:a -c:a copy -c:v libx265 -crf <span class="m">28</span> Auntie-Edna.mp4
 </code></pre></div></li>
