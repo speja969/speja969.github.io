@@ -6,7 +6,207 @@
     <description>Recent content in Učionica on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 31 Jan 2021 14:43:30 +0100</lastBuildDate><atom:link href="https://speja969.github.io/categories/u%C4%8Dionica/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 14:43:30 +0100</lastBuildDate><atom:link href="https://speja969.github.io/categories/u%C4%8Dionica/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFMPEG - neke napredne opcije</title>
+      <link>https://speja969.github.io/post/ffmpeg_2/</link>
+      <pubDate>Thu, 04 Feb 2021 14:43:30 +0100</pubDate>
+      
+      <guid>https://speja969.github.io/post/ffmpeg_2/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h4 id=&#34;preuzeto-odavdehttpsgistgithubcomprotroliume0dbd4bb0f1a396fcb55&#34;&gt;preuzeto &lt;a href=&#34;https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55&#34;&gt;odavde&lt;/a&gt;&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;converting-audio-into-different-formats--sample-rates&#34;&gt;Converting Audio into Different Formats / Sample Rates&lt;/h2&gt;
+&lt;p&gt;Minimal example: transcode from MP3 to WMA:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp3 output.wma
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can get the list of supported formats with:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -formats
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can get the list of installed codecs with:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -codecs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Convert WAV to MP3, mix down to mono (use 1 audio channel), set bit rate to 64 kbps and  sample rate to 22050 Hz:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.wav -ac &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -ab &lt;span class=&#34;m&#34;&gt;64000&lt;/span&gt; -ar &lt;span class=&#34;m&#34;&gt;22050&lt;/span&gt; output.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Convert any MP3 file to WAV 16khz mono 16bit:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i 111.mp3 -acodec pcm_s16le -ac 1 -ar 16000 out.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Convert any MP3 file to WAV 20khz mono 16bit for ADDAC WAV Player:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i 111.mp3 -acodec pcm_s16le -ac &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -ar &lt;span class=&#34;m&#34;&gt;22050&lt;/span&gt; out.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;cd into dir for batch process:&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in *.mp3&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -acodec pcm_s16le -ac &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -ar &lt;span class=&#34;m&#34;&gt;22050&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.mp3&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;-encoded.wav&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Picking the 30 seconds fragment at an offset of 1 minute:&lt;br&gt;
+In seconds&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp3 -ss &lt;span class=&#34;m&#34;&gt;60&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;30&lt;/span&gt; output.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;In HH:MM:SS format&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp3 -ss 0:01:00 -t 0:00:30 output.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Split an audio stream at specified segment rate (e.g. 3 seconds)&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i somefile.mp3 -f segment -segment_time &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; -c copy out%03d.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;extract-audio&#34;&gt;Extract Audio&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;vn&lt;/code&gt; is no video.&lt;br&gt;
+&lt;code&gt;acodec&lt;/code&gt; copy says use the same audio stream that&#39;s already in there.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i video.mp4 -f mp3 -ab &lt;span class=&#34;m&#34;&gt;192000&lt;/span&gt; -vn music.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;The -i option in the above command is simple: it is the path to the input file.&lt;/li&gt;
+&lt;li&gt;The second option -f mp3 tells ffmpeg that the ouput is in mp3 format.&lt;/li&gt;
+&lt;li&gt;The third option i.e -ab 192000 tells ffmpeg that we want the output to be encoded at 192Kbps and -vn tells ffmpeg that we dont want video.&lt;/li&gt;
+&lt;li&gt;The last param is the name of the output file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;replace-audio-on-a-video-without-re-encoding&#34;&gt;Replace Audio on a Video without re-encoding.&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;preferred method&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i INPUT.mp4 -i AUDIO.wav -shortest -c:v copy -c:a aac -b:a 256k OUTPUT.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;strip audio stream away from video&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i INPUT.mp4 -codec copy -an OUTPUT.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;combine the two streams together (new audio with originally exisiting video)&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i 36.MOV -i 36.wav -map 0:v -map 1:a -c copy -y 36-encoded.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;or add an offset to audio&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i 36.MOV -itsoffset -0.25 -i 36.wav -map 0:v -map 1:a -c copy -y 36-encoded.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;You say you want to &amp;quot;extract audio from them (mp3 or ogg)&amp;quot;.&lt;br&gt;
+But what if the audio in the mp4 file is not one of those? you&#39;d have to transcode anyway.&lt;br&gt;
+So why not leave the audio format detection up to ffmpeg?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To convert one file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i videofile.mp4 -vn -acodec libvorbis audiofile.ogg 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To convert many files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; vid in *.mp4&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$vid&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -vn -acodec libvorbis &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.mp4&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.ogg&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;You can of course select any ffmpeg parameters for audio encoding that you like, to set things like bitrate and so on.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;-acodec libmp3lame&lt;/code&gt;  and change the extension from &lt;code&gt;.ogg&lt;/code&gt; to &lt;code&gt;.mp3&lt;/code&gt; for mp3 encoding.&lt;/p&gt;
+&lt;p&gt;If what you want is to really extract the audio, you can simply &amp;quot;copy&amp;quot; the audio track to a file using -acodec copy. Of course, the main difference is that transcoding is slow and cpu-intensive, while copying is really quick as you&#39;re just moving bytes from one file to another. Here&#39;s how to copy just the audio track (assuming it&#39;s in mp3 format):&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i videofile.mp4 -vn -acodec copy audiofile.mp3 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Note that in this case, the audiofile format has to be consistent with what the container has (i.e. if the audio is AAC format, you have to say audiofile.aac). You can use the ffprobe command to see which formats you have, this may provide some information:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; file in *&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffprobe &lt;span class=&#34;nv&#34;&gt;$file&lt;/span&gt; 2&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;grep Audio&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A possible way to automatically parse the audio codec and name the audio file accordingly would be:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; file in *mp4 *avi&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$file&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -vn -acodec copy &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$file&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;.ffprobe &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$file&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; 2&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;sed -rn &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/.*Audio: (...), .*/\1/p&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that this command uses sed to parse output from ffprobe for each file, it assumes a 3-letter audio codec name (e.g. mp3, ogg, aac) and will break with anything different.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Encoding multiple files&lt;/p&gt;
+&lt;p&gt;You can use a Bash &amp;quot;for loop&amp;quot; to encode all files in a directory:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir newfiles
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; f in *.m4a&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -codec:v copy -codec:a libmp3lame -q:a &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; newfiles/&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.m4a&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.mp3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.m4a -acodec libmp3lame -ab 128k output.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+m4a to mp3 conversion with ffmpeg and lame
+&lt;hr&gt;
+&lt;p&gt;A batch file version of the same command would be:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; f in *.m4a&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -acodec libmp3lame -ab 256k &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.m4a&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.mp3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;extract-single-image-from-a-video-at-specified-frame&#34;&gt;Extract Single Image from a Video at Specified Frame&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ vf &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;ss&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;filename&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;outputFileName&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;where &lt;code&gt;vf&lt;/code&gt; is a custom bash script as follows:&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -ss &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; -i &lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt; -qmin &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -q:v &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -qscale:v &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; -frames:v &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -huffman optimal &lt;span class=&#34;nv&#34;&gt;$3&lt;/span&gt;.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;ss offset = frame number divided by FPS of video = the decimal (in milliseconds) ffmpeg needs i.e. 130.5&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;merge-multiple-videos&#34;&gt;Merge Multiple Videos&lt;/h2&gt;
+&lt;p&gt;concat demuxer&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat mylist.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;/path/to/file1&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;/path/to/file2&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;/path/to/file3&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -f concat -safe &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -i mylist.txt -c copy output.mp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;split-a-video-into-images&#34;&gt;Split a Video into Images&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -i video.flv image%d.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;convert-images-into-a-video&#34;&gt;Convert Images into a Video&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -f image2 -i image%d.jpg imagestovideo.mp4
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ffmpeg -i image-%03d.png -c:v libx264 -pix_fmt yuv420p test.mp4
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ ffmpeg -r 1/5 -i image-%03d.png -c:v libx264 -vf &lt;span class=&#34;nv&#34;&gt;fps&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;25&lt;/span&gt; -pix_fmt yuv420p test.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;convert-single-image-into-a-video&#34;&gt;Convert Single Image into a Video&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -loop &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -i image.png -c:v libx264 -t &lt;span class=&#34;m&#34;&gt;60&lt;/span&gt; -pix_fmt yuv420p -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1920:1080 out.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;convert-non-sequentially-named-images-in-a-directory&#34;&gt;Convert non-sequentially named Images in a directory&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -framerate &lt;span class=&#34;m&#34;&gt;30&lt;/span&gt; -pattern_type glob -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.jpeg&amp;#39;&lt;/span&gt; -c:v libx264 -pix_fmt yuv420p gan-1.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;convert-image-sequence-of-many-different-sizes-and-conform-to-specific-frame-size&#34;&gt;Convert image sequence of many different sizes and conform to specific frame size&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=max(1280\,a*720):max(1280\,720/a),crop=1280:720&amp;#34;&lt;/span&gt; test.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;guarantee-aspect-ratio-from-image-sequence&#34;&gt;Guarantee aspect ratio from image sequence&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=720:-2&amp;#34;&lt;/span&gt; test.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;evaluate-which-ratio-to-apply-for-scaling-then-scale-with-the-requisite-amount-of-padding&#34;&gt;Evaluate which ratio to apply for scaling, then scale with the requisite amount of padding&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=iw*min(1280/iw\,720/ih):ih*min(1280/iw\,720/ih), pad=1280:720:(1280-iw*min(1280/iw\,720/ih))/2:(720-ih*min(1280/iw\,720/ih))/2&amp;#34;&lt;/span&gt; test.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+1920 version:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=iw*min(1920/iw\,1080/ih):ih*min(1920/iw\,1080/ih), pad=1920:1080:(1920-iw*min(1920/iw\,1080/ih))/2:(1080-ih*min(1920/iw\,1080/ih))/2&amp;#34;&lt;/span&gt; test.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;convert-mov-jpeg-a-or-other-codec-to-h264-mp4&#34;&gt;Convert .mov (JPEG-A or other codec) to H264 .mp4&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mov -vcodec libx264 -pix_fmt yuv420p output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;simple-flac-convert&#34;&gt;Simple FLAC convert&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i audio.xxx -c:a flac audio.flac
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mix-stereo-to-mono&#34;&gt;Mix Stereo to Mono&lt;/h2&gt;
+&lt;p&gt;You can modify a video file directly without having to re-encode the video stream.&lt;br&gt;
+However the audio stream will have to be re-encoded.
+&lt;br&gt;
+Left channel to mono:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i video.mp4 -map_channel 0.1.0 -c:v copy mono.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+Left channel to stereo:&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i video.mp4 -map_channel 0.1.0 -map_channel 0.1.0 -c:v copy stereo.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+If you want to use the right channel, write  `0.1.1`  instead of  `0.1.0.`
+&lt;h2 id=&#34;trim-end-of-file-mp3&#34;&gt;Trim End of file (mp3)&lt;/h2&gt;
+&lt;p&gt;Here&#39;s a command line that will slice to 30 seconds without transcoding:
+&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -t &lt;span class=&#34;m&#34;&gt;30&lt;/span&gt; -i inputfile.mp3 -acodec copy outputfile.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;to-encode-or-re-encode-&#34;&gt;To Encode or Re-encode ?&lt;/h2&gt;
+&lt;p&gt;Do you need to cut video with re-encoding or without re-encoding mode? You can try to following below command.&lt;br&gt;
+Synopsis: ffmpeg -i [input_file] -ss [start_seconds] -t [duration_seconds] [output_file]&lt;/p&gt;
+&lt;h4 id=&#34;use-ffmpeg-cut-mp4-video-without-re-encoding&#34;&gt;use ffmpeg cut mp4 video without re-encoding&lt;/h4&gt;
+&lt;p&gt;Example:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -c copy cut_video.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h4 id=&#34;use-ffmpeg-cut-mp4-video-with-re-encoding&#34;&gt;use ffmpeg cut mp4 video with re-encoding&lt;/h4&gt;
+&lt;p&gt;Example:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -async &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -strict -2 cut_video.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to cut off section from the beginning, simply drop -t 00:00:10 from the command&lt;/p&gt;
+&lt;h4 id=&#34;reduce-filesize&#34;&gt;reduce filesize&lt;/h4&gt;
+&lt;p&gt;Example:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mov -vcodec libx264 -crf &lt;span class=&#34;m&#34;&gt;24&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+It reduced a 100mb video to 9mb.. Very little change in video quality.
+&lt;p&gt;Example:&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i video.mov -vf &lt;span class=&#34;nv&#34;&gt;eq&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;saturation&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -s 640x480 -c:v libx264 -crf &lt;span class=&#34;m&#34;&gt;24&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+make a grayscale version and scale to 640x480
+&lt;h3 id=&#34;convert-mp4-to-webm&#34;&gt;Convert MP4 to WEBM&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf &lt;span class=&#34;m&#34;&gt;31&lt;/span&gt; -b:v 1M output.webm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://trac.ffmpeg.org/wiki/Encode/VP9&#34;&gt;more info&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;convert-mkv-to-mp4&#34;&gt;Convert MKV to MP4&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i file.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+check for streams that you want (video/audio). be sure to convert/specify DTS 6 channel audio stream&lt;br&gt;
+&lt;h3 id=&#34;add-watermark-overlay-png-to-the-center-of-a-video&#34;&gt;Add Watermark overlay (png) to the center of a video&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i source.mov -i watermark.png -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2&amp;#34;&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h3 id=&#34;concat-a-video-with-a-reversed-copy-of-itself-for-ping-pong-looping-effect&#34;&gt;Concat a video with a reversed copy of itself for ping-pong looping effect&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;[0:v]reverse,fifo[r];[0:v][r] concat=n=2:v=1 [v]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[v]&amp;#34;&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;more commands&lt;br&gt;
+&lt;a href=&#34;http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs&#34;&gt;http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs&lt;/a&gt;&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>FFMPEG - moćna multimedijska alatka</title>
       <link>https://speja969.github.io/post/ffmpeg_1/</link>
@@ -27,6 +227,8 @@ FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, st
 &lt;li&gt;Instalacija je jednostavna:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install ffmpeg
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ffmpeg -formats &lt;span class=&#34;c1&#34;&gt;# formati koje podržava&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;ffmpeg -codecs  &lt;span class=&#34;c1&#34;&gt;# lista kodeka koje se instaliraju sa njim&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Konverziju video i audio fajlova u smislu promene formata, bitrejta, rezolucije, tipa kompresije itd. , što smanjuje izlaznu veličinu ali uz gubitak kvaliteta prikaza.&lt;/li&gt;
@@ -252,12 +454,13 @@ Evo primera kako iz desete epizode šeste sezone &lt;em&gt;Game of Thrones&lt;/e
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -ss 00:57:14 -to 01:01:51 -copyts -i GoT.S06E10.mkv -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;subtitles=GoT.S06E10.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;&amp;#34;&lt;/span&gt; -c:a copy -ss 00:57:14 -y king_in_the_north.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;
+
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/my2r8tVEqsQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-  &lt;br&gt;
-I to bi bilo to...&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; I to bi bilo to...
+&lt;/code&gt;&lt;/pre&gt;
 
         
       </description>

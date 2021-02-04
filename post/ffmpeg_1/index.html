@@ -191,6 +191,8 @@ FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, st
 <li>Instalacija je jednostavna:</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt install ffmpeg
+<span class="ln">2</span>ffmpeg -formats <span class="c1"># formati koje podržava</span>
+<span class="ln">3</span>ffmpeg -codecs  <span class="c1"># lista kodeka koje se instaliraju sa njim</span>
 </code></pre></div><p>Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:</p>
 <ul>
 <li>Konverziju video i audio fajlova u smislu promene formata, bitrejta, rezolucije, tipa kompresije itd. , što smanjuje izlaznu veličinu ali uz gubitak kvaliteta prikaza.</li>
@@ -416,12 +418,13 @@ Evo primera kako iz desete epizode šeste sezone <em>Game of Thrones</em> izrend
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -ss 00:57:14 -to 01:01:51 -copyts -i GoT.S06E10.mkv -vf <span class="s2">&#34;subtitles=GoT.S06E10.srt:charenc=CP1250:force_style=&#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;&#34;</span> -c:a copy -ss 00:57:14 -y king_in_the_north.mp4
 </code></pre></div></li>
 </ol>
-<p>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/my2r8tVEqsQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-  <br>
-I to bi bilo to...</p>
+
+<pre><code> I to bi bilo to...
+</code></pre>
 
     
       
@@ -438,6 +441,9 @@ I to bi bilo to...</p>
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
+        <a href="https://speja969.github.io/post/ffmpeg_2/" class="nav-link">FFMPEG - neke napredne opcije</a>
+      </li>
+      <li>
         <a href="https://speja969.github.io/post/hugo_sajt_1/" class="nav-link">Hugo sajt</a>
       </li>
       <li>
@@ -449,6 +455,9 @@ I to bi bilo to...</p>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
+      <li>
+        <a href="https://speja969.github.io/post/ffmpeg_2/" class="nav-link">FFMPEG - neke napredne opcije</a>
+      </li>
       <li>
         <a href="https://speja969.github.io/post/hugo_sajt_4/" class="nav-link">Hugo sajt - 4.deo</a>
       </li>
@@ -470,9 +479,6 @@ I to bi bilo to...</p>
       <li>
         <a href="https://speja969.github.io/post/podes_posle_instal_5/" class="nav-link">Debian 10 u VirtualBox-u - 5.deo</a>
       </li>
-      <li>
-        <a href="https://speja969.github.io/post/podes_posle_instal_4/" class="nav-link">Debian 10 u VirtualBox-u - 4.deo</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
@@ -489,12 +495,12 @@ I to bi bilo to...</p>
         
         <a href='https://speja969.github.io/categories/radionica/' class="post_tag button button_translucent">
           RADIONICA
-          <span class="button_tally">1</span>
+          <span class="button_tally">2</span>
         </a>
         
         <a href='https://speja969.github.io/categories/u%C4%8Dionica/' class="post_tag button button_translucent">
           UČIONICA
-          <span class="button_tally">1</span>
+          <span class="button_tally">2</span>
         </a>
         
         
@@ -510,7 +516,7 @@ I to bi bilo to...</p>
         
         <a href='https://speja969.github.io/series/linux/' class="post_tag button button_translucent">
           LINUX
-          <span class="button_tally">1</span>
+          <span class="button_tally">2</span>
         </a>
         
         
@@ -534,6 +540,16 @@ I to bi bilo to...</p>
           <span class="button_tally">3</span>
         </a>
         
+        <a href='https://speja969.github.io/tags/multimedija/' class="post_tag button button_translucent">
+          MULTIMEDIJA
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://speja969.github.io/tags/softver/' class="post_tag button button_translucent">
+          SOFTVER
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='https://speja969.github.io/tags/emoji/' class="post_tag button button_translucent">
           EMOJI
           <span class="button_tally">1</span>
@@ -549,11 +565,6 @@ I to bi bilo to...</p>
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://speja969.github.io/tags/multimedija/' class="post_tag button button_translucent">
-          MULTIMEDIJA
-          <span class="button_tally">1</span>
-        </a>
-        
         <a href='https://speja969.github.io/tags/privacy/' class="post_tag button button_translucent">
           PRIVACY
           <span class="button_tally">1</span>
@@ -561,11 +572,6 @@ I to bi bilo to...</p>
         
         <a href='https://speja969.github.io/tags/shortcodes/' class="post_tag button button_translucent">
           SHORTCODES
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://speja969.github.io/tags/softver/' class="post_tag button button_translucent">
-          SOFTVER
           <span class="button_tally">1</span>
         </a>
         
