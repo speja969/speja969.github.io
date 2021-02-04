@@ -184,14 +184,18 @@
 <hr>
 <hr>
 <blockquote>
-<p>FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, strimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.<br>
-Instalacija je jednostavna:</p>
+<p><img src="/img/ffmpeg_1/FFmpeg_logo_128.png" alt=":left"><br>
+FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, strimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.</p>
+</blockquote>
+<ul>
+<li>Instalacija je jednostavna:</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt install ffmpeg
-</code></pre></div></blockquote>
-<p>Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:</p>
+</code></pre></div><p>Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:</p>
 <ul>
 <li>Konverziju video i audio fajlova u smislu promene formata, bitrejta, rezolucije, tipa kompresije itd. , što smanjuje izlaznu veličinu ali uz gubitak kvaliteta prikaza.</li>
-<li>Ugrađivanje titlova u video fajlove, kao i lepljenje (<em>hardcoding</em>) titlova prvenstveno srpske latinice i ćirilice.</li>
+<li>Ugrađivanje titlova u video fajlove, kao i lepljenje (<em>hardcoding</em>) titlova prvenstveno srpske latinice i ćirilice. <a href="#TITLOVI">TITLOVI</a></li>
+<li>Svuda u daljem tekstu <strong>CP1250</strong> je oznaka za latinicu, a ako imamo ćirilični titl oznaka je <strong>CP1251</strong>.</li>
 </ul>
 <hr>
 <h2 id="konverzija">KONVERZIJA</h2>
@@ -319,8 +323,7 @@ Smanjili smo veličinu fajla na 26 MB, ali po cenu vidljive degradacije kvalitet
 <p>Na svakom od nas je da proceni koliki gubitak kvaliteta mu je prihvatljiv kad zadaje izlazne parametre.<br>
 Evo predloga kako bi to moglo da se uradi kombinujući više operacija u istoj komandi.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1920:1080,setsar<span class="o">=</span>1:1 -b:v 15M -minrate 13M -maxrate 16M -c:v libx265 -crf <span class="m">28</span> output.mp4
-</code></pre></div><p><img src="/img/ffmpeg_1/mediainfo-gui-plaza-sve.png" alt=""></p>
-<hr>
+</code></pre></div><h2 id="TITLOVI"><img src="/img/ffmpeg_1/mediainfo-gui-plaza-sve.png" alt=""></h2>
 <h2 id="_titlovi_"><strong><em>TITLOVI</em></strong></h2>
 <hr>
 <p>Neka nam testni fajl bude <a href="https://vimeo.com/311038206"><em>Auntie Edna</em></a>.<br>
@@ -333,7 +336,7 @@ Ako još niste instalirali/ažurirali <em>youtube-dl</em> evo komande:</p>
 <img src="/img/ffmpeg_1/youtube-dl.png" alt=""><br>
 Izaberemo jednu od ponuđenih opcija sa najvećom rezolucijom (ja sam uzeo poslednju):</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>youtube-dl -f dash-fastly_skyfire-video-1197402664 https://vimeo.com/311038206
-</code></pre></div><p>Sad skinemo titl <a href="https://titlovi.com/titlovi/auntie-edna-318598/">odavde</a>.</p>
+</code></pre></div><p>Sad skinimo titl <a href="https://titlovi.com/titlovi/auntie-edna-318598/">odavde</a>.</p>
 <p>Imamo video fajl (<em>Auntie Edna-311038206.mp4</em>) i titl (Auntie.Edna.2018.720p.BluRay.x264-[YTS.AM].srt) koje ćemo preimenovati u <strong><em>Auntie_Edna.mp4</em></strong> i <strong><em>titl.srt</em></strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>mv <span class="s1">&#39;Auntie Edna-311038206.mp4&#39;</span> Auntie_Edna.mp4
 <span class="ln">2</span>mv Auntie.Edna.2018.720p.BluRay.x264-<span class="o">[</span>YTS.AM<span class="o">]</span>.srt titl.srt
@@ -405,7 +408,18 @@ Evo kako bi smo skalirali naš video fajl sa 1920x808 [A.R - 2.40:1] na 1280:720
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="o">[</span>YTS.AM<span class="o">]</span>.mp4 -filter_complex <span class="s2">&#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:-1:-1,setsar=1,subtitles=titl.srt:charenc=CP1250:force_style=&#39;Fontname=Arial,Fontsize=20,OutlineColour=&amp;H100000000,Outline=1,Alignment=2,MarginV=1,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;[v]&#34;</span> -map <span class="s2">&#34;[v]&#34;</span> -map 0:a -c:a copy -c:v libx265 -crf <span class="m">28</span> Auntie-Edna.mp4
 </code></pre></div></li>
 </ol>
-<p><img src="/img/ffmpeg_1/skalirano_MarginV_1_H265.png" alt="">
+<p><img src="/img/ffmpeg_1/skalirano_MarginV_1_H265.png" alt=""></p>
+<ol start="9">
+<li>
+<p>Kako bi recimo nalepili titl na samo jedan deo video fajla. Evo primera kako iz desete epizode šeste sezone <em>Game of Thrones</em> izrenderovati titl na segment od <strong>00:57:14</strong> do <strong>01:01:51</strong> u kome <em>Lyanna Mormont</em> drži istorijski govor Severnjacima:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -ss 00:57:14 -to 01:01:51 -copyts -i GoT.S06E10.mkv -vf <span class="s2">&#34;subtitles=GoT.S06E10.srt:charenc=CP1250:force_style=&#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;&#34;</span> -c:a copy -ss 00:57:14 -y king_in_the_north.mp4
+</code></pre></div></li>
+</ol>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/my2r8tVEqsQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+  <br>
 I to bi bilo to...</p>
 
     

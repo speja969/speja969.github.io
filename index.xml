@@ -20,14 +20,18 @@
 &lt;hr&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, strimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.&lt;br&gt;
-Instalacija je jednostavna:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/FFmpeg_logo_128.png&#34; alt=&#34;:left&#34;&gt;&lt;br&gt;
+FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, strimuje, filtrira i pušta skoro sve poznate formate medijskih fajlova, počev od onih zastarelih pa do savrmenih tek uvedenih u primenu.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalacija je jednostavna:&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install ffmpeg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ja ću se ovde fokusirati na 2  slučaja zanimljiva običnim korisnicima:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Konverziju video i audio fajlova u smislu promene formata, bitrejta, rezolucije, tipa kompresije itd. , što smanjuje izlaznu veličinu ali uz gubitak kvaliteta prikaza.&lt;/li&gt;
-&lt;li&gt;Ugrađivanje titlova u video fajlove, kao i lepljenje (&lt;em&gt;hardcoding&lt;/em&gt;) titlova prvenstveno srpske latinice i ćirilice.&lt;/li&gt;
+&lt;li&gt;Ugrađivanje titlova u video fajlove, kao i lepljenje (&lt;em&gt;hardcoding&lt;/em&gt;) titlova prvenstveno srpske latinice i ćirilice. &lt;a href=&#34;#TITLOVI&#34;&gt;TITLOVI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Svuda u daljem tekstu &lt;strong&gt;CP1250&lt;/strong&gt; je oznaka za latinicu, a ako imamo ćirilični titl oznaka je &lt;strong&gt;CP1251&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;konverzija&#34;&gt;KONVERZIJA&lt;/h2&gt;
@@ -155,8 +159,7 @@ Smanjili smo veličinu fajla na 26 MB, ali po cenu vidljive degradacije kvalitet
 &lt;p&gt;Na svakom od nas je da proceni koliki gubitak kvaliteta mu je prihvatljiv kad zadaje izlazne parametre.&lt;br&gt;
 Evo predloga kako bi to moglo da se uradi kombinujući više operacija u istoj komandi.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1920:1080,setsar&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1:1 -b:v 15M -minrate 13M -maxrate 16M -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; output.mp4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-sve.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;TITLOVI&#34;&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-sve.png&#34; alt=&#34;&#34;&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;_titlovi_&#34;&gt;&lt;strong&gt;&lt;em&gt;TITLOVI&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;Neka nam testni fajl bude &lt;a href=&#34;https://vimeo.com/311038206&#34;&gt;&lt;em&gt;Auntie Edna&lt;/em&gt;&lt;/a&gt;.&lt;br&gt;
@@ -169,7 +172,7 @@ Ako još niste instalirali/ažurirali &lt;em&gt;youtube-dl&lt;/em&gt; evo komand
 &lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/youtube-dl.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
 Izaberemo jednu od ponuđenih opcija sa najvećom rezolucijom (ja sam uzeo poslednju):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;youtube-dl -f dash-fastly_skyfire-video-1197402664 https://vimeo.com/311038206
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sad skinemo titl &lt;a href=&#34;https://titlovi.com/titlovi/auntie-edna-318598/&#34;&gt;odavde&lt;/a&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sad skinimo titl &lt;a href=&#34;https://titlovi.com/titlovi/auntie-edna-318598/&#34;&gt;odavde&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Imamo video fajl (&lt;em&gt;Auntie Edna-311038206.mp4&lt;/em&gt;) i titl (Auntie.Edna.2018.720p.BluRay.x264-[YTS.AM].srt) koje ćemo preimenovati u &lt;strong&gt;&lt;em&gt;Auntie_Edna.mp4&lt;/em&gt;&lt;/strong&gt; i &lt;strong&gt;&lt;em&gt;titl.srt&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mv &lt;span class=&#34;s1&#34;&gt;&amp;#39;Auntie Edna-311038206.mp4&amp;#39;&lt;/span&gt; Auntie_Edna.mp4
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mv Auntie.Edna.2018.720p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.srt titl.srt
@@ -241,7 +244,18 @@ Evo kako bi smo skalirali naš video fajl sa 1920x808 [A.R - 2.40:1] na 1280:720
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;YTS.AM&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:-1:-1,setsar=1,subtitles=titl.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=20,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,MarginV=1,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;[v]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[v]&amp;#34;&lt;/span&gt; -map 0:a -c:a copy -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; Auntie-Edna.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_MarginV_1_H265.png&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_MarginV_1_H265.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Kako bi recimo nalepili titl na samo jedan deo video fajla. Evo primera kako iz desete epizode šeste sezone &lt;em&gt;Game of Thrones&lt;/em&gt; izrenderovati titl na segment od &lt;strong&gt;00:57:14&lt;/strong&gt; do &lt;strong&gt;01:01:51&lt;/strong&gt; u kome &lt;em&gt;Lyanna Mormont&lt;/em&gt; drži istorijski govor Severnjacima:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -ss 00:57:14 -to 01:01:51 -copyts -i GoT.S06E10.mkv -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;subtitles=GoT.S06E10.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;&amp;#34;&lt;/span&gt; -c:a copy -ss 00:57:14 -y king_in_the_north.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/my2r8tVEqsQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+  &lt;br&gt;
 I to bi bilo to...&lt;/p&gt;
 
         
