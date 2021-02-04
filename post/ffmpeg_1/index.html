@@ -411,7 +411,8 @@ Evo kako bi smo skalirali naš video fajl sa 1920x808 [A.R - 2.40:1] na 1280:720
 <p><img src="/img/ffmpeg_1/skalirano_MarginV_1_H265.png" alt=""></p>
 <ol start="9">
 <li>
-<p>Kako bi recimo nalepili titl na samo jedan deo video fajla. Evo primera kako iz desete epizode šeste sezone <em>Game of Thrones</em> izrenderovati titl na segment od <strong>00:57:14</strong> do <strong>01:01:51</strong> u kome <em>Lyanna Mormont</em> drži istorijski govor Severnjacima:</p>
+<p>Kako bi recimo isekli deo fajla i na njega nalepili titl.<br>
+Evo primera kako iz desete epizode šeste sezone <em>Game of Thrones</em> izrenderovati titl na segment od <strong>00:57:14</strong> do <strong>01:01:51</strong> u kome <em>Lyanna Mormont</em> drži istorijski govor Severnjacima:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -ss 00:57:14 -to 01:01:51 -copyts -i GoT.S06E10.mkv -vf <span class="s2">&#34;subtitles=GoT.S06E10.srt:charenc=CP1250:force_style=&#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;H0000FFFF&#39;&#34;</span> -c:a copy -ss 00:57:14 -y king_in_the_north.mp4
 </code></pre></div></li>
 </ol>

@@ -247,7 +247,8 @@ Evo kako bi smo skalirali naš video fajl sa 1920x808 [A.R - 2.40:1] na 1280:720
 &lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/skalirano_MarginV_1_H265.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Kako bi recimo nalepili titl na samo jedan deo video fajla. Evo primera kako iz desete epizode šeste sezone &lt;em&gt;Game of Thrones&lt;/em&gt; izrenderovati titl na segment od &lt;strong&gt;00:57:14&lt;/strong&gt; do &lt;strong&gt;01:01:51&lt;/strong&gt; u kome &lt;em&gt;Lyanna Mormont&lt;/em&gt; drži istorijski govor Severnjacima:&lt;/p&gt;
+&lt;p&gt;Kako bi recimo isekli deo fajla i na njega nalepili titl.&lt;br&gt;
+Evo primera kako iz desete epizode šeste sezone &lt;em&gt;Game of Thrones&lt;/em&gt; izrenderovati titl na segment od &lt;strong&gt;00:57:14&lt;/strong&gt; do &lt;strong&gt;01:01:51&lt;/strong&gt; u kome &lt;em&gt;Lyanna Mormont&lt;/em&gt; drži istorijski govor Severnjacima:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -ss 00:57:14 -to 01:01:51 -copyts -i GoT.S06E10.mkv -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;subtitles=GoT.S06E10.srt:charenc=CP1250:force_style=&amp;#39;Fontname=Arial,Fontsize=24,OutlineColour=&amp;amp;H100000000,Outline=1,Alignment=2,Shadow=1,PrimaryColour=&amp;amp;H0000FFFF&amp;#39;&amp;#34;&lt;/span&gt; -c:a copy -ss 00:57:14 -y king_in_the_north.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
