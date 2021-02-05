@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="" class="page">
   <head>
-<title>FFMPEG - neke napredne opcije | Clarity</title>
+<title>FFmpeg - 2. deo | Clarity</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.79.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -21,9 +21,9 @@
 <meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="FFMPEG - neke napredne opcije" />
+<meta name="twitter:title" content="FFmpeg - 2. deo" />
 <meta property="og:url" content="https://speja969.github.io/post/ffmpeg_2/" />
-<meta property="og:title" content="FFMPEG - neke napredne opcije" />
+<meta property="og:title" content="FFmpeg - 2. deo" />
 <meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
 <meta property="og:image" content="https://speja969.github.io/images/building.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://speja969.github.io/icons/apple-touch-icon.png'>
@@ -140,7 +140,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">FFMPEG - neke napredne opcije</h1><div class="post_meta">
+    <h1 class="post_title">FFmpeg - 2. deo</h1><div class="post_meta">
   
     <svg class="icon">
   <use xlink:href="#calendar"></use>
@@ -156,12 +156,12 @@
     
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=FFMPEG%20-%20neke%20napredne%20opcije&url=https%3a%2f%2fspeja969.github.io%2fpost%2fffmpeg_2%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=FFmpeg%20-%202.%20deo&url=https%3a%2f%2fspeja969.github.io%2fpost%2fffmpeg_2%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
     </a>
-    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fspeja969.github.io%2fpost%2fffmpeg_2%2f&t=FFMPEG%20-%20neke%20napredne%20opcije" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fspeja969.github.io%2fpost%2fffmpeg_2%2f&t=FFmpeg%20-%202.%20deo" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -180,190 +180,206 @@
 
     
     <hr>
+<h2 id="_ffmpeg_---napredne-opcije"><strong><em>FFmpeg</em> - napredne opcije</strong></h2>
 <h4 id="preuzeto-odavdehttpsgistgithubcomprotroliume0dbd4bb0f1a396fcb55">preuzeto <a href="https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55">odavde</a></h4>
 <hr>
-<h2 id="converting-audio-into-different-formats--sample-rates">Converting Audio into Different Formats / Sample Rates</h2>
+<hr>
+<h3 id="converting-audio-into-different-formats--sample-rates"><strong>Converting Audio into Different Formats / Sample Rates</strong></h3>
+<hr>
 <p>Minimal example: transcode from MP3 to WMA:<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mp3 output.wma
-</code></pre></div><p>You can get the list of supported formats with:<br></p>
+</code></pre></div><hr>
+<p>You can get the list of supported formats with:<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -formats
-</code></pre></div><p>You can get the list of installed codecs with:<br></p>
+</code></pre></div><hr>
+<p>You can get the list of installed codecs with:<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -codecs
-</code></pre></div><p>Convert WAV to MP3, mix down to mono (use 1 audio channel), set bit rate to 64 kbps and  sample rate to 22050 Hz:<br></p>
+</code></pre></div><hr>
+<p>Convert WAV to MP3, mix down to mono (use 1 audio channel), set bit rate to 64 kbps and  sample rate to 22050 Hz:<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.wav -ac <span class="m">1</span> -ab <span class="m">64000</span> -ar <span class="m">22050</span> output.mp3
-</code></pre></div><br>
+</code></pre></div><hr>
+<br>
 <p>Convert any MP3 file to WAV 16khz mono 16bit:<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ffmpeg -i 111.mp3 -acodec pcm_s16le -ac 1 -ar 16000 out.wav
-</code></pre></div><br>
-<p>Convert any MP3 file to WAV 20khz mono 16bit for ADDAC WAV Player:<br></p>
+</code></pre></div><hr>
+<p>Convert any MP3 file to WAV 20khz mono 16bit for ADDAC WAV Player:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i 111.mp3 -acodec pcm_s16le -ac <span class="m">1</span> -ar <span class="m">22050</span> out.wav
-</code></pre></div><br>
-<p><strong>cd into dir for batch process:</strong><br></p>
+</code></pre></div><hr>
+<h4 id="cd-into-dir-for-batch-process"><strong>cd into dir for batch process:</strong></h4>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> i in *.mp3<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -acodec pcm_s16le -ac <span class="m">1</span> -ar <span class="m">22050</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">i</span><span class="p">%.mp3</span><span class="si">}</span><span class="s2">-encoded.wav&#34;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div><p>Picking the 30 seconds fragment at an offset of 1 minute:<br>
-In seconds<br></p>
+</code></pre></div><hr>
+<p>Picking the 30 seconds fragment at an offset of 1 minute:</p>
+<p><strong>In seconds:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mp3 -ss <span class="m">60</span> -t <span class="m">30</span> output.wav
-</code></pre></div><br>
-<p>In HH:MM:SS format<br></p>
+</code></pre></div><p><strong>In HH:MM:SS format:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mp3 -ss 0:01:00 -t 0:00:30 output.wav
-</code></pre></div><p>Split an audio stream at specified segment rate (e.g. 3 seconds)<br></p>
+</code></pre></div><hr>
+<p>Split an audio stream at specified segment rate (e.g. 3 seconds)<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i somefile.mp3 -f segment -segment_time <span class="m">3</span> -c copy out%03d.mp3
-</code></pre></div><br>
-<h2 id="extract-audio">Extract Audio</h2>
+</code></pre></div><hr>
+<hr>
+<h3 id="extract-audio"><strong>Extract Audio:</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac 
-</code></pre></div><p><code>vn</code> is no video.<br>
-<code>acodec</code> copy says use the same audio stream that's already in there.</p>
+</code></pre></div><ul>
+<li><mark style="background-color: #50C7FF"><strong><em>vn</em></strong></mark> is no video.</li>
+<li><mark style="background-color: #50C7FF"><strong><em>acodec</em></strong></mark> copy says use the same audio stream that's already in there.</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i video.mp4 -f mp3 -ab <span class="m">192000</span> -vn music.mp3
 </code></pre></div><ul>
-<li>The -i option in the above command is simple: it is the path to the input file.</li>
-<li>The second option -f mp3 tells ffmpeg that the ouput is in mp3 format.</li>
-<li>The third option i.e -ab 192000 tells ffmpeg that we want the output to be encoded at 192Kbps and -vn tells ffmpeg that we dont want video.</li>
+<li>The <mark style="background-color: #50C7FF"><em><strong>-i</strong></em></mark> option in the above command is simple: it is the path to the input file.</li>
+<li>The second option <mark style="background-color: #50C7FF"><em><strong>-f</strong></em></mark>  mp3 tells ffmpeg that the ouput is in mp3 format.</li>
+<li>The third option i.e <mark style="background-color: #50C7FF"><em><strong>-ab 192000</strong></em></mark> tells ffmpeg that we want the output to be encoded at 192Kbps and  <mark style="background-color: #50C7FF"><em><strong>-vn</strong></em></mark> tells ffmpeg that we dont want video.</li>
 <li>The last param is the name of the output file.</li>
 </ul>
-<h2 id="replace-audio-on-a-video-without-re-encoding">Replace Audio on a Video without re-encoding.</h2>
-<p><strong>preferred method</strong><br></p>
+<hr>
+<hr>
+<h3 id="replace-audio-on-a-video-without-re-encoding"><strong>Replace Audio on a Video without re-encoding</strong></h3>
+<hr>
+<h5 id="preferred-method"><strong>preferred method:</strong></h5>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i INPUT.mp4 -i AUDIO.wav -shortest -c:v copy -c:a aac -b:a 256k OUTPUT.mp4
-</code></pre></div><p>strip audio stream away from video<br></p>
+</code></pre></div><hr>
+<p>strip audio stream away from video</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i INPUT.mp4 -codec copy -an OUTPUT.mp4
-</code></pre></div><p>combine the two streams together (new audio with originally exisiting video)<br></p>
+</code></pre></div><hr>
+<p>combine the two streams together (new audio with originally exisiting video)</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i 36.MOV -i 36.wav -map 0:v -map 1:a -c copy -y 36-encoded.mov
-</code></pre></div><br>
+</code></pre></div><hr>
 <p>or add an offset to audio<br></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i 36.MOV -itsoffset -0.25 -i 36.wav -map 0:v -map 1:a -c copy -y 36-encoded.mov
-</code></pre></div><br>
+</code></pre></div><hr>
 <hr>
-<ul>
-<li>You say you want to &quot;extract audio from them (mp3 or ogg)&quot;.<br>
+<blockquote>
+<p>You say you want to &quot;extract audio from them (mp3 or ogg)&quot;.<br>
 But what if the audio in the mp4 file is not one of those? you'd have to transcode anyway.<br>
-So why not leave the audio format detection up to ffmpeg?</li>
-</ul>
+So why not leave the audio format detection up to ffmpeg?</p>
 <p>To convert one file:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i videofile.mp4 -vn -acodec libvorbis audiofile.ogg 
 </code></pre></div><p>To convert many files:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span> <span class="k">for</span> vid in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$vid</span><span class="s2">&#34;</span> -vn -acodec libvorbis <span class="s2">&#34;</span><span class="si">${</span><span class="nv">vid</span><span class="p">%.mp4</span><span class="si">}</span><span class="s2">.ogg&#34;</span><span class="p">;</span> <span class="k">done</span> 
-</code></pre></div><blockquote>
-<p>You can of course select any ffmpeg parameters for audio encoding that you like, to set things like bitrate and so on.</p>
-<p>Use <code>-acodec libmp3lame</code>  and change the extension from <code>.ogg</code> to <code>.mp3</code> for mp3 encoding.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> vid in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$vid</span><span class="s2">&#34;</span> -vn -acodec libvorbis <span class="s2">&#34;</span><span class="si">${</span><span class="nv">vid</span><span class="p">%.mp4</span><span class="si">}</span><span class="s2">.ogg&#34;</span><span class="p">;</span> <span class="k">done</span> 
+</code></pre></div><p>You can of course select any ffmpeg parameters for audio encoding that you like, to set things like bitrate and so on.</p>
+<p>Use <mark style="background-color: #50C7FF"><em><strong>-acodec libmp3lame</strong></em></mark>  and change the extension from <mark style="background-color: #50C7FF"><em><strong>.ogg</strong></em></mark> to  <mark style="background-color: #50C7FF"><em><strong>.mp3</strong></em></mark> for mp3 encoding.</p>
 <p>If what you want is to really extract the audio, you can simply &quot;copy&quot; the audio track to a file using -acodec copy. Of course, the main difference is that transcoding is slow and cpu-intensive, while copying is really quick as you're just moving bytes from one file to another. Here's how to copy just the audio track (assuming it's in mp3 format):</p>
-</blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i videofile.mp4 -vn -acodec copy audiofile.mp3 
-</code></pre></div><blockquote>
-<p>Note that in this case, the audiofile format has to be consistent with what the container has (i.e. if the audio is AAC format, you have to say audiofile.aac). You can use the ffprobe command to see which formats you have, this may provide some information:</p>
-</blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span> <span class="k">for</span> file in *<span class="p">;</span> <span class="k">do</span> ffprobe <span class="nv">$file</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span>grep Audio<span class="p">;</span> <span class="k">done</span> 
+</code></pre></div><p>Note that in this case, the audiofile format has to be consistent with what the container has (i.e. if the audio is AAC format, you have to say audiofile.aac). You can use the ffprobe command to see which formats you have, this may provide some information:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> file in *<span class="p">;</span> <span class="k">do</span> ffprobe <span class="nv">$file</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span>grep Audio<span class="p">;</span> <span class="k">done</span> 
 </code></pre></div><p>A possible way to automatically parse the audio codec and name the audio file accordingly would be:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> file in *mp4 *avi<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span> -vn -acodec copy <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span>.ffprobe <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span>sed -rn <span class="s1">&#39;s/.*Audio: (...), .*/\1/p&#39;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div><p>Note that this command uses sed to parse output from ffprobe for each file, it assumes a 3-letter audio codec name (e.g. mp3, ogg, aac) and will break with anything different.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> file in *mp4 *avi<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span> -vn -acodec copy <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span>.<span class="sb">`</span>ffprobe <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span>sed -rn <span class="s1">&#39;s/.*Audio: (...), .*/\1/p&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div><p>Note that this command uses sed to parse output from ffprobe for each file, it assumes a 3-letter &gt;audio codec name (e.g. mp3, ogg, aac) and will break with anything different.</p>
+</blockquote>
 <hr>
-<p>Encoding multiple files</p>
+<p><strong>Encoding multiple files</strong></p>
 <p>You can use a Bash &quot;for loop&quot; to encode all files in a directory:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ mkdir newfiles
-<span class="ln">2</span>$ <span class="k">for</span> f in *.m4a<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -codec:v copy -codec:a libmp3lame -q:a <span class="m">2</span> newfiles/<span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.m4a</span><span class="si">}</span><span class="s2">.mp3&#34;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div><br>
-<hr>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>mkdir newfiles
+<span class="ln">2</span><span class="k">for</span> f in *.m4a<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -codec:v copy -codec:a libmp3lame -q:a <span class="m">2</span> newfiles/<span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.m4a</span><span class="si">}</span><span class="s2">.mp3&#34;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div><hr>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.m4a -acodec libmp3lame -ab 128k output.mp3
-</code></pre></div><br>
-m4a to mp3 conversion with ffmpeg and lame
+</code></pre></div><p>m4a to mp3 conversion with ffmpeg and lame</p>
 <hr>
-<p>A batch file version of the same command would be:<br></p>
+<p>A batch file version of the same command would be:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> f in *.m4a<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$f</span><span class="s2">&#34;</span> -acodec libmp3lame -ab 256k <span class="s2">&#34;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.m4a</span><span class="si">}</span><span class="s2">.mp3&#34;</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div><hr>
-<h2 id="extract-single-image-from-a-video-at-specified-frame">Extract Single Image from a Video at Specified Frame</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ vf <span class="o">[</span>ss<span class="o">][</span>filename<span class="o">][</span>outputFileName<span class="o">]</span>
-</code></pre></div><br>
+<hr>
+<h3 id="extract-single-image-from-a-video-at-specified-frame"><strong>Extract Single Image from a Video at Specified Frame</strong></h3>
 <ul>
-<li>where <code>vf</code> is a custom bash script as follows:<br></li>
+<li>vf [ss][filename][outputFileName]<br>
+where <mark style="background-color: #50C7FF"><strong><em>vf</em></strong></mark>  is a custom bash script as follows:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -ss <span class="nv">$1</span> -i <span class="nv">$2</span> -qmin <span class="m">1</span> -q:v <span class="m">1</span> -qscale:v <span class="m">2</span> -frames:v <span class="m">1</span> -huffman optimal <span class="nv">$3</span>.jpg
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -ss <span class="nv">$1</span> -i <span class="nv">$2</span> -qmin <span class="m">1</span> -q:v <span class="m">1</span> -qscale:v <span class="m">2</span> -frames:v <span class="m">1</span> -huffman optimal <span class="nv">$3</span>.jpg
 </code></pre></div><ul>
-<li>ss offset = frame number divided by FPS of video = the decimal (in milliseconds) ffmpeg needs i.e. 130.5<br></li>
+<li><mark style="background-color: #50C7FF"><em><strong>ss offset</strong></em></mark> = frame number divided by FPS of video = the decimal (in milliseconds) ffmpeg needs i.e. 130.5<br></li>
 </ul>
+<hr>
+<hr>
 <h2 id="merge-multiple-videos">Merge Multiple Videos</h2>
-<p>concat demuxer<br></p>
+<hr>
+<p>concat demuxer</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ cat mylist.txt
 <span class="ln">2</span>file <span class="s1">&#39;/path/to/file1&#39;</span>
 <span class="ln">3</span>file <span class="s1">&#39;/path/to/file2&#39;</span>
 <span class="ln">4</span>file <span class="s1">&#39;/path/to/file3&#39;</span>
-</code></pre></div><br>
-<br>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -f concat -safe <span class="m">0</span> -i mylist.txt -c copy output.mp
-</code></pre></div><h2 id="split-a-video-into-images">Split a Video into Images</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -i video.flv image%d.jpg
-</code></pre></div><h2 id="convert-images-into-a-video">Convert Images into a Video</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -f image2 -i image%d.jpg imagestovideo.mp4
-<span class="ln">2</span>$ ffmpeg -i image-%03d.png -c:v libx264 -pix_fmt yuv420p test.mp4
-<span class="ln">3</span>$ ffmpeg -r 1/5 -i image-%03d.png -c:v libx264 -vf <span class="nv">fps</span><span class="o">=</span><span class="m">25</span> -pix_fmt yuv420p test.mp4
-</code></pre></div><h2 id="convert-single-image-into-a-video">Convert Single Image into a Video</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -loop <span class="m">1</span> -i image.png -c:v libx264 -t <span class="m">60</span> -pix_fmt yuv420p -vf <span class="nv">scale</span><span class="o">=</span>1920:1080 out.mp4
-</code></pre></div><h2 id="convert-non-sequentially-named-images-in-a-directory">Convert non-sequentially named Images in a directory</h2>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -f concat -safe <span class="m">0</span> -i mylist.txt -c copy output.mp
+</code></pre></div><hr>
+<h3 id="split-a-video-into-images"><strong>Split a Video into Images</strong></h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i video.flv image%d.jpg
+</code></pre></div><hr>
+<h3 id="convert-images-into-a-video"><strong>Convert Images into a Video</strong></h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -f image2 -i image%d.jpg imagestovideo.mp4
+<span class="ln">2</span>ffmpeg -i image-%03d.png -c:v libx264 -pix_fmt yuv420p test.mp4
+<span class="ln">3</span>ffmpeg -r 1/5 -i image-%03d.png -c:v libx264 -vf <span class="nv">fps</span><span class="o">=</span><span class="m">25</span> -pix_fmt yuv420p test.mp4
+</code></pre></div><hr>
+<h3 id="convert-single-image-into-a-video"><strong>Convert Single Image into a Video</strong></h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -loop <span class="m">1</span> -i image.png -c:v libx264 -t <span class="m">60</span> -pix_fmt yuv420p -vf <span class="nv">scale</span><span class="o">=</span>1920:1080 out.mp4
+</code></pre></div><hr>
+<h3 id="convert-non-sequentially-named-images-in-a-directory"><strong>Convert non-sequentially named Images in a directory</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -framerate <span class="m">30</span> -pattern_type glob -i <span class="s1">&#39;*.jpeg&#39;</span> -c:v libx264 -pix_fmt yuv420p gan-1.mov
-</code></pre></div><h2 id="convert-image-sequence-of-many-different-sizes-and-conform-to-specific-frame-size">Convert image sequence of many different sizes and conform to specific frame size</h2>
+</code></pre></div><hr>
+<h3 id="convert-image-sequence-of-many-different-sizes-and-conform-to-specific-frame-size"><strong>Convert image sequence of many different sizes and conform to specific frame size</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf <span class="s2">&#34;scale=max(1280\,a*720):max(1280\,720/a),crop=1280:720&#34;</span> test.mp4
-</code></pre></div><h2 id="guarantee-aspect-ratio-from-image-sequence">Guarantee aspect ratio from image sequence</h2>
+</code></pre></div><hr>
+<h3 id="guarantee-aspect-ratio-from-image-sequence"><strong>Guarantee aspect ratio from image sequence</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf <span class="s2">&#34;scale=720:-2&#34;</span> test.mp4
-</code></pre></div><h2 id="evaluate-which-ratio-to-apply-for-scaling-then-scale-with-the-requisite-amount-of-padding">Evaluate which ratio to apply for scaling, then scale with the requisite amount of padding</h2>
+</code></pre></div><hr>
+<h3 id="evaluate-which-ratio-to-apply-for-scaling-then-scale-with-the-requisite-amount-of-padding"><strong>Evaluate which ratio to apply for scaling, then scale with the requisite amount of padding</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf <span class="s2">&#34;scale=iw*min(1280/iw\,720/ih):ih*min(1280/iw\,720/ih), pad=1280:720:(1280-iw*min(1280/iw\,720/ih))/2:(720-ih*min(1280/iw\,720/ih))/2&#34;</span> test.mp4
-</code></pre></div><br>
-<br>
-1920 version:
+</code></pre></div><p><strong>1920 version:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ffmpeg -i image-%04d.jpg -c:v libx264 -pix_fmt yuv420p -vf <span class="s2">&#34;scale=iw*min(1920/iw\,1080/ih):ih*min(1920/iw\,1080/ih), pad=1920:1080:(1920-iw*min(1920/iw\,1080/ih))/2:(1080-ih*min(1920/iw\,1080/ih))/2&#34;</span> test.mp4
-</code></pre></div><h2 id="convert-mov-jpeg-a-or-other-codec-to-h264-mp4">Convert .mov (JPEG-A or other codec) to H264 .mp4</h2>
+</code></pre></div><hr>
+<h3 id="convert-mov-jpeg-a-or-other-codec-to-h264-mp4"><strong>Convert .mov (JPEG-A or other codec) to H264 .mp4</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mov -vcodec libx264 -pix_fmt yuv420p output.mp4
-</code></pre></div><br>
-<h2 id="simple-flac-convert">Simple FLAC convert</h2>
+</code></pre></div><hr>
+<h3 id="simple-flac-convert"><strong>Simple FLAC convert</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i audio.xxx -c:a flac audio.flac
-</code></pre></div><h2 id="mix-stereo-to-mono">Mix Stereo to Mono</h2>
+</code></pre></div><hr>
+<h3 id="mix-stereo-to-mono"><strong>Mix Stereo to Mono</strong></h3>
 <p>You can modify a video file directly without having to re-encode the video stream.<br>
-However the audio stream will have to be re-encoded.
-<br>
-Left channel to mono:</p>
+However the audio stream will have to be re-encoded.</p>
+<p><strong>Left channel to mono:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i video.mp4 -map_channel 0.1.0 -c:v copy mono.mp4
-</code></pre></div><br>
-<br>
-Left channel to stereo:<br>
+</code></pre></div><p><strong>Left channel to stereo:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i video.mp4 -map_channel 0.1.0 -map_channel 0.1.0 -c:v copy stereo.mp4
-</code></pre></div><br>
-<br>
-If you want to use the right channel, write  `0.1.1`  instead of  `0.1.0.`
-<h2 id="trim-end-of-file-mp3">Trim End of file (mp3)</h2>
-<p>Here's a command line that will slice to 30 seconds without transcoding:
-<br></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -t <span class="m">30</span> -i inputfile.mp3 -acodec copy outputfile.mp3
-</code></pre></div><br>
+</code></pre></div><p>If you want to use the right channel, write   <mark style="background-color: #50C7FF"><em><strong>0.1.1</strong></em></mark> instead of  <mark style="background-color: #50C7FF"><em><strong>0.1.0.</strong></em></mark></p>
 <hr>
-<h2 id="to-encode-or-re-encode-">To Encode or Re-encode ?</h2>
+<h3 id="trim-end-of-file-mp3"><strong>Trim End of file (mp3)</strong></h3>
+<p>Here's a command line that will slice to 30 seconds without transcoding:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -t <span class="m">30</span> -i inputfile.mp3 -acodec copy outputfile.mp3
+</code></pre></div><hr>
+<h3 id="to-encode-or-re-encode-"><strong>To Encode or Re-encode ?</strong></h3>
 <p>Do you need to cut video with re-encoding or without re-encoding mode? You can try to following below command.<br>
-Synopsis: ffmpeg -i [input_file] -ss [start_seconds] -t [duration_seconds] [output_file]</p>
-<h4 id="use-ffmpeg-cut-mp4-video-without-re-encoding">use ffmpeg cut mp4 video without re-encoding</h4>
-<p>Example:<br></p>
+Synopsis: <em><strong>ffmpeg -i [input_file] -ss [start_seconds] -t [duration_seconds] [output_file]</strong></em></p>
+<hr>
+<h4 id="use-ffmpeg-cut-mp4-video-without-re-encoding"><strong>use ffmpeg cut mp4 video without re-encoding</strong></h4>
+<p>Example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -c copy cut_video.mp4
 </code></pre></div><hr>
-<h4 id="use-ffmpeg-cut-mp4-video-with-re-encoding">use ffmpeg cut mp4 video with re-encoding</h4>
-<p>Example:<br></p>
+<h4 id="use-ffmpeg-cut-mp4-video-with-re-encoding"><strong>use ffmpeg cut mp4 video with re-encoding</strong></h4>
+<p>Example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -async <span class="m">1</span> -strict -2 cut_video.mp4
 </code></pre></div><p>If you want to cut off section from the beginning, simply drop -t 00:00:10 from the command</p>
-<h4 id="reduce-filesize">reduce filesize</h4>
-<p>Example:<br></p>
+<hr>
+<h4 id="reduce-filesize"><strong>reduce filesize</strong></h4>
+<p>Example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mov -vcodec libx264 -crf <span class="m">24</span> output.mp4
-</code></pre></div><br>
-It reduced a 100mb video to 9mb.. Very little change in video quality.
-<p>Example:<br></p>
+</code></pre></div><p>It reduced a 100mb video to 9mb.. Very little change in video quality.</p>
+<p>Example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i video.mov -vf <span class="nv">eq</span><span class="o">=</span><span class="nv">saturation</span><span class="o">=</span><span class="m">0</span> -s 640x480 -c:v libx264 -crf <span class="m">24</span> output.mp4
-</code></pre></div><br>
-make a grayscale version and scale to 640x480
-<h3 id="convert-mp4-to-webm">Convert MP4 to WEBM</h3>
+</code></pre></div><p>make a grayscale version and scale to 640x480</p>
+<hr>
+<h3 id="convert-mp4-to-webm"><strong>Convert MP4 to WEBM</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf <span class="m">31</span> -b:v 1M output.webm
-</code></pre></div><p><a href="http://trac.ffmpeg.org/wiki/Encode/VP9">more info</a><br></p>
-<h3 id="convert-mkv-to-mp4">Convert MKV to MP4</h3>
+</code></pre></div><p><a href="http://trac.ffmpeg.org/wiki/Encode/VP9">more info</a></p>
+<hr>
+<h3 id="convert-mkv-to-mp4"><strong>Convert MKV to MP4</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i file.mkv
-</code></pre></div><br>
-check for streams that you want (video/audio). be sure to convert/specify DTS 6 channel audio stream<br>
-<h3 id="add-watermark-overlay-png-to-the-center-of-a-video">Add Watermark overlay (png) to the center of a video</h3>
+</code></pre></div><p>check for streams that you want (video/audio). be sure to convert/specify DTS 6 channel audio stream</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mkv -strict experimental -map 0:0 -map 0:1 -c:v copy -c:a:1 libmp3lame -b:a 192k -ac <span class="m">6</span> output.mp4
+</code></pre></div><hr>
+<h3 id="add-watermark-overlay-png-to-the-center-of-a-video"><strong>Add Watermark overlay (png) to the center of a video</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i source.mov -i watermark.png -filter_complex <span class="s2">&#34;overlay=x=(main_w-overlay_w)/2:y=(main_h-overlay_h)/2&#34;</span> output.mp4
-</code></pre></div><br>
-<h3 id="concat-a-video-with-a-reversed-copy-of-itself-for-ping-pong-looping-effect">Concat a video with a reversed copy of itself for ping-pong looping effect</h3>
+</code></pre></div><hr>
+<h3 id="concat-a-video-with-a-reversed-copy-of-itself-for-ping-pong-looping-effect"><strong>Concat a video with a reversed copy of itself for ping-pong looping effect</strong></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i input.mp4 -filter_complex <span class="s2">&#34;[0:v]reverse,fifo[r];[0:v][r] concat=n=2:v=1 [v]&#34;</span> -map <span class="s2">&#34;[v]&#34;</span> output.mp4
 </code></pre></div><hr>
+<hr>
 <p>more commands<br>
 <a href="http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs">http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs</a></p>
 
@@ -382,7 +398,7 @@ check for streams that you want (video/audio). be sure to convert/specify DTS 6 
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
-        <a href="https://speja969.github.io/post/ffmpeg_1/" class="nav-link">FFMPEG - moćna multimedijska alatka</a>
+        <a href="https://speja969.github.io/post/ffmpeg_1/" class="nav-link">FFmpeg </a>
       </li>
       <li>
         <a href="https://speja969.github.io/post/hugo_sajt_1/" class="nav-link">Hugo sajt</a>
@@ -397,7 +413,7 @@ check for streams that you want (video/audio). be sure to convert/specify DTS 6 
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://speja969.github.io/post/ffmpeg_1/" class="nav-link">FFMPEG - moćna multimedijska alatka</a>
+        <a href="https://speja969.github.io/post/ffmpeg_1/" class="nav-link">FFmpeg </a>
       </li>
       <li>
         <a href="https://speja969.github.io/post/hugo_sajt_4/" class="nav-link">Hugo sajt - 4.deo</a>
