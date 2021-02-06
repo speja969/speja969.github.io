@@ -257,6 +257,7 @@ FFmpeg je moćno parče softvera sposobno da dekodira, enkodira, transkodira, st
 &lt;p&gt;Da li vam se desilo da dođete u posed video ili audio snimka koji za svoju dužinu  ima neverovatnu veličinu.&lt;br&gt;
 Običnom korisniku nije potreban preterani kvalitet klipa od 7 minuta koji ima 1 GB ili više.&lt;br&gt;
 Treba naći kompromisno rešenje, a za to su nam potrebni parametri video fajla.&lt;br&gt;
+U paketu sa &lt;em&gt;&lt;strong&gt;FFmpeg&lt;/strong&gt;&lt;/em&gt; instalira se i &lt;em&gt;&lt;strong&gt;FFplay&lt;/strong&gt;&lt;/em&gt; (jednostavni medijski plejer) i &lt;em&gt;FFprobe&lt;/em&gt; (alat za analizu parametara multimedijskih fajlova).&lt;br&gt;
 Evo kako pomoću &lt;em&gt;FFprobe&lt;/em&gt; možemo dobiti parametre našeg testnog &lt;a href=&#34;https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4&#34;&gt;fajla&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Rezoluciju:&lt;/li&gt;
@@ -272,8 +273,8 @@ Evo kako pomoću &lt;em&gt;FFprobe&lt;/em&gt; možemo dobiti parametre našeg te
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffprobe -v error -show_entries &lt;span class=&#34;nv&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;size -of &lt;span class=&#34;nv&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;noprint_wrappers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# dobijena vrednost je bajtima (za iznos u MB treba podeliti sa 1048576)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/ffprobe.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
-Kao što vidimo komande su dugačke i mada daju sliku o upotrebljivosti, njihova primena nije baš praktična. Mnogo jednostavnije je instalirati neki &lt;em&gt;GUI&lt;/em&gt; program, kao što je &lt;em&gt;mediaInfo-gui&lt;/em&gt;:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/ffprobe.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;kao-što-vidimo-komande-su-dugačke-i-mada-daju-sliku-o-upotrebljivosti-njihova-primena-nije-baš-praktična-mnogo-jednostavnije-je-instalirati-neki-_gui_-program-kao-što-je-_mediainfo-gui_&#34;&gt;Kao što vidimo komande su dugačke i mada daju sliku o upotrebljivosti, njihova primena nije baš praktična. Mnogo jednostavnije je instalirati neki &lt;em&gt;GUI&lt;/em&gt; program, kao što je &lt;em&gt;mediaInfo-gui&lt;/em&gt;:&lt;/h6&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;sudo apt install mediainfo-gui
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -475,6 +476,14 @@ Evo primera kako iz desete epizode šeste sezone &lt;em&gt;Game of Thrones&lt;/e
   &lt;iframe src=&#34;https://www.youtube.com/embed/my2r8tVEqsQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;napomena:&lt;br&gt;
+Podatke o parametrima video fajla možemo da dobijemo i iz komandne linije:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo apt install mediainfo
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mediainfo --Inform&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Video;rezolucija = %Width%x%Height% Px, dijagonala = %DisplayAspectRatio/String%, bitrejt = %BitRate/String%, frejmrejt = %FrameRate% fps, dužina = %Duration/String1%, %InternetMediaType%&amp;#34;&lt;/span&gt; https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;odgovor:&lt;br&gt;
+rezolucija = 3840x2160 Px, dijagonala = 16:9, bitrejt = 22.0 Mb/s, frejmrejt = 29.970 fps, dužina = 23 s 123 ms, video/H264&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre&gt;&lt;code&gt; I to bi bilo to...
 &lt;/code&gt;&lt;/pre&gt;
 
