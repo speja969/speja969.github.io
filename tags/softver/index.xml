@@ -6,7 +6,224 @@
     <description>Recent content in Softver on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 04 Feb 2021 14:43:30 +0100</lastBuildDate><atom:link href="https://speja969.github.io/tags/softver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 09:04:17 +0100</lastBuildDate><atom:link href="https://speja969.github.io/tags/softver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg - treći deo</title>
+      <link>https://speja969.github.io/post/ffmpeg_3/</link>
+      <pubDate>Sun, 07 Feb 2021 09:04:17 +0100</pubDate>
+      
+      <guid>https://speja969.github.io/post/ffmpeg_3/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;_ffmpeg_---kraćenje-i-spajanje&#34;&gt;&lt;strong&gt;&lt;em&gt;FFmpeg&lt;/em&gt; - kraćenje i spajanje&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;Uzmimo za dalje razmatranje 2 testna fajla:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov&#34;&gt;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Evo koje parametre nam daje mediainfo za prvi:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mediainfo --Inform&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Video;rezolucija = %Width%x%Height% Px, dijagonala = %DisplayAspectRatio/String%, bitrejt = %BitRate/String%, frejmrejt = %FrameRate% fps, dužina = %Duration/String1%, %InternetMediaType%&amp;#34;&lt;/span&gt; https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;rezolucija = 1920x1080 Px, dijagonala = 16:9, bitrejt = 14.4 Mb/s, frejmrejt = 29.970 fps, dužina = 14 s 982 ms, video/H264&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4&#34;&gt;https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Parametri za drugi:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mediainfo --Inform&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Video;rezolucija = %Width%x%Height% Px, dijagonala = %DisplayAspectRatio/String%, bitrejt = %BitRate/String%, frejmrejt = %FrameRate% fps, dužina = %Duration/String1%, %InternetMediaType%&amp;#34;&lt;/span&gt; https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;rezolucija = 3840x2160 Px, dijagonala = 16:9, bitrejt = 22.0 Mb/s, frejmrejt = 29.970 fps, dužina = 23 s 123 ms, video/H264&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;skraćivanje-sa-zadatim-početnim-vremenom-i-dužinom-trajanja-segmenta&#34;&gt;&lt;em&gt;&lt;strong&gt;SKRAĆIVANJE SA ZADATIM POČETNIM VREMENOM I DUŽINOM TRAJANJA SEGMENTA&lt;/strong&gt;&lt;/em&gt;:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;primer 1 (skraćujemo na segment od druge sekunde sa trajanjem od 6 sekundi):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov&amp;#34;&lt;/span&gt; -ss 00:00:02 -t 00:00:06 -c copy -avoid_negative_ts make_zero &lt;span class=&#34;s2&#34;&gt;&amp;#34;eksplozija_6s.mov&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h4 id=&#34;skraćivanje-sa-zadatim-početnim-i-završnim-vremenom--segmenta&#34;&gt;&lt;em&gt;&lt;strong&gt;SKRAĆIVANJE SA ZADATIM POČETNIM I ZAVRŠNIM VREMENOM  SEGMENTA&lt;/strong&gt;&lt;/em&gt;:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;primer 2 (skraćujemo na segment od osme sekunde do trinaeste sekunde):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov&amp;#34;&lt;/span&gt; -ss 00:00:08 -to 00:00:13 -c copy -avoid_negative_ts make_zero &lt;span class=&#34;s2&#34;&gt;&amp;#34;eksplozija_5s.mov&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;spajanje-video-fajlova&#34;&gt;&lt;em&gt;&lt;strong&gt;SPAJANJE VIDEO FAJLOVA&lt;/strong&gt;&lt;/em&gt;:&lt;/h3&gt;
+&lt;p&gt;Najpre da usaglasimo značenje termina:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Strimovanje ili striming (&lt;em&gt;Streaming&lt;/em&gt;) u osnovnom značenju predstavlja isporučivanje multimedijalnih sadržaja (video i audio materijal) od strane servera isporučioca do klijenta - krajnjeg korisnika i to &lt;strong&gt;u realnom vremenu&lt;/strong&gt;.  Više o tome &lt;a href=&#34;https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=74052&#34;&gt;ovde&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Kodeci (&lt;em&gt;Codecs&lt;/em&gt;), su tehnologije kompresije sastavljene od dve komponente: enkodera zaduženog za komprimovanje fajlova i dekodera koji služi za dekompresiju.Tako postoje kodeci za podatke (ZIP,RAR), za statične slike (JPEG,TIFF,PNG), audio fajlove (MP3,AAC), video fajlove (Cinepak,MPEG-2,H.264,VP9). Više o tome &lt;a href=&#34;https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=74487&#34;&gt;ovde&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Jedan od još uvek najraširenijih video kodeka H.264 je ugrađen u brojne &amp;quot;kontejner&amp;quot; formate od kojih je najpoznatiji &lt;em&gt;MPEG-4&lt;/em&gt; (&lt;strong&gt;.mp4&lt;/strong&gt;), ali i u &lt;em&gt;QuickTime&lt;/em&gt; (&lt;strong&gt;.MOV&lt;/strong&gt;), &lt;em&gt;Flash&lt;/em&gt; (&lt;strong&gt;.F4V&lt;/strong&gt;), &lt;em&gt;3GP&lt;/em&gt; koji se koristi za mobilne telefone (&lt;strong&gt;.3GP&lt;/strong&gt;), kao i  &lt;em&gt;MPEG transport stream&lt;/em&gt; (&lt;strong&gt;.ts&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;H.264 kodek se u izveštaju programa za analizu parametara može pojaviti i pod nazivom &lt;em&gt;AVC&lt;/em&gt; kako je registrovan od strane druge &lt;a href=&#34;http://www.iso.org/iso/prods-services/popstds/mpeg.html&#34;&gt;institucije&lt;/a&gt;. Više o H.264 &lt;a href=&#34;https://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-Is-H.264-74735.aspx&#34;&gt;ovde&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;spajanje-video-fajlova-sa-istim-kodekom&#34;&gt;&lt;em&gt;&lt;strong&gt;SPAJANJE VIDEO FAJLOVA SA ISTIM KODEKOM&lt;/strong&gt;&lt;/em&gt;:&lt;/h4&gt;
+&lt;p&gt;Za spajanje dva video fajla sa istim kodekom (oba test fajla su H.264),postoje dve metode:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;the concat &#39;&#39;demuxer&#39;&#39;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;the concat &#39;&#39;protocol&#39;&#39;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;concat-demuxer&#34;&gt;Concat demuxer:&lt;/h4&gt;
+&lt;p&gt;Ova metoda zahteva iste kodeke, ali dozvoljava različite formate &amp;quot;kontejnera&amp;quot;, dok je primena &amp;quot;protocol&amp;quot; metode ograničena na svega nekoliko.&lt;br&gt;
+Procedura je sledeća:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Formiramo fajl &lt;em&gt;mylist.txt&lt;/em&gt; sa svim fajlovima koje želimo da spojimo (prva linija se igniriše) i to u formi:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# this is a comment
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;file &amp;#39;/path/to/file1.wav&amp;#39;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;file &amp;#39;/path/to/file2.wav&amp;#39;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;file &amp;#39;/path/to/file3.wav&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Putanje mogu biti relativne ili apsolutne (ipak sam pobornik apsolutnih).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Novonastali strim možemo da re-enkodiramo ili ostavimo postojeće parametre kodeka:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -f concat -safe &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -i mylist.txt -c copy output.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;U našoj probi skraćivanja dobili smo 2 fajla istog kodeka koje ćemo spojiti:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;eksplozija_6s.mov  (/mnt/8300-podaci/multimedija/eksplozija_6s.mov)&lt;/li&gt;
+&lt;li&gt;eksplozija_5s.mov  (/mnt/8300-podaci/multimedija/eksplozija_5s.mov)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mv eksplozija_6s.mov 1.eksplozija_6s.mov &lt;span class=&#34;c1&#34;&gt;# preimenujemo zbog redosleda&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mv eksplozija_5s.mov 2.eksplozija_5s.mov &lt;span class=&#34;c1&#34;&gt;# preimenujemo zbog redosleda&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# spajamo prvi deo od 02. do 08. s i drugi deo od 08. do 13. s&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;file &amp;#39;%s&amp;#39;\n&amp;#34;&lt;/span&gt; ./*.mov &amp;gt; mylist.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Izvršimo spajanje bez re-enkodiranja:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -f concat -safe &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -i mylist.txt -c copy eksplozija_11s.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Izvršimo spajanje direktno, bez formiranja &lt;em&gt;mylist.txt&lt;/em&gt; fajla:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -f concat -safe &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -i &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; f in ./*.mov&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;file &amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PWD&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; -c copy eksplozija_11s.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Napravimo fajl koji je 10 puta ponovljeni naš &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;eksplozija_11s.mov&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;for i in {1..10}; do printf &amp;#34;file &amp;#39;%s&amp;#39;\n&amp;#34; eksplozija_11s.mov &amp;gt;&amp;gt; mylist.txt; done
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ffmpeg -f concat -i mylist.txt -c copy 10xeksplozija_11s.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;concat-protocol&#34;&gt;Concat protocol:&lt;/h4&gt;
+&lt;p&gt;Dok &lt;em&gt;demuxer&lt;/em&gt; radi na nivou strima, &lt;em&gt;concat protocol&lt;/em&gt; radi na nivou fajla.Tako neki fajlovi, pvenstveno &lt;em&gt;MPEG-2 transport streams&lt;/em&gt; mogu da budu spajani.&lt;br&gt;
+Evo primera spajanja tri &lt;em&gt;MPEG-2 TS&lt;/em&gt; fajla bez re-enkodiranja:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;concat:input1.ts|input2.ts|input3.ts&amp;#34;&lt;/span&gt; -c copy output.ts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SPAJANJE POMOĆU POSREDNIČKIH FAJLOVA:&lt;/p&gt;
+&lt;p&gt;Spajanje MP4 fajlova bez gubitaka (&lt;em&gt;losslessly&lt;/em&gt;), možemo da izvedemo transkodirajući ih u &lt;em&gt;MPEG-2 transport stream&lt;/em&gt;. Za slučaj video komponenti enkodiranih u H.264 i audio u AAC imali bi:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ffmpeg -i input2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;concat:intermediate1.ts|intermediate2.ts&amp;#34;&lt;/span&gt; -c copy -bsf:a aac_adtstoasc output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Svi MPEG kodeci (MPEG-4 Part 10 / AVC, MPEG-4 Part 2, MPEG-2 Video, MPEG-1 Audio Layer II, MPEG-2 Audio Layer III (MP3), MPEG-4 Part III (AAC)), su podržani od strane &lt;em&gt;MPEG-2 TS&lt;/em&gt; &amp;quot;kontejnera&amp;quot;, mada komande traže izvesne izmene kao što su &lt;a href=&#34;https://www.ffmpeg.org/ffmpeg-bitstream-filters.html&#34;&gt;bitstrim filteri&lt;/a&gt; (&lt;em&gt;&lt;strong&gt;-bsf&lt;/strong&gt;&lt;/em&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;spajanje-video-fajlova-sa-različitim-kodekom&#34;&gt;&lt;em&gt;&lt;strong&gt;SPAJANJE VIDEO FAJLOVA SA RAZLIČITIM KODEKOM&lt;/strong&gt;&lt;/em&gt;:&lt;/h3&gt;
+&lt;p&gt;Često je slučaj da trba spojiti fajlove sa različitim kodecima čime su nam onemogućene prethodno navedene metode.&lt;/p&gt;
+&lt;h4 id=&#34;concat&#34;&gt;Concat:&lt;/h4&gt;
+&lt;p&gt;Spajanje audio i video strimova se vrši po reosledu jedan za drugim.&lt;br&gt;
+Filter u stvari obrađuje segmente sinhronizovanih audio i video strimova.&lt;br&gt;
+Svi segmenti treba da imaju identičan broj strimova svakog tipa, što predstavlja ujedno i broj strimova na izlazu.&lt;br&gt;
+Potrebno je da spajani fajlovi imaju istu rezoluciju (npr. 1920x1080 Px) kao i frejmrejt. Moguće je pre spajanja ,fajlove kojima je potrebno, dodati &lt;a href=&#34;http://ffmpeg.org/ffmpeg-filters.html#scale-1&#34;&gt;&lt;em&gt;&lt;strong&gt;scale filter&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; ili &lt;a href=&#34;http://ffmpeg.org/ffmpeg-filters.html#scale2ref&#34;&gt;scale2ref&lt;/a&gt; . Još nekoliko parametara treba da se podudaraju kao npr. dijagonala (&lt;em&gt;&lt;strong&gt;aspect ratio&lt;/strong&gt;&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Procedura je sledeća:&lt;/p&gt;
+&lt;p&gt;Recimo da imamo tri fajla da spojimo, a svaki sa po jednim video i audio strimom.&lt;br&gt;
+&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;&lt;em&gt;Concat filter&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; bi izgledao ovako:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input1.mp4 -i input2.webm -i input3.mov &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;-filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;[0:v:0][0:a:0][1:v:0][1:a:0][2:v:0][2:a:0]concat=n=3:v=1:a=1[outv][outa]&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;-map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[outv]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;s2&#34;&gt;&amp;#34;[outa]&amp;#34;&lt;/span&gt; output.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hajde da analiziramo komandu:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Prvo unesemo ulazne fajlove:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;-i input1.mp4&lt;/li&gt;
+&lt;li&gt;-i input2.webm&lt;/li&gt;
+&lt;li&gt;-i input3.mov&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Zatim -filter_complex pošto postoji više ulaza i više izlaza.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Zatim sledi:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;[0:v:0][0:a:0][1:v:0][1:a:0][2:v:0][2:a:0]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ovde svaki prvi karakter svake srednje zagrade predstavlja ulazni fajl (0 --&amp;gt; imput1.mp4 ; 1 --&amp;gt; imput2.webm ; 2 --&amp;gt; imput3.mov)&lt;br&gt;
+drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovarajućeg segmenta (fajla). (video strim 0 &lt;code&gt;[0:v:0]&lt;/code&gt; i audio strim 0 &lt;code&gt;[0:a:0]&lt;/code&gt; su od &lt;em&gt;input1.mp4&lt;/em&gt; itd.).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;concat=n=3:v=1:a=1[outv][outa]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ovo sam &lt;em&gt;&lt;strong&gt;concat filter&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;n=3 informiše filter da postoje 3 fajla&lt;/li&gt;
+&lt;li&gt;v=1 obaveštava da postoji jedan video strim po segmentu&lt;/li&gt;
+&lt;li&gt;a=1 daje do znanja da segmenti imaju po 1 audio strim&lt;/li&gt;
+&lt;li&gt;Filter zatim spaje segmente i stvara dva izlazna strima: &lt;code&gt;[outv]&lt;/code&gt; i &lt;code&gt;[outa]&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_3/concat_filter.png&#34; alt=&#34;concat filter&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Sada ide deo sa mapiranjem izlaznih strimova i unošenje naziva izlaznog fajla:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;-map &amp;#34;[outv]&amp;#34; -map &amp;#34;[outa]&amp;#34; output.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ovo daje instrukciju FFmpeg-u da da prioritet &lt;em&gt;&lt;strong&gt;concat filteru&lt;/strong&gt;&lt;/em&gt; u odnocu na strimove koji potiču direktno od imput fajlova.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;proba&#34;&gt;&lt;strong&gt;proba&lt;/strong&gt;:&lt;/h4&gt;
+&lt;hr&gt;
+&lt;p&gt;Daunlodujmo sledeće fajlove:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/GREEN_SCREEN_ANIMALS__ALPACA.mov&#34;&gt;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/GREEN_SCREEN_ANIMALS__ALPACA.mov&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;i ranije pomenuti:&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov&#34;&gt;https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/AMS__Big_Explosion.mov&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Prvi nam daje parametre:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mediainfo --Inform&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Video;rezolucija = %Width%x%Height% Px, dijagonala = %DisplayAspectRatio/String%, bitrejt = %BitRate/String%, frejmrejt = %FrameRate% fps, dužina = %Duration/String1%, %InternetMediaType%&amp;#34;&lt;/span&gt; https://content.videvo.net/videvo_files/video/free/2015-01/originalContent/GREEN_SCREEN_ANIMALS__ALPACA.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;rezolucija = 1920x1080 Px, dijagonala = 16:9, bitrejt = 16.4 Mb/s, frejmrejt = 23.976 fps, dužina = 34 s 76 ms, video/H264
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;a za drugi već imamo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;rezolucija = 1920x1080 Px, dijagonala = 16:9, bitrejt = 14.4 Mb/s, frejmrejt = 29.970 fps, dužina = 14 s 982 ms, video/H264
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Transkodirajmo prvi fajl iz H264 MOV u H265 MP4 skaliran na 720p i sa bitrejtom od 16 Mb/s&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i GREEN_SCREEN_ANIMALS__ALPACA.mov -vf scale=1280:720,setsar=1:1 -b:v 16M -c:v libx265 -crf 1 output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;preimenujmo ga u alpaka_720p.mp4 i pogledajmo šta daje mediainfo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;rezolucija = 1280x720 Px, dijagonala = 16:9, bitrejt = 5 420 kb/s, frejmrejt = 23.976 fps, dužina = 34 s 76 ms, video/H265
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;preimenujmo i drugi fajl u explosion_1080p.mp4&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Po svim navedenim parametrima osim dijagonale (aspect ratio), alpaka_720p.mp4 i explosion_1080p.mov su različiti. Kako da ih spojimo? Evo kako:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i explosion_1080p.mov -i alpaka_720p.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;[0:v]scale=1280:720:force_original_aspect_ratio=1[v0];[v0][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Video strim prvog segmenta mora da se skalira na rezoluciju 720p ako nju želimo.Pri tome video strim preskače skaliranje jer je već u 720p.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Da smo želeli izlazni fajl u 1024:576 , moralo bi ovako:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i explosion_1080p.mov -i alpaka_720p.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;[0:v]scale=1024:576:force_original_aspect_ratio=1[v0];[1:v]scale=1024:576:force_original_aspect_ratio=1[v1];[v0][0:a][v1][1:a]concat=n=2:v=1:a=1[v][a]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; output1.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Da bi izlazni fajl imao dužinu 1152 Px, ne treba da računamo drugu stranu da bi slika zadržala proporcije 16:9&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i explosion_1080p.mov -i alpaka_720p.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;[0:v]scale=1152:-2:force_original_aspect_ratio=1[v0];[1:v]scale=1152:-2:force_original_aspect_ratio=1[v1];[v0][0:a][v1][1:a]concat=n=2:v=1:a=1[v][a]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; output1.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;faktor -2 važi i za dužinu ako je zahtevana mera visina slike na primer 684 Px:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i explosion_1080p.mov -i alpaka_720p.mp4 -filter_complex &amp;#34;[0:v]scale=-2:684:force_original_aspect_ratio=1[v0];[1:v]scale=-2:684:force_original_aspect_ratio=1[v1];[v0][0:a][v1][1:a]concat=n=2:v=1:a=1[v][a]&amp;#34; -map [v] -map [a] output2.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>FFmpeg - 2. deo</title>
       <link>https://speja969.github.io/post/ffmpeg_2/</link>
