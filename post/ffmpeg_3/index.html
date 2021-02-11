@@ -368,7 +368,7 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i explosion_1080p.mov -i alpaka_720p.mp4 -filter_complex <span class="s2">&#34;[0:v]scale=1280:720:force_original_aspect_ratio=1[v0];[v0][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]&#34;</span> -map <span class="o">[</span>v<span class="o">]</span> -map <span class="o">[</span>a<span class="o">]</span> output.mp4
 </code></pre></div><ol>
 <li>
-<p>Video strim prvog segmenta mora da se skalira na rezoluciju 720p ako nju želimo.Pri tome video strim preskače skaliranje jer je već u 720p.</p>
+<p>Video strim prvog segmenta mora da se skalira na rezoluciju 720p ako nju želimo.Pri tome video strim drugog segmenta preskače skaliranje jer je već u 720p.</p>
 </li>
 <li>
 <p>Da smo želeli izlazni fajl u 1024:576 , moralo bi ovako:</p>
@@ -399,6 +399,9 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
+        <a href="https://speja969.github.io/post/ffmpeg_4/" class="nav-link">FFmpeg - 4. deo</a>
+      </li>
+      <li>
         <a href="https://speja969.github.io/post/ffmpeg_2/" class="nav-link">FFmpeg - 2. deo</a>
       </li>
       <li>
@@ -416,6 +419,9 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
+      <li>
+        <a href="https://speja969.github.io/post/ffmpeg_4/" class="nav-link">FFmpeg - 4. deo</a>
+      </li>
       <li>
         <a href="https://speja969.github.io/post/ffmpeg_2/" class="nav-link">FFmpeg - 2. deo</a>
       </li>
@@ -437,9 +443,6 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
       <li>
         <a href="https://speja969.github.io/post/kako_koristiti_debian-openbox/" class="nav-link">Kako koristiti Debian-OpenBox</a>
       </li>
-      <li>
-        <a href="https://speja969.github.io/post/podes_posle_instal_6/" class="nav-link">Debian 10 u VirtualBox-u - 6.deo</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
@@ -456,12 +459,12 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
         
         <a href='https://speja969.github.io/categories/radionica/' class="post_tag button button_translucent">
           RADIONICA
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         <a href='https://speja969.github.io/categories/u%C4%8Dionica/' class="post_tag button button_translucent">
           UČIONICA
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         
@@ -477,7 +480,7 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
         
         <a href='https://speja969.github.io/series/linux/' class="post_tag button button_translucent">
           LINUX
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         
@@ -491,19 +494,19 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
           <span class="button_tally">4</span>
         </a>
         
+        <a href='https://speja969.github.io/tags/multimedija/' class="post_tag button button_translucent">
+          MULTIMEDIJA
+          <span class="button_tally">4</span>
+        </a>
+        
         <a href='https://speja969.github.io/tags/postinstall-settings/' class="post_tag button button_translucent">
           POSTINSTALL-SETTINGS
           <span class="button_tally">4</span>
         </a>
         
-        <a href='https://speja969.github.io/tags/multimedija/' class="post_tag button button_translucent">
-          MULTIMEDIJA
-          <span class="button_tally">3</span>
-        </a>
-        
         <a href='https://speja969.github.io/tags/softver/' class="post_tag button button_translucent">
           SOFTVER
-          <span class="button_tally">3</span>
+          <span class="button_tally">4</span>
         </a>
         
         <a href='https://speja969.github.io/tags/virtualbox/' class="post_tag button button_translucent">

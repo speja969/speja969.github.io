@@ -6,7 +6,141 @@
     <description>Recent content in Učionica on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 07 Feb 2021 09:04:17 +0100</lastBuildDate><atom:link href="https://speja969.github.io/categories/u%C4%8Dionica/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Feb 2021 09:49:47 +0100</lastBuildDate><atom:link href="https://speja969.github.io/categories/u%C4%8Dionica/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg - 4. deo</title>
+      <link>https://speja969.github.io/post/ffmpeg_4/</link>
+      <pubDate>Wed, 10 Feb 2021 09:49:47 +0100</pubDate>
+      
+      <guid>https://speja969.github.io/post/ffmpeg_4/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;_ffmpeg_---animirani-gif-ovi&#34;&gt;&lt;strong&gt;&lt;em&gt;FFmpeg&lt;/em&gt; - animirani GIF-ovi&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;Kao što smo radili &lt;a href=&#34;https://speja969.github.io/post/ffmpeg_1/#_titlovi_&#34;&gt;ovde&lt;/a&gt;, daunlodujmo probni fajl sa YouTube-a:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /folder/gde/vrsimo/konverziju
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;youtube-dl -f 247+251 https://youtu.be/-2b79B6iaj8
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;mv Tutorial&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;video--2b79B6iaj8.webm test.webm  &lt;span class=&#34;c1&#34;&gt;# preimenujmo fajl u test.webm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Naš probni fajl ima parametre:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mediainfo test.webm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;dobijamo:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;General&lt;br&gt;
+Complete name                            : test.webm&lt;br&gt;
+Format                                   : WebM&lt;br&gt;
+Format version                           : Version 4&lt;br&gt;
+File size                                : 2.40 MiB&lt;br&gt;
+Duration                                 : 15 s 121 ms&lt;br&gt;
+Overall bit rate                         : 1 331 kb/s&lt;br&gt;
+Writing application                      : Lavf58.20.100&lt;br&gt;
+Writing library                          : Lavf58.20.100&lt;/p&gt;
+&lt;p&gt;Video
+ID                                       : 1&lt;br&gt;
+Format                                   : VP9&lt;br&gt;
+Codec ID                                 : V_VP9&lt;br&gt;
+Duration                                 : 15 s 100 ms&lt;br&gt;
+Width                                    : 720 pixels&lt;br&gt;
+Height                                   : 1 280 pixels&lt;br&gt;
+Display aspect ratio                     : 0.562&lt;br&gt;
+Frame rate mode                          : Constant&lt;br&gt;
+Frame rate                               : 30.000 FPS&lt;br&gt;
+Color space                              : YUV&lt;br&gt;
+Language                                 : English&lt;br&gt;
+Default                                  : Yes&lt;br&gt;
+Forced                                   : No&lt;br&gt;
+Color range                              : Limited&lt;br&gt;
+Color primaries                          : BT.709&lt;br&gt;
+Transfer characteristics                 : BT.709&lt;br&gt;
+Matrix coefficients                      : BT.709&lt;/p&gt;
+&lt;p&gt;Audio&lt;br&gt;
+ID                                       : 2&lt;br&gt;
+Format                                   : Opus&lt;br&gt;
+Codec ID                                 : A_OPUS&lt;br&gt;
+Duration                                 : 15 s 121 ms&lt;br&gt;
+Channel(s)                               : 2 channels&lt;br&gt;
+Channel layout                           : L R&lt;br&gt;
+Sampling rate                            : 48.0 kHz&lt;br&gt;
+Bit depth                                : 32 bits&lt;br&gt;
+Compression mode                         : Lossy&lt;br&gt;
+Language                                 : English&lt;br&gt;
+Default                                  : Yes&lt;br&gt;
+Forced                                   : No&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Napravimo animirani gif od fajla kakav jeste&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i test.webm test_HD.gif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Novonastali test_HD.gif ima ~54 MB, što je previše mada izgleda vrlo &lt;a href=&#34;https://speja969.github.io/img/ffmpeg_4/test_HD.gif&#34;&gt;lepo&lt;/a&gt;.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Smanjimo fejmrejt sa 30 na 20, i rezoluciju sa 1280 na 640 Px. prema &lt;a href=&#34;https://speja969.github.io/post/ffmpeg_1/#tabela_16_9&#34;&gt;preporukama&lt;/a&gt; :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i test.webm -r &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt; -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-1:640 test_640_r20.gif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;-r 20       # ovo je &lt;em&gt;rate&lt;/em&gt;, broj frejmova u sekundi&lt;/li&gt;
+&lt;li&gt;scale=-1:640      #  skalirano sa 1280 na 640 Px po &lt;em&gt;y&lt;/em&gt; osi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Parametri za &lt;a href=&#34;https://speja969.github.io/img/ffmpeg_4/test_640.gif&#34;&gt;test_640_r20&lt;/a&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mediainfo test_640_r20.gif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;General&lt;br&gt;
+Complete name                            : test_640_r20.gif&lt;br&gt;
+Format                                   : GIF&lt;br&gt;
+Format/Info                              : Graphics Interchange Format&lt;br&gt;
+File size                                : 11.3 MiB&lt;/p&gt;
+&lt;p&gt;Image
+Format                                   : GIF&lt;br&gt;
+Format/Info                              : Graphics Interchange Format&lt;br&gt;
+Format profile                           : 89a&lt;br&gt;
+Width                                    : 360 pixels&lt;br&gt;
+Height                                   : 640 pixels&lt;br&gt;
+Display aspect ratio                     : 0.562&lt;br&gt;
+Compression mode                         : Lossless&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Isprobajmo još 2 varijante:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-r 8 i scale=-1:640&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://speja969.github.io/img/ffmpeg_4/test_640_r8.gif&#34;&gt;test_640_r8&lt;/a&gt;__5.7 MB;nedovoljan bitrejt&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-r 12 i scale=-1:512&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://speja969.github.io/img/ffmpeg_4/test_512_r12.gif&#34;&gt;test_512_r12&lt;/a&gt;__5.2 MB; optimalno&lt;/p&gt;
+&lt;h3 id=&#34;proba-2&#34;&gt;&lt;strong&gt;proba 2&lt;/strong&gt;:&lt;/h3&gt;
+&lt;p&gt;Skinimo sa YouTube-a &lt;a href=&#34;https://youtu.be/x1Os8NcSrbI&#34;&gt;ovaj&lt;/a&gt; klip u najnižoj rezoluciji: 640x360 Px u MP4 formatu.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;youtube-dl -f &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; https://youtu.be/x1Os8NcSrbI
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Preimenujmo ga u time_lapse_640x360.mp4 i pogledajmo njegov mediainfo izveštaj:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mv 24&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;Hour&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;Time&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;Lapse-x1Os8NcSrbI.mp4 time_lapse_640x360.mp4	
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mediainfo time_lapse_640x360.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;2.9 MB nije mnogo ali njegov Animirani GIF bi  bio mnogo veći.&lt;/p&gt;
+&lt;p&gt;Rezoluciju nećemo menjati, ali 60 sekundi koliko traje možemo malo da &amp;gt;skratimo. Tačnije odstranićemo prvih 15 sekundi i poslednjih 7:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i time_lapse_640x360.mp4 -ss 00:00:15 -to 00:00:53 -c copy -avoid_negative_ts make_zero &lt;span class=&#34;s2&#34;&gt;&amp;#34;time_lapse_640x360_38.mp4&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To je to. Ipak, 38 sekundi je predugačko.Hajde da klip ubrzamo 4 puta.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i time_lapse_640x360_38.mp4 -vf  &lt;span class=&#34;s2&#34;&gt;&amp;#34;setpts=0.25*PTS&amp;#34;&lt;/span&gt; -an time_lapse_38_0.25.mp4
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Ako se pitate šta je &lt;em&gt;&lt;strong&gt;-an&lt;/strong&gt;&lt;/em&gt; , to je isključivanje audio strima iz konverzije. Audio nam nije potreban, a da smo ga ostavili FFmpeg bi nam ubrzao video strim ali trajanje ne bi skratio 4 puta ostavljajući poslednji frejm smrznut do 38. sekunde&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dobili smo klip koji traje ispod 10 sekundi.&lt;br&gt;
+Hajde da mu frejmrejt smanjimo sa 30 na 20, skaliramo mu dužinu na 512 Px i pretvorimo ga u GIF.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i time_lapse_38_0.25.mp4 -r &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt; -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;512:-1 time_lapse_38_0.25.gif
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sasvim pristojno:&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_4/time_lapse_38_0.25.gif&#34; alt=&#34;Time Lapse&#34;&gt;&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>FFmpeg - treći deo</title>
       <link>https://speja969.github.io/post/ffmpeg_3/</link>
@@ -204,7 +338,7 @@ drugi karakter svake srednje zagrade predstavlja strim (video ili audio) odgovar
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i explosion_1080p.mov -i alpaka_720p.mp4 -filter_complex &lt;span class=&#34;s2&#34;&gt;&amp;#34;[0:v]scale=1280:720:force_original_aspect_ratio=1[v0];[v0][0:a][1:v][1:a]concat=n=2:v=1:a=1[v][a]&amp;#34;&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -map &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;a&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; output.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Video strim prvog segmenta mora da se skalira na rezoluciju 720p ako nju želimo.Pri tome video strim preskače skaliranje jer je već u 720p.&lt;/p&gt;
+&lt;p&gt;Video strim prvog segmenta mora da se skalira na rezoluciju 720p ako nju želimo.Pri tome video strim drugog segmenta preskače skaliranje jer je već u 720p.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Da smo želeli izlazni fajl u 1024:576 , moralo bi ovako:&lt;/p&gt;
