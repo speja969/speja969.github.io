@@ -78,7 +78,7 @@
     <a href="https://speja969.github.io/" class="nav_item">Home </a>
   </div>
   <div class="nav_parent">
-    <a href="https://speja969.github.io/post/rich-content/" class="nav_item">Arhiva </a>
+    <a href="https://speja969.github.io/post/" class="nav_item">Arhiva </a>
   </div>
   <div class="nav_parent">
     <a href="https://speja969.github.io/" class="nav_item">Linkovi <img src='https://speja969.github.io/icons/caret-icon.svg' alt="icon" class="nav_icon"></a>
@@ -240,6 +240,30 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
 <li>
 <p>Nekad je lakše duplirati postojeću stranu (kontekstni meni --&gt; <em>Duplicate</em>), pa izvršiti izmene.</p>
 </li>
+<li>
+<p>Ako vam ne odgovara, kao što meni ne odgovara, da <em><strong>Home Menu</strong></em> prikazuje listu svih postova (što bi trebalo da prikazuje <em><strong>Arhiva</strong></em>), predlažem nekoliko podešavanja:</p>
+<ul>
+<li>
+<p>Otvorite <em>~/projects/mojnovisajt/config/_default/menus/menu.en.toml</em> u editoru (Geany)<br>
+<img src="/img/ffmpeg_4/meni.png" alt=""></p>
+<p>Promenite po želji nazive glavnih padajućih menija,dodajte ili promenite linkove, ali da bi meni <mark style="background-color: #50C7FF"><strong><em>Archives</em></strong></mark> prikazivao listu postova, mora da se izmeni url u <mark style="background-color: #50C7FF"><strong><em>url = &quot;post/&quot;</em></strong></mark></p>
+</li>
+<li>
+<p>Ostale linkove ka društvenim mrežama podesiti po želji.</p>
+</li>
+<li>
+<p>Da bi <em><strong>Home</strong></em> strana prikazivala <em>single page</em> (statički sadržaj) potrebno je nekoliko koraka:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>hugo new _index.md  <span class="c1"># dobićemo odgovor da već postoji</span>
+<span class="ln">2</span><span class="nb">cd</span> themes/hugo-clarity/layouts
+<span class="ln">3</span>rm index.html
+<span class="ln">4</span>cp _default/single.html index.html
+<span class="ln">5</span><span class="c1"># mojnovisajt/content/_index.md postaje staticka strana za sajt</span>
+</code></pre></div></li>
+<li>
+<p>Ostale linkove ka društvenim mrežama podesiti po želji.</p>
+</li>
+</ul>
+</li>
 </ol>
 <h3 id="mark-stylebackground-color-98afc7ažuriranje-promena-na-serverumark"><mark style="background-color: #98AFC7"><strong>Ažuriranje promena na serveru</strong></mark></h3>
 <p>Skockali smo stranu ili više njih lokalno i želimo da to bude dostupno <em>online</em> na našem sajtu <em>mojnovisajt</em>:</p>
@@ -255,7 +279,6 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
 <span class="ln">10</span>git commit -am <span class="s2">&#34;promena&#34;</span>
 <span class="ln">11</span>git status  <span class="c1"># da se uverimo da nije ostalo nista za commit</span>
 <span class="ln">12</span>git push -u origin master
-<span class="ln">13</span>
 </code></pre></div><p>Nakon ovoga, može da potraje i 10-15 minuta dok se na GitHub serveru ne ažuriraju promene.</p>
 
     
@@ -272,15 +295,6 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
       <a href='https://speja969.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
-      <li>
-        <a href="https://speja969.github.io/post/ffmpeg_4/" class="nav-link">FFmpeg - 4. deo</a>
-      </li>
-      <li>
-        <a href="https://speja969.github.io/post/ffmpeg_3/" class="nav-link">FFmpeg - treći deo</a>
-      </li>
-      <li>
-        <a href="https://speja969.github.io/post/ffmpeg_2/" class="nav-link">FFmpeg - 2. deo</a>
-      </li>
       <li>
         <a href="https://speja969.github.io/post/ffmpeg_1/" class="nav-link">FFmpeg </a>
       </li>
@@ -300,7 +314,7 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
         <a href="https://speja969.github.io/post/ffmpeg_4/" class="nav-link">FFmpeg - 4. deo</a>
       </li>
       <li>
-        <a href="https://speja969.github.io/post/ffmpeg_3/" class="nav-link">FFmpeg - treći deo</a>
+        <a href="https://speja969.github.io/post/ffmpeg_3/" class="nav-link">FFmpeg - 3. deo</a>
       </li>
       <li>
         <a href="https://speja969.github.io/post/ffmpeg_2/" class="nav-link">FFmpeg - 2. deo</a>
@@ -403,16 +417,6 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
         
         <a href='https://speja969.github.io/tags/markdown/' class="post_tag button button_translucent">
           MARKDOWN
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://speja969.github.io/tags/privacy/' class="post_tag button button_translucent">
-          PRIVACY
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://speja969.github.io/tags/shortcodes/' class="post_tag button button_translucent">
-          SHORTCODES
           <span class="button_tally">1</span>
         </a>
         

@@ -78,6 +78,30 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
 &lt;li&gt;
 &lt;p&gt;Nekad je lakše duplirati postojeću stranu (kontekstni meni --&amp;gt; &lt;em&gt;Duplicate&lt;/em&gt;), pa izvršiti izmene.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ako vam ne odgovara, kao što meni ne odgovara, da &lt;em&gt;&lt;strong&gt;Home Menu&lt;/strong&gt;&lt;/em&gt; prikazuje listu svih postova (što bi trebalo da prikazuje &lt;em&gt;&lt;strong&gt;Arhiva&lt;/strong&gt;&lt;/em&gt;), predlažem nekoliko podešavanja:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Otvorite &lt;em&gt;~/projects/mojnovisajt/config/_default/menus/menu.en.toml&lt;/em&gt; u editoru (Geany)&lt;br&gt;
+&lt;img src=&#34;https://speja969.github.io/img/ffmpeg_4/meni.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Promenite po želji nazive glavnih padajućih menija,dodajte ili promenite linkove, ali da bi meni &lt;mark style=&#34;background-color: #50C7FF&#34;&gt;&lt;strong&gt;&lt;em&gt;Archives&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; prikazivao listu postova, mora da se izmeni url u &lt;mark style=&#34;background-color: #50C7FF&#34;&gt;&lt;strong&gt;&lt;em&gt;url = &amp;quot;post/&amp;quot;&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ostale linkove ka društvenim mrežama podesiti po želji.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Da bi &lt;em&gt;&lt;strong&gt;Home&lt;/strong&gt;&lt;/em&gt; strana prikazivala &lt;em&gt;single page&lt;/em&gt; (statički sadržaj) potrebno je nekoliko koraka:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;hugo new _index.md  &lt;span class=&#34;c1&#34;&gt;# dobićemo odgovor da već postoji&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; themes/hugo-clarity/layouts
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;rm index.html
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;cp _default/single.html index.html
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# mojnovisajt/content/_index.md postaje staticka strana za sajt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ostale linkove ka društvenim mrežama podesiti po želji.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;mark-stylebackground-color-98afc7ažuriranje-promena-na-serverumark&#34;&gt;&lt;mark style=&#34;background-color: #98AFC7&#34;&gt;&lt;strong&gt;Ažuriranje promena na serveru&lt;/strong&gt;&lt;/mark&gt;&lt;/h3&gt;
 &lt;p&gt;Skockali smo stranu ili više njih lokalno i želimo da to bude dostupno &lt;em&gt;online&lt;/em&gt; na našem sajtu &lt;em&gt;mojnovisajt&lt;/em&gt;:&lt;/p&gt;
@@ -93,7 +117,6 @@ Na početku strane formiramo blok sa podacima (varijablama) koji mogu biti forma
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;git commit -am &lt;span class=&#34;s2&#34;&gt;&amp;#34;promena&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;git status  &lt;span class=&#34;c1&#34;&gt;# da se uverimo da nije ostalo nista za commit&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;git push -u origin master
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nakon ovoga, može da potraje i 10-15 minuta dok se na GitHub serveru ne ažuriraju promene.&lt;/p&gt;
 
         
