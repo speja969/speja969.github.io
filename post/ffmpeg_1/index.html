@@ -234,7 +234,7 @@ Evo kako pomoću <em>FFprobe</em> možemo dobiti parametre našeg testnog <a hre
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -c:v libx265 -crf <span class="m">28</span> output.mp4
 </code></pre></div><p>Ovde koristimo <em>CRF (Constant Rate Factor)</em> kao <em>default</em> podešavanje kvaliteta i <em>bitrate</em>-a. Više o tome <a href="https://slhck.info/video/2017/02/24/crf-guide.html">ovde</a>.<br>
-Ovim smo fajl smanjili: sa 57.8 na 48.6 MB, odnosno nekih ~20%:
+Test fajl smo smanjili: sa 57.8 na 48.6 MB, odnosno nekih ~20%:
 <img src="/img/ffmpeg_1/mediainfo-gui-plaza-H265.png" alt=""></p>
 </blockquote>
 <blockquote>
@@ -432,8 +432,24 @@ Podatke o parametrima video fajla možemo da dobijemo i iz komandne linije:</p>
 </code></pre></div><p>odgovor:<br>
 rezolucija = 3840x2160 Px, dijagonala = 16:9, bitrejt = 22.0 Mb/s, frejmrejt = 29.970 fps, dužina = 23 s 123 ms, video/H264</p>
 </blockquote>
-<pre><code> I to bi bilo to...
-</code></pre>
+<ol start="10">
+<li>Hajde da razmotrimo scenario u kome nam je zadato da veličinu fajla svedemo na određenu vrednost i to promenom bitrejta.<br>
+Naš fajl <em><strong>Auntie.Edna.2018.1080p.BluRay.x264-[YTS.AM].mp4</strong></em> ima bitrejt 2150 kb/s , dužinu 5 min 8 s = 308 s i veličinu ~84 MB.<br>
+Zadatak je da fajl ne pređe 80 MB.</li>
+</ol>
+<p>1 byte = 0.008192 kb   # jedan bajt je jednak 8192 milionita dela kilobita.<br>
+1 MB = 1000000 byte = 1000000 x 0.008192 =  8192 kb (kilobita)</p>
+<blockquote>
+<p>Formula je: <strong>bitrejt (kb/s) = veličina fajla (kb)/ vreme trajanja (s)</strong></p>
+<p>Konvertujemo megabajte u kilobite (MB u kb):<br>
+80 MB x 8192 =  655360 kb</p>
+<p>Ukupni bitrejt (video + audio) = 655360/308 = 2127 kb/s<br>
+2127 - 128 = 1999 kb/s  # kad oduzmemo 128 za audio strim, za video ostaje 1999</p>
+<p>Sad ide transkodiranje u 2 prolaza:</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -y -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="se">\[</span>YTS.AM<span class="se">\]</span>.mp4 -c:v libx264 -b:v 1999k -pass <span class="m">1</span> -an -f null /dev/null <span class="o">&amp;&amp;</span> ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="se">\[</span>YTS.AM<span class="se">\]</span>.mp4 -c:v libx264 -b:v 1999k -pass <span class="m">2</span> -c:a aac -b:a 128k Auntie.Edna.80MB.mp4
+</code></pre></div><p><strong>Rezultat: fajl veličine 78,5 MB</strong></p>
+<p>I to bi bilo to...</p>
 
     
       

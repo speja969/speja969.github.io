@@ -637,7 +637,7 @@ Evo kako pomoću &lt;em&gt;FFprobe&lt;/em&gt; možemo dobiti parametre našeg te
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; output.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ovde koristimo &lt;em&gt;CRF (Constant Rate Factor)&lt;/em&gt; kao &lt;em&gt;default&lt;/em&gt; podešavanje kvaliteta i &lt;em&gt;bitrate&lt;/em&gt;-a. Više o tome &lt;a href=&#34;https://slhck.info/video/2017/02/24/crf-guide.html&#34;&gt;ovde&lt;/a&gt;.&lt;br&gt;
-Ovim smo fajl smanjili: sa 57.8 na 48.6 MB, odnosno nekih ~20%:
+Test fajl smo smanjili: sa 57.8 na 48.6 MB, odnosno nekih ~20%:
 &lt;img src=&#34;https://speja969.github.io/img/ffmpeg_1/mediainfo-gui-plaza-H265.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
@@ -835,8 +835,24 @@ Podatke o parametrima video fajla možemo da dobijemo i iz komandne linije:&lt;/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;odgovor:&lt;br&gt;
 rezolucija = 3840x2160 Px, dijagonala = 16:9, bitrejt = 22.0 Mb/s, frejmrejt = 29.970 fps, dužina = 23 s 123 ms, video/H264&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt; I to bi bilo to...
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;Hajde da razmotrimo scenario u kome nam je zadato da veličinu fajla svedemo na određenu vrednost i to promenom bitrejta.&lt;br&gt;
+Naš fajl &lt;em&gt;&lt;strong&gt;Auntie.Edna.2018.1080p.BluRay.x264-[YTS.AM].mp4&lt;/strong&gt;&lt;/em&gt; ima bitrejt 2150 kb/s , dužinu 5 min 8 s = 308 s i veličinu ~84 MB.&lt;br&gt;
+Zadatak je da fajl ne pređe 80 MB.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1 byte = 0.008192 kb   # jedan bajt je jednak 8192 milionita dela kilobita.&lt;br&gt;
+1 MB = 1000000 byte = 1000000 x 0.008192 =  8192 kb (kilobita)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Formula je: &lt;strong&gt;bitrejt (kb/s) = veličina fajla (kb)/ vreme trajanja (s)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Konvertujemo megabajte u kilobite (MB u kb):&lt;br&gt;
+80 MB x 8192 =  655360 kb&lt;/p&gt;
+&lt;p&gt;Ukupni bitrejt (video + audio) = 655360/308 = 2127 kb/s&lt;br&gt;
+2127 - 128 = 1999 kb/s  # kad oduzmemo 128 za audio strim, za video ostaje 1999&lt;/p&gt;
+&lt;p&gt;Sad ide transkodiranje u 2 prolaza:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -y -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;se&#34;&gt;\[&lt;/span&gt;YTS.AM&lt;span class=&#34;se&#34;&gt;\]&lt;/span&gt;.mp4 -c:v libx264 -b:v 1999k -pass &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -an -f null /dev/null &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;se&#34;&gt;\[&lt;/span&gt;YTS.AM&lt;span class=&#34;se&#34;&gt;\]&lt;/span&gt;.mp4 -c:v libx264 -b:v 1999k -pass &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; -c:a aac -b:a 128k Auntie.Edna.80MB.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Rezultat: fajl veličine 78,5 MB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I to bi bilo to...&lt;/p&gt;
 
         
       </description>
