@@ -102,8 +102,13 @@
 &lt;li&gt;
 &lt;p&gt;Ako hoćemo čisto kopiranje audio strima iz video fajla bez re-enkodiranja:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i videofile.mp4 -vn -acodec copy audiofile.mp3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ali pre toga treba da smo sigurni da je kopirani audio strim nekompatibilan sa zadatim formatom (recimo AAC).Tada bi kopiranje izveli sa zamenom &lt;em&gt;mp3&lt;/em&gt; u &lt;em&gt;aac&lt;/em&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ali pre toga treba da smo sigurni da je kopirani audio strim kompatibilan sa zadatim formatom .Šta ako je recimo AAC ?.&lt;br&gt;
+Tada bi kopiranje izveli sa zamenom &lt;em&gt;mp3&lt;/em&gt; --&amp;gt; &lt;em&gt;aac&lt;/em&gt;  u prethodnoj komandi.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Evo kako bi proverili audio format pre zadavanja komande kopiranja (&lt;em&gt;batch verzija&lt;/em&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;for file in *; do ffprobe $file 2&amp;gt;&amp;amp;1 |grep Audio; done
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
         
