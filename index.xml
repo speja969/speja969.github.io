@@ -6,7 +6,110 @@
     <description>Recent content on Clarity</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2020–, Peja Badzic &amp; Friends; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 10 Feb 2021 09:49:47 +0100</lastBuildDate><atom:link href="https://speja969.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 15:33:18 +0100</lastBuildDate><atom:link href="https://speja969.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg - 5. deo</title>
+      <link>https://speja969.github.io/post/ffmpeg_5/</link>
+      <pubDate>Fri, 19 Feb 2021 15:33:18 +0100</pubDate>
+      
+      <guid>https://speja969.github.io/post/ffmpeg_5/</guid>
+      <description>
+        
+          &lt;hr&gt;
+&lt;h2 id=&#34;_ffmpeg_---rad-sa-audio-fajlovima&#34;&gt;&lt;strong&gt;&lt;em&gt;FFmpeg&lt;/em&gt; - rad sa audio fajlovima&lt;/strong&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Osnovna konverzija jednog audio formata u drugi (na primer MP3 u WMA):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp3 output.wma
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Konverzija WAV u MP3 uz redukovanje na 1 audio kanal (mono), audio bitrejt na 64 kbps i &lt;em&gt;sample rate&lt;/em&gt; na 22050 Hz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.wav -ac &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -ab &lt;span class=&#34;m&#34;&gt;64000&lt;/span&gt; -ar &lt;span class=&#34;m&#34;&gt;22050&lt;/span&gt; output.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Konverzija MP3 fajla u WAV sa jednokanalnim 16-bitnim zvukom i &lt;em&gt;sample rate&lt;/em&gt;-om od 16000 Hz:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i 111.mp3 -acodec pcm_s16le -ac &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -ar &lt;span class=&#34;m&#34;&gt;16000&lt;/span&gt; out.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Grupna konverzija svih MP3 fajlova u aktivnom direktorijumu  &lt;em&gt;&lt;strong&gt;batch conversion&lt;/strong&gt;&lt;/em&gt; u istoimene WAV fajlove sa sufiksom &lt;em&gt;-encoded&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in *.mp3&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -acodec pcm_s16le -ac &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -ar &lt;span class=&#34;m&#34;&gt;22050&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.mp3&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;-encoded.wav&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Isecanje dela u trajanju od 30 sekundi počev od 60-te sekunde (sistem označavanja vremena u sekundama):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp3 -ss &lt;span class=&#34;m&#34;&gt;60&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;30&lt;/span&gt; output.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Isecanje dela u trajanju od 30 sekundi počev od 60-te sekunde (sistem označavanja vremena u sformatu HH:MM:SS:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i input.mp3 -ss 0:01:00 -t 0:00:30 output.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deljenje jednog MP3 fajla na segmente dužine 3 sekunde:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i somefile.mp3 -f segment -segment_time &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; -c copy out%03d.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;ekstrakcija-audio-fajla-iz-video-fajla&#34;&gt;&lt;strong&gt;Ekstrakcija Audio fajla iz Video fajla&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Iz video fajla &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;video.mp4&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt; izvući ćemo audio zapis kao &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;&lt;em&gt;music.mp3&lt;/em&gt;&lt;/strong&gt;&lt;/mark&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i video.mp4 -f mp3 -ab &lt;span class=&#34;m&#34;&gt;192000&lt;/span&gt; -vn music.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;gde je:&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-i&lt;/strong&gt;&lt;/mark&gt;  - imput, oznaka da sledi fajl koji obrađujemo&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-f&lt;/strong&gt;&lt;/mark&gt;  - daje do znanja FFmpeg-u da je izlazni format mp3&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-ab&lt;/strong&gt;&lt;/mark&gt;  - traži da izlazni mp3 ima bitrejt od 192000 bps (bita po sekundi) ili 192 Kbps&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-vn&lt;/strong&gt;&lt;/mark&gt;  - isključuje video strim iz konverzije (&lt;em&gt;video no&lt;/em&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;zamena-audio-strima-u-video-fajlu---bez-re-enkodiranja&#34;&gt;&lt;strong&gt;Zamena Audio strima u Video fajlu - bez re-enkodiranja&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;prioritetni metod:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -map 0:v:0 -map 1:a:0 new.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;gde je:&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-i&lt;/strong&gt;&lt;/mark&gt;  - imput, oznaka da sledi fajl koji obrađujemo&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-f&lt;/strong&gt;&lt;/mark&gt;  - daje do znanja FFmpeg-u da je izlazni format mp3&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-c:v copy -map 0:v:0&lt;/strong&gt;&lt;/mark&gt;  - oznaka da se mapira (bira) video strim prvog fajla i kopira bez re-enkodiranja&lt;br&gt;
+&lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-map 1:a:0&lt;/strong&gt;&lt;/mark&gt;  - mapira se audio strim drugog fajla&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;zamena-audio-strima-u-video-fajlu---bez-re-enkodiranja-sa-zadatim-kašnjenjem&#34;&gt;&lt;strong&gt;Zamena Audio strima u Video fajlu - bez re-enkodiranja sa zadatim kašnjenjem&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;kašnjenje 0,25 sekundi:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i 36.MOV -itsoffset -0.25 -i 36.wav -map 0:v -map 1:a -c copy -y 36-encoded.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;ekstrakcija-audio-strima-iz-video-fajla---uz-re-enkodiranje&#34;&gt;&lt;strong&gt;Ekstrakcija Audio strima iz Video fajla - uz re-enkodiranje&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;U Vorbis audio format:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i videofile.mp4 -vn -acodec libvorbis audiofile.ogg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;U mp3:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i videofile.mp4 -vn -acodec libmp3lame audiofile.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ako hoćemo čisto kopiranje audio strima iz video fajla bez re-enkodiranja:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i videofile.mp4 -vn -acodec copy audiofile.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ali pre toga treba da smo sigurni da je kopirani audio strim nekompatibilan sa zadatim formatom (recimo AAC).Tada bi kopiranje izveli sa zamenom &lt;em&gt;mp3&lt;/em&gt; u &lt;em&gt;aac&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>FFmpeg - 4. deo</title>
       <link>https://speja969.github.io/post/ffmpeg_4/</link>
