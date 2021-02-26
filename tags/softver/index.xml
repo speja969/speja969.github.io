@@ -993,48 +993,7 @@ Evo primera kako iz desete epizode šeste sezone &lt;em&gt;Game of Thrones&lt;/e
   &lt;iframe src=&#34;https://www.youtube.com/embed/my2r8tVEqsQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;ol start=&#34;10&#34;&gt;
-&lt;li&gt;Hajde da razmotrimo scenario u kome nam je zadato da veličinu fajla svedemo na određenu vrednost i to promenom bitrejta.&lt;br&gt;
-Naš fajl &lt;em&gt;&lt;strong&gt;Auntie.Edna.2018.1080p.BluRay.x264-[YTS.AM].mp4&lt;/strong&gt;&lt;/em&gt; ima bitrejt 2150 kb/s , dužinu 5 min 8 s = 308 s i veličinu ~84 MB.&lt;br&gt;
-Zadatak je da fajl ne pređe 80 MB.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;1 byte = 0.008192 kb   # jedan bajt je jednak 8192 milionita dela kilobita.&lt;br&gt;
-1 MB = 1000000 byte = 1000000 x 0.008192 =  8192 kb (kilobita)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Formula je: &lt;strong&gt;bitrejt (kb/s) = veličina fajla (kb)/ vreme trajanja (s)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Konvertujemo megabajte u kilobite (MB u kb):&lt;br&gt;
-80 MB x 8192 =  655360 kb&lt;/p&gt;
-&lt;p&gt;Ukupni bitrejt (video + audio) = 655360/308 = 2127 kb/s&lt;br&gt;
-2127 - 128 = 1999 kb/s  # kad oduzmemo 128 za audio strim, za video ostaje 1999&lt;/p&gt;
-&lt;p&gt;Sad ide transkodiranje u 2 prolaza:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -y -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;se&#34;&gt;\[&lt;/span&gt;YTS.AM&lt;span class=&#34;se&#34;&gt;\]&lt;/span&gt;.mp4 -c:v libx264 -b:v 1999k -pass &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -an -f null /dev/null &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-&lt;span class=&#34;se&#34;&gt;\[&lt;/span&gt;YTS.AM&lt;span class=&#34;se&#34;&gt;\]&lt;/span&gt;.mp4 -c:v libx264 -b:v 1999k -pass &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; -c:a aac -b:a 128k Auntie.Edna.80MB.mp4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Rezultat: fajl veličine 78,5 MB&lt;/strong&gt;&lt;/p&gt;
-&lt;ol start=&#34;11&#34;&gt;
-&lt;li&gt;FFmppeg program koji simultano koristi više procesorskih jezgara, odnosno tredova (paralelnih operacija).&lt;br&gt;
-Kako naći koliko jezgara i tredova može da koristi maš procesor:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;grep ^cpu&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;scores /proc/cpuinfo &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; uniq &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  awk &lt;span class=&#34;s1&#34;&gt;&amp;#39;{print $4}&amp;#39;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# broj fizičkih jezgara&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;grep -c ^processor /proc/cpuinfo &lt;span class=&#34;c1&#34;&gt;# broj tredova (number of threads)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Prva komanda mi daje broj 4, a druga broj 8, što znači da moj procesor Intel i7-3770 ima 4 jezgra i 8 tredova.&lt;/p&gt;
-&lt;p&gt;Kad pokrenem neko grupno enkodiranje (batch process), svih 8 tredova se aktiviraju dovodeći do zauzeća procesora od 100%.&lt;br&gt;
-Treba ograničiti broj tredova koje će koristiti FFmpeg kako bi rasteretili procesor i paralelno mogli da radimo nešto drugo.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Za enkodiranje u H.264:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i imput.mp4 -c:v libx264 -crf &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt; -threads &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; output.mp4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;gde smo sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-threads 4&lt;/strong&gt;&lt;/mark&gt; zadali FFmpeg-u da komandu izvršava sa 4 treda.&lt;/p&gt;
-&lt;p&gt;Za grupno (batch) enkodiranje ista komanda bi bila:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in *.mp4&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -c:v libx264 -crf &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt; -threads &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.mp4&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;-H.264.mp4&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;dobijamo enkodirane istoimene fajlove samo sa sufiksom &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-H.264&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Za enkodiranje u H.265:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ffmpeg -i imput.mp4 -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt; -x265-params &lt;span class=&#34;nv&#34;&gt;pools&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;6&lt;/span&gt; output.mp4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;gde smo sa &lt;mark style=&#34;background-color: lightblue&#34;&gt;&lt;strong&gt;-x265-params pools=6&lt;/strong&gt;&lt;/mark&gt; zadali FFmpeg-u da komandu izvršava sa 6 tredova.&lt;br&gt;
-Za grupno (batch) enkodiranje ista komanda bi bila:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in *.mp4&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; -c:v libx265 -crf &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt; -x265-params &lt;span class=&#34;nv&#34;&gt;pools&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%.mp4&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;-H.265.mp4&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I to bi bilo to...&lt;/p&gt;
+&lt;p&gt;I to bi bilo to...&lt;/p&gt;
 
         
       </description>
