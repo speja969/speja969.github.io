@@ -227,6 +227,14 @@ Evo kako pomoću <em>FFprobe</em> možemo dobiti parametre našeg testnog <a hre
 <span class="ln">2</span>sudo apt install mediainfo-gui
 </code></pre></div><p><img src="/img/ffmpeg_1/mediainfo-gui-plaza.png" alt=""></p>
 <p>Dakle naš <a href="https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4">fajl</a> ima ~58 MB, rezoluciju 3840x2160 i <em>Bitrate</em> 22 Mb/s</p>
+<blockquote>
+<p>napomena:<br>
+Podatke o parametrima video fajla možemo da dobijemo i iz komandne linije:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt install mediainfo
+<span class="ln">2</span>mediainfo --Inform<span class="o">=</span><span class="s2">&#34;Video;rezolucija = %Width%x%Height% Px, dijagonala = %DisplayAspectRatio/String%, bitrejt = %BitRate/String%, frejmrejt = %FrameRate% fps, dužina = %Duration/String1%, %InternetMediaType%&#34;</span> https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
+</code></pre></div><p>odgovor:<br>
+rezolucija = 3840x2160 Px, dijagonala = 16:9, bitrejt = 22.0 Mb/s, frejmrejt = 29.970 fps, dužina = 23 s 123 ms, video/H264</p>
+</blockquote>
 <h4 id="možemo-da-uradimo-sledeće"><strong>Možemo da uradimo sledeće:</strong></h4>
 <blockquote>
 <ul>
@@ -252,9 +260,9 @@ Smanjili smo veličinu fajla na 26 MB, ali po cenu vidljive degradacije kvalitet
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1920:1080,setsar<span class="o">=</span>1:1 output.mp4
 </code></pre></div><p>Dobijamo sledeće parametre:<br>
 <img src="/img/ffmpeg_1/mediainfo-gui-plaza-rezolucija.png" alt=""></p>
-<h6 id="tabela_16_9">Evo tabele sa preporučenim rezolucijama za dijagonalu 16:9 </h6>
 </blockquote>
 <hr>
+<h6 id="tabela_16_9">Evo tabele sa preporučenim rezolucijama za dijagonalu 16:9</h6>
 <hr>
 <table>
 <thead>
@@ -326,8 +334,58 @@ Smanjili smo veličinu fajla na 26 MB, ali po cenu vidljive degradacije kvalitet
 <p>Na svakom od nas je da proceni koliki gubitak kvaliteta mu je prihvatljiv kad zadaje izlazne parametre.<br>
 Evo predloga kako bi to moglo da se uradi kombinujući više operacija u istoj komandi.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1920:1080,setsar<span class="o">=</span>1:1 -b:v 15M -minrate 13M -maxrate 16M -c:v libx265 -crf <span class="m">28</span> output.mp4
-</code></pre></div><h2 id="TITLOVI"><img src="/img/ffmpeg_1/mediainfo-gui-plaza-sve.png" alt=""></h2>
+</code></pre></div><p><img src="/img/ffmpeg_1/mediainfo-gui-plaza-sve.png" alt=""></p>
+<hr>
+<h4 id="video_zadato"><strong>Dovođenje video fajla na zadatu veličinu</strong></h4>
+<hr>
+<ul>
+<li>Hajde da razmotrimo scenario u kome nam je zadato da veličinu fajla svedemo na određenu vrednost i to promenom bitrejta.<br>
+Naš fajl <em><strong>Auntie.Edna.2018.1080p.BluRay.x264-[YTS.AM].mp4</strong></em> ima bitrejt 2150 kb/s , dužinu 5 min 8 s = 308 s i veličinu ~84 MB.<br>
+Zadatak je da fajl ne pređe 80 MB.</li>
+</ul>
+<blockquote>
+<p>1 byte = 0.008192 kb   # jedan bajt je jednak 8192 milionita dela kilobita.<br>
+1 MB = 1000000 byte = 1000000 x 0.008192 =  8192 kb (kilobita)</p>
+<p>Formula je: <strong>bitrejt (kb/s) = veličina fajla (kb)/ vreme trajanja (s)</strong></p>
+<p>Konvertujemo megabajte u kilobite (MB u kb):<br>
+80 MB x 8192 =  655360 kb</p>
+<p>Ukupni bitrejt (video + audio) = 655360/308 = 2127 kb/s<br>
+2127 - 128 = 1999 kb/s  # kad oduzmemo 128 za audio strim, za video ostaje 1999</p>
+</blockquote>
+<p>Sad ide transkodiranje u 2 prolaza:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -y -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="se">\[</span>YTS.AM<span class="se">\]</span>.mp4 -c:v libx264 -b:v 1999k -pass <span class="m">1</span> -an -f null /dev/null <span class="o">&amp;&amp;</span> ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="se">\[</span>YTS.AM<span class="se">\]</span>.mp4 -c:v libx264 -b:v 1999k -pass <span class="m">2</span> -c:a aac -b:a 128k Auntie.Edna.80MB.mp4
+</code></pre></div><p><strong>Rezultat: fajl veličine 78,5 MB</strong></p>
+<hr>
+<h4 id="tredovi_zadato"><strong>Limitiranje broja jezgara-tredova pri precesiranju</strong></h4>
+<hr>
+<ul>
+<li>FFmppeg je program koji simultano koristi više procesorskih jezgara, odnosno tredova (paralelnih operacija).<br>
+Kako naći koliko jezgara i tredova poržava naš procesor:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>grep ^cpu<span class="se">\\</span>scores /proc/cpuinfo <span class="p">|</span> uniq <span class="p">|</span>  awk <span class="s1">&#39;{print $4}&#39;</span>  <span class="c1"># broj fizičkih jezgara</span>
+<span class="ln">2</span>grep -c ^processor /proc/cpuinfo <span class="c1"># broj tredova (number of threads)</span>
+</code></pre></div><p>Prva komanda mi daje broj 4, a druga broj 8, što znači da moj procesor Intel i7-3770 ima 4 jezgra i 8 tredova.</p>
+<p>Kad pokrenem neko grupno enkodiranje (batch process), svih 8 tredova se aktiviraju dovodeći do zauzeća procesora od 100%.<br>
+Treba ograničiti broj tredova koje će koristiti FFmpeg kako bi rasteretili procesor za nešto drugo.</p>
+<ul>
+<li>Za enkodiranje u H.264:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i imput.mp4 -c:v libx264 -crf <span class="m">23</span> -threads <span class="m">4</span> output.mp4
+</code></pre></div><p>​	gde smo sa <mark style="background-color: lightblue"><strong>-threads 4</strong></mark> zadali FFmpeg-u da komandu izvršava sa 4 treda.</p>
+<p>​	Za grupno (batch) enkodiranje ista komanda bi bila:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> i in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -c:v libx264 -crf <span class="m">23</span> -threads <span class="m">4</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">i</span><span class="p">%.mp4</span><span class="si">}</span><span class="s2">-H.264.mp4&#34;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div><p>​	dobijamo enkodirane istoimene fajlove samo sa sufiksom <mark style="background-color: lightblue"><strong>-H.264</strong></mark></p>
+<ul>
+<li>Za enkodiranje u H.265:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i imput.mp4 -c:v libx265 -crf <span class="m">23</span> -x265-params <span class="nv">pools</span><span class="o">=</span><span class="m">6</span> output.mp4
+</code></pre></div><p>​	gde smo sa <mark style="background-color: lightblue"><strong>-x265-params pools=6</strong></mark> zadali FFmpeg-u da komandu izvršava sa 6 tredova.  
+​	Za grupno (batch) enkodiranje ista komanda bi bila:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> i in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -c:v libx265 -crf <span class="m">23</span> -x265-params <span class="nv">pools</span><span class="o">=</span><span class="m">4</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">i</span><span class="p">%.mp4</span><span class="si">}</span><span class="s2">-H.265.mp4&#34;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div><h2 id="TITLOVI"></h2>
+<hr>
 <h2 id="_titlovi_"><strong><em>TITLOVI</em></strong></h2>
+<hr>
 <hr>
 <p>Neka nam testni fajl bude <a href="https://vimeo.com/311038206"><em>Auntie Edna</em></a>.<br>
 Ako još niste instalirali/ažurirali <em>youtube-dl</em> evo komande:</p>
@@ -424,14 +482,6 @@ Evo primera kako iz desete epizode šeste sezone <em>Game of Thrones</em> izrend
   <iframe src="https://www.youtube.com/embed/my2r8tVEqsQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<blockquote>
-<p>napomena:<br>
-Podatke o parametrima video fajla možemo da dobijemo i iz komandne linije:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>sudo apt install mediainfo
-<span class="ln">2</span>mediainfo --Inform<span class="o">=</span><span class="s2">&#34;Video;rezolucija = %Width%x%Height% Px, dijagonala = %DisplayAspectRatio/String%, bitrejt = %BitRate/String%, frejmrejt = %FrameRate% fps, dužina = %Duration/String1%, %InternetMediaType%&#34;</span> https://www.countryvetclinic.com/wp-content/uploads/2019/05/Pexels-Videos-1321208.mp4
-</code></pre></div><p>odgovor:<br>
-rezolucija = 3840x2160 Px, dijagonala = 16:9, bitrejt = 22.0 Mb/s, frejmrejt = 29.970 fps, dužina = 23 s 123 ms, video/H264</p>
-</blockquote>
 <ol start="10">
 <li>Hajde da razmotrimo scenario u kome nam je zadato da veličinu fajla svedemo na određenu vrednost i to promenom bitrejta.<br>
 Naš fajl <em><strong>Auntie.Edna.2018.1080p.BluRay.x264-[YTS.AM].mp4</strong></em> ima bitrejt 2150 kb/s , dužinu 5 min 8 s = 308 s i veličinu ~84 MB.<br>
@@ -449,7 +499,31 @@ Zadatak je da fajl ne pređe 80 MB.</li>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -y -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="se">\[</span>YTS.AM<span class="se">\]</span>.mp4 -c:v libx264 -b:v 1999k -pass <span class="m">1</span> -an -f null /dev/null <span class="o">&amp;&amp;</span> ffmpeg -i Auntie.Edna.2018.1080p.BluRay.x264-<span class="se">\[</span>YTS.AM<span class="se">\]</span>.mp4 -c:v libx264 -b:v 1999k -pass <span class="m">2</span> -c:a aac -b:a 128k Auntie.Edna.80MB.mp4
 </code></pre></div><p><strong>Rezultat: fajl veličine 78,5 MB</strong></p>
-<p>I to bi bilo to...</p>
+<ol start="11">
+<li>FFmppeg program koji simultano koristi više procesorskih jezgara, odnosno tredova (paralelnih operacija).<br>
+Kako naći koliko jezgara i tredova može da koristi maš procesor:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>grep ^cpu<span class="se">\\</span>scores /proc/cpuinfo <span class="p">|</span> uniq <span class="p">|</span>  awk <span class="s1">&#39;{print $4}&#39;</span>  <span class="c1"># broj fizičkih jezgara</span>
+<span class="ln">2</span>grep -c ^processor /proc/cpuinfo <span class="c1"># broj tredova (number of threads)</span>
+</code></pre></div><p>Prva komanda mi daje broj 4, a druga broj 8, što znači da moj procesor Intel i7-3770 ima 4 jezgra i 8 tredova.</p>
+<p>Kad pokrenem neko grupno enkodiranje (batch process), svih 8 tredova se aktiviraju dovodeći do zauzeća procesora od 100%.<br>
+Treba ograničiti broj tredova koje će koristiti FFmpeg kako bi rasteretili procesor i paralelno mogli da radimo nešto drugo.</p>
+<ul>
+<li>Za enkodiranje u H.264:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i imput.mp4 -c:v libx264 -crf <span class="m">23</span> -threads <span class="m">4</span> output.mp4
+</code></pre></div><p>gde smo sa <mark style="background-color: lightblue"><strong>-threads 4</strong></mark> zadali FFmpeg-u da komandu izvršava sa 4 treda.</p>
+<p>Za grupno (batch) enkodiranje ista komanda bi bila:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> i in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -c:v libx264 -crf <span class="m">23</span> -threads <span class="m">4</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">i</span><span class="p">%.mp4</span><span class="si">}</span><span class="s2">-H.264.mp4&#34;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div><p>dobijamo enkodirane istoimene fajlove samo sa sufiksom <mark style="background-color: lightblue"><strong>-H.264</strong></mark></p>
+<ul>
+<li>Za enkodiranje u H.265:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>ffmpeg -i imput.mp4 -c:v libx265 -crf <span class="m">23</span> -x265-params <span class="nv">pools</span><span class="o">=</span><span class="m">6</span> output.mp4
+</code></pre></div><p>gde smo sa <mark style="background-color: lightblue"><strong>-x265-params pools=6</strong></mark> zadali FFmpeg-u da komandu izvršava sa 6 tredova.<br>
+Za grupno (batch) enkodiranje ista komanda bi bila:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">for</span> i in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -c:v libx265 -crf <span class="m">23</span> -x265-params <span class="nv">pools</span><span class="o">=</span><span class="m">4</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">i</span><span class="p">%.mp4</span><span class="si">}</span><span class="s2">-H.265.mp4&#34;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div><p>I to bi bilo to...</p>
 
     
       
